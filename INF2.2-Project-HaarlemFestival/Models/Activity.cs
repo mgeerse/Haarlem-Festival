@@ -19,6 +19,9 @@ namespace INF2._2_Project_HaarlemFestival.Models
         [ForeignKey("SubjectId")]
         public Subject Subject { get; private set; }
 
+        [ForeignKey("TicketId")]
+        public ICollection<Ticket> Tickets { get; private set; }
+
         //Constructor:
         public Activity(int ActivityId, string Name, string Description, int Capacity, DateTime Duration, DateTime StartTime)
         {

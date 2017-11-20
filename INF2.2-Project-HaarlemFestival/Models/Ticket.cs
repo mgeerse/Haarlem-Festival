@@ -18,6 +18,9 @@ namespace INF2._2_Project_HaarlemFestival.Models
         [ForeignKey("ShoppingCartId")]
         public ShoppingCart ShoppingCart { get; private set; }
 
+        [ForeignKey("ActivityId")]
+        public Activity Activity { get; private set; }
+
         //Constructor:
         public Ticket(int TicketId, decimal Price, int Amount)
         {
