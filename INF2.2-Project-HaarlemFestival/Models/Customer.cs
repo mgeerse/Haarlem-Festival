@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -13,6 +14,9 @@ namespace INF2._2_Project_HaarlemFestival.Models
         public string Address { get; private set; }
         public string EmailAddress { get; private set; }
         public string Country { get; private set; }
+
+        [ForeignKey("TicketId")]
+        public ICollection<Ticket> Tickets { get; private set; }
 
         //Constructor:
         public Customer(int CustomerId, string FirstName, string LastName, string Address, string EmailAddress, string Country)
