@@ -18,5 +18,32 @@ namespace INF2._2_Project_HaarlemFestival.Models
             this.Name = Name;
             this.Description = Name;
         }
+
+        public bool changeName(string Name)
+        {
+            try
+            {
+                this.Name = Name;
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool changeDescription(string Description)
+        {
+            try
+            {
+                this.Description = Description;
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
     }
 }
