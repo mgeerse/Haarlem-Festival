@@ -10,12 +10,12 @@ namespace INF2._2_Project_HaarlemFestival.Models
     public class Activity
     {
         [Key]
-        public int ActivityId { get; private set; }
-        public string Name { get; private set; }
-        public string Description { get; private set; }
-        public int Capacity { get; private set; }
-        public DateTime Duration { get; private set; }
-        public DateTime StartTime { get; private set; }
+        public int ActivityId { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public int Capacity { get; set; }
+        public DateTime Duration { get; set; }
+        public DateTime StartTime { get; set; }
 
         [ForeignKey("SubjectId")]
         public virtual Subject Subject { get; private set; }

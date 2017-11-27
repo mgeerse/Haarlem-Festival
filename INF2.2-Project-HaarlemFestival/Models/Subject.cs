@@ -10,9 +10,9 @@ namespace INF2._2_Project_HaarlemFestival.Models
     public class Subject
     {
         [Key]
-        public int SubjectId { get; private set; }
-        public string Name { get; private set; }
-        public string Description { get; private set; }
+        public int SubjectId { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
 
         //Constructor
         public Subject(int Id, string Name, string Description)

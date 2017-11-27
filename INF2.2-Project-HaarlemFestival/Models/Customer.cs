@@ -10,15 +10,15 @@ namespace INF2._2_Project_HaarlemFestival.Models
     public class Customer
     {
         [Key]
-        public int CustomerId { get; private set; }
-        public string FirstName { get; private set; }
-        public string LastName { get; private set; }
-        public string Address { get; private set; }
-        public string EmailAddress { get; private set; }
-        public string Country { get; private set; }
+        public int CustomerId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+        public string EmailAddress { get; set; }
+        public string Country { get; set; }
 
         [ForeignKey("TicketId")]
-        public virtual ICollection<Ticket> Tickets { get; private set; }
+        public virtual ICollection<Ticket> Tickets { get; set; }
 
         //Constructor:
         public Customer(int CustomerId, string FirstName, string LastName, string Address, string EmailAddress, string Country, ICollection<Ticket> Tickets)

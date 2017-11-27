@@ -10,10 +10,10 @@ namespace INF2._2_Project_HaarlemFestival.Models
     public class ShoppingCart
     {
         [Key]
-        public int ShoppingCartId { get; private set; }
+        public int ShoppingCartId { get; set; }
 
         [ForeignKey("TicketId")]
-        public virtual ICollection<Ticket> Tickets { get; private set; }
+        public virtual ICollection<Ticket> Tickets { get; set; }
 
         public ShoppingCart(int ShoppingCartId, ICollection<Ticket> Tickets)
         {

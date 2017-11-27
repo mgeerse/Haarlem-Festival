@@ -10,19 +10,19 @@ namespace INF2._2_Project_HaarlemFestival.Models
     public class Ticket
     {
         [Key]
-        public int TicketId { get; private set; }
-        public decimal Price { get; private set; }
-        public int Amount { get; private set; }
+        public int TicketId { get; set; }
+        public decimal Price { get; set; }
+        public int Amount { get; set; }
 
         [ForeignKey("CustomerId")]
-        public Customer Customer { get; private set; }
+        public Customer Customer { get; set; }
 
         [ForeignKey("ShoppingCartId")]
-        public ShoppingCart ShoppingCart { get; private set; }
+        public ShoppingCart ShoppingCart { get; set; }
 
         [ForeignKey("ActivityId")]
-        public Activity Activity { get; private set; }
-        
+        public Activity Activity { get; set; }
+
         //Constructor:
         public Ticket(int TicketId, decimal Price, int Amount, Customer Customer, ShoppingCart ShoppingCart, Activity Activity)
         {
