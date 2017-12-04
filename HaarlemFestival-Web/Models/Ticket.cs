@@ -13,6 +13,10 @@ namespace HaarlemFestival_Web.Models
 
         // Non-referencing properties
         public decimal Price { get; set; }
+        // Holds the amount of people that can make use of this ticket.
+        public int Amount { get; set; }
+        // Holds comments for the activity, for example questions for Talking Haarlem.
+        public string Comment { get; set; }
 
         // Referencing properties
         public int ActivityId { get; set; }

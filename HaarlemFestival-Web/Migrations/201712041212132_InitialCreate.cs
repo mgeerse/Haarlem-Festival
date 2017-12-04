@@ -26,6 +26,9 @@ namespace HaarlemFestival_Web.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Description = c.String(),
+                        Location = c.String(),
+                        StartTime = c.DateTime(nullable: false),
+                        EndTime = c.DateTime(nullable: false),
                         SubjectId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -48,6 +51,8 @@ namespace HaarlemFestival_Web.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Amount = c.Int(nullable: false),
+                        Comment = c.String(),
                         ActivityId = c.Int(nullable: false),
                         CustomerId = c.Int(nullable: false),
                     })
