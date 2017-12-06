@@ -20,28 +20,28 @@ insert into Subjects (Name, Description) values
 -- Tours 
 -- Wat een kutwerk.
 insert into Activities (Name, Description, Location, StartTime, EndTime, SubjectId) values
-      ('Tour Dutch', 'A Dutch tour through Haarlem', '20180726 10:00:00 AM','20180726 12:30:00 PM', 1),
-      ('Tour English', 'An English tour through Haarlem', '20180726 10:00:00 AM','20180726 12:30:00 PM', 1),
-      ('Tour Dutch', 'A Dutch tour through Haarlem', '20180726 13:00:00 AM','20180726 15:30:00 PM', 1),
-      ('Tour English', 'An English tour through Haarlem', '20180726 13:00:00 AM','20180726 15:30:00 PM', 1),
-      ('Tour Dutch', 'A Dutch tour through Haarlem', '20180726 16:00:00 AM','20180726 18:30:00 PM', 1),
-      ('Tour English', 'An English tour through Haarlem', '20180726 16:00:00 AM','20180726 18:30:00 PM', 1),
+    ('Tour Dutch', 'A Dutch tour through Haarlem', '20180726 10:00:00 AM','20180726 12:30:00 PM', 1),
+    ('Tour English', 'An English tour through Haarlem', '20180726 10:00:00 AM','20180726 12:30:00 PM', 1),
+    ('Tour Dutch', 'A Dutch tour through Haarlem', '20180726 13:00:00 AM','20180726 15:30:00 PM', 1),
+    ('Tour English', 'An English tour through Haarlem', '20180726 13:00:00 AM','20180726 15:30:00 PM', 1),
+    ('Tour Dutch', 'A Dutch tour through Haarlem', '20180726 16:00:00 AM','20180726 18:30:00 PM', 1),
+    ('Tour English', 'An English tour through Haarlem', '20180726 16:00:00 AM','20180726 18:30:00 PM', 1),
 	  
-      ('Tour Dutch', 'A Dutch tour through Haarlem', '20180726 10:00:00 AM','20180726 12:30:00 PM', 1),
-      ('Tour English', 'An English tour through Haarlem', '20180726 10:00:00 AM','20180726 12:30:00 PM', 1),
-      ('Tour Dutch', 'A Dutch tour through Haarlem', '20180726 13:00:00 AM','20180726 15:30:00 PM', 1),
-      ('Tour English', 'An English tour through Haarlem', '20180726 13:00:00 AM','20180726 15:30:00 PM', 1),
-      ('Tour Chinese', 'A Chinese tour through Haarlem', '20180726 13:00:00 AM','20180726 15:30:00 PM', 1),
-      ('Tour Dutch', 'An English tour through Haarlem', '20180726 16:00:00 AM','20180726 18:30:00 PM', 1),
-      ('Tour English', 'An English tour through Haarlem', '20180726 16:00:00 AM','20180726 18:30:00 PM', 1),
+    ('Tour Dutch', 'A Dutch tour through Haarlem', '20180727 10:00:00 AM','20180727 12:30:00 PM', 1),
+    ('Tour English', 'An English tour through Haarlem', '20180727 10:00:00 AM','20180727 12:30:00 PM', 1),
+    ('Tour Dutch', 'A Dutch tour through Haarlem', '20180727 13:00:00 AM','20180727 15:30:00 PM', 1),
+    ('Tour English', 'An English tour through Haarlem', '20180727 13:00:00 AM','20180727 15:30:00 PM', 1),
+    ('Tour Chinese', 'A Chinese tour through Haarlem', '20180727 13:00:00 AM','20180727 15:30:00 PM', 1),
+    ('Tour Dutch', 'An English tour through Haarlem', '20180727 16:00:00 AM','20180727 18:30:00 PM', 1),
+    ('Tour English', 'An English tour through Haarlem', '20180727 16:00:00 AM','20180727 18:30:00 PM', 1),
 	  
-      ('Tour Dutch', 'A Dutch tour through Haarlem', '20180726 10:00:00 AM','20180726 12:30:00 PM', 1),
-      ('Tour English', 'An English tour through Haarlem', '20180726 10:00:00 AM','20180726 12:30:00 PM', 1),
-      ('Tour Dutch', 'A Dutch tour through Haarlem', '20180726 13:00:00 AM','20180726 15:30:00 PM', 1),
-      ('Tour English', 'An English tour through Haarlem', '20180726 13:00:00 AM','20180726 15:30:00 PM', 1),
-      ('Tour Chinese', 'A Chinese tour through Haarlem', '20180726 13:00:00 AM','20180726 15:30:00 PM', 1),
-      ('Tour Dutch', 'A Dutch tour through Haarlem', '20180726 16:00:00 AM','20180726 18:30:00 PM', 1),
-      ('Tour English', 'An English tour through Haarlem', '20180726 16:00:00 AM','20180726 18:30:00 PM', 1),
-      ('Tour Chinese', 'A Chinese tour through Haarlem', '20180726 16:00:00 AM','20180726 18:30:00 PM', 1);
+    ('Tour Dutch', 'A Dutch tour through Haarlem', '20180728 10:00:00 AM','20180728 12:30:00 PM', 1),
+    ('Tour English', 'An English tour through Haarlem', '20180728 10:00:00 AM','20180728 12:30:00 PM', 1),
+    ('Tour Dutch', 'A Dutch tour through Haarlem', '20180728 13:00:00 AM','20180728 15:30:00 PM', 1),
+    ('Tour English', 'An English tour through Haarlem', '20180728 13:00:00 AM','20180728 15:30:00 PM', 1),
+    ('Tour Chinese', 'A Chinese tour through Haarlem', '20180728 13:00:00 AM','20180728 15:30:00 PM', 1),
+    ('Tour Dutch', 'A Dutch tour through Haarlem', '20180728 16:00:00 AM','20180728 18:30:00 PM', 1),
+    ('Tour English', 'An English tour through Haarlem', '20180728 16:00:00 AM','20180728 18:30:00 PM', 1),
+    ('Tour Chinese', 'A Chinese tour through Haarlem', '20180728 16:00:00 AM','20180728 18:30:00 PM', 1);
 
--- Restaurants
+x

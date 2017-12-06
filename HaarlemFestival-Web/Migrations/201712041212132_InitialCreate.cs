@@ -27,6 +27,7 @@ namespace HaarlemFestival_Web.Migrations
                         Name = c.String(),
                         Description = c.String(),
                         Location = c.String(),
+                        Capacity = c.Int(nullable: false),
                         StartTime = c.DateTime(nullable: false),
                         EndTime = c.DateTime(nullable: false),
                         SubjectId = c.Int(nullable: false),
