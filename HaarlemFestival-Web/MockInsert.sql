@@ -44,4 +44,3 @@ insert into Activities (Name, Description, Location, StartTime, EndTime, Subject
     ('Tour English', 'An English tour through Haarlem', '20180728 16:00:00 AM','20180728 18:30:00 PM', 1),
     ('Tour Chinese', 'A Chinese tour through Haarlem', '20180728 16:00:00 AM','20180728 18:30:00 PM', 1);
 
-x
