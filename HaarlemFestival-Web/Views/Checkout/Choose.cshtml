@@ -1,7 +1,33 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Choose";
+    Layout = "~/Views/Shared/Checkout/_Layout.cshtml";
 }
 
-<h2>Choose</h2>
+<section class="col-sm-4 col-md-4 col-lg-4">
+    <button id="btn-historic" class="btn-lg">Historic Tours</button>
+    <button id="btn-dining" class="btn-lg">Dining in Haarlem</button>
+    <button id="btn-jazz" class="btn-lg">Jazz &#64; Patronaat</button>
+    <button id="btn-talking" class="btn-lg">Talking Haarlem</button>
+</section>
+<section id="ticket-choose-content" class="col-sm-4 col-md-4 col-lg-4"></section>
+<section class="col-sm-4 col-md-4 col-lg-4"></section>
+<div class="clearfix"></div>
 
+<template id="opt-historic">
+    @using (Html.BeginForm())
+    {
+        // TODO toevoegen dagen aan dropdown
+    }
+</template>
+<template id="opt-dining">
+    @using (Html.BeginForm())
+    {
+
+    }
+</template>
+<template id="opt-jazz">
+
+</template>
+<template id="opt-talking">
+
+</template>
