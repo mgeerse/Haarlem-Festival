@@ -160,14 +160,26 @@
     <Compile Include="Migrations\201712041212132_InitialCreate.Designer.cs">
       <DependentUpon>201712041212132_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712061613576_SecondCreate.cs" />
+    <Compile Include="Migrations\201712061613576_SecondCreate.Designer.cs">
+      <DependentUpon>201712061613576_SecondCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Content Include="MockInsert.sql" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountType.cs" />
     <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\Cuisine.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Jazz.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Dining.cs" />
     <Compile Include="Models\Subject.cs" />
+    <Compile Include="Models\Talking.cs" />
     <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\TourGuide.cs" />
+    <Compile Include="Models\TourLocation.cs" />
+    <Compile Include="Models\Walking.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -233,6 +245,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712041212132_InitialCreate.resx">
       <DependentUpon>201712041212132_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712061613576_SecondCreate.resx">
+      <DependentUpon>201712061613576_SecondCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

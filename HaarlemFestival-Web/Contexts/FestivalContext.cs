@@ -14,5 +14,7 @@ namespace HaarlemFestival_Web.Contexts
         public DbSet<Customer>  Customers   { get; set; }
         public DbSet<Subject>   Subjects    { get; set; }
         public DbSet<Ticket>    Tickets     { get; set; }
+        public DbSet<Location>  Location    { get; set; }
+        public DbSet<Jazz>      Jazz        { get; set; }
     }
 }

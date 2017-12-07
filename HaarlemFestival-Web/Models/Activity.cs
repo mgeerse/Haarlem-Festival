@@ -12,7 +12,8 @@ namespace HaarlemFestival_Web.Models
     /// For example, a performance of a Jazz band at the Patronaat could be an activity inside of the
     /// Jazz@Patronaat subject.
     /// </summary>
-    public class Activity
+
+    public abstract class Activity
     {
         [Key]
         public int Id { get; private set; }
@@ -20,7 +21,6 @@ namespace HaarlemFestival_Web.Models
         // Non-referencing properties
         public string Name { get; set; }
         public string Description { get; set; }
-        public string Location { get; set; }
         public int Capacity { get; set; }
 
         public DateTime StartTime { get; set; }
@@ -30,6 +30,8 @@ namespace HaarlemFestival_Web.Models
 
         // An activity belongs to a single subject. Using an additional integer pointing 
         // to the Id forces non-nullability (An activity needs to be member of exactly one subject).
+        public int LocationId { get; set; }
+        public Location Location { get; set; }
         public int SubjectId { get; set; }
         public Subject Subject { get; set; }
 
