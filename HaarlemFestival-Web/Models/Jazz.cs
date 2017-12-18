@@ -10,5 +10,6 @@ namespace HaarlemFestival_Web.Models
     {
         public string Artist { get; set; }
         public string Hall { get; set; }
+        public string ImagePath { get; set; }
     }
 }
