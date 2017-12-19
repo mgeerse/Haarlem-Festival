@@ -4,16 +4,11 @@
     Layout = null;
 }
 
-<table style="width:100%; border:none; height:100%; text-align:center;">
 
-    <tr>
-        <td>Blok 1</td>
-        <td>Blok 2</td>
-    </tr>
+    @foreach (HaarlemFestival_Web.Models.Subject item in Model)
+    {
 
-    <tr>
-        <td>Blok 1</td>
-        <td>Blok 2</td>
-    </tr>
-</table>
 
+        @Html.DisplayFor(m => item.Name)
+        @Html.DisplayFor(m => item.Description )
+    }

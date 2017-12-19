@@ -9,11 +9,13 @@ namespace HaarlemFestival_Web.Controllers
 {
     public class HomeController : Controller
     {
-        private FestivalContext FestivalContext = new FestivalContext();
+        private Repositories.SubjectRepository SR = new Repositories.SubjectRepository();
 
         public ActionResult Index()
         {
-            return View(FestivalContext.Subjects.ToList());
+            IEnumerable<Models.Subject> Subjects = SR.GetAllSubjects();
+
+            return View(Subjects);
         }
     }
 }

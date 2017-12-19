@@ -169,6 +169,7 @@
       <DependentUpon>201712181408184_ThirdCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repositories\SubjectRepository.cs" />
     <Content Include="Content\Checkout\Choose.css" />
     <Content Include="MockInsert.sql" />
     <Compile Include="Models\Account.cs" />
