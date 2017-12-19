@@ -1,14 +1,29 @@
-﻿@model IEnumerable<HaarlemFestival_Web.Models.Subject>
+﻿@model IList<HaarlemFestival_Web.Models.Subject>
 
 @{
     Layout = null;
+    //int i = 0;
 }
 
-
-    @foreach (HaarlemFestival_Web.Models.Subject item in Model)
-    {
-
-
-        @Html.DisplayFor(m => item.Name)
-        @Html.DisplayFor(m => item.Description )
-    }
+<table style="width:100%; height:100%; text-align: center; border-style:hidden;">
+    <tr >
+        <td style="background-image:url(https://www.planwallpaper.com/static/images/Seamless-Polygon-Backgrounds-Vol2-full_Kfb2t3Q.jpg)">
+            @Html.DisplayFor(m => Model[0].Name) <br />
+            @Html.DisplayFor(m => Model[0].Description)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model[1].Name)<br />
+            @Html.DisplayFor(m => Model[1].Description)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(m => Model[2].Name)<br />
+            @Html.DisplayFor(m => Model[2].Description)
+        </td>
+        <td>
+            @Html.DisplayFor(m => Model[3].Name)<br />
+            @Html.DisplayFor(m => Model[3].Description)
+        </td>
+    </tr>
+</table>

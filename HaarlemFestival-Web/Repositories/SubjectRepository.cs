@@ -9,9 +9,9 @@ namespace HaarlemFestival_Web.Repositories
     {
         private Contexts.FestivalContext db = new Contexts.FestivalContext();
 
-        public IEnumerable<Models.Subject> GetAllSubjects()
+        public IList<Models.Subject> GetAllSubjects()
         {
-            return db.Subjects;
+            return db.Subjects.ToList();
         }
 
         public Models.Subject GetSubject(int SubjectId)
