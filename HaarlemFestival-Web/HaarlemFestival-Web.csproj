@@ -168,6 +168,10 @@
     <Compile Include="Migrations\201712181408184_ThirdCreate.Designer.cs">
       <DependentUpon>201712181408184_ThirdCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712202005049_FourthCreate.cs" />
+    <Compile Include="Migrations\201712202005049_FourthCreate.Designer.cs">
+      <DependentUpon>201712202005049_FourthCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Content Include="Content\Checkout\Choose.css" />
     <Content Include="MockInsert.sql" />
@@ -258,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712181408184_ThirdCreate.resx">
       <DependentUpon>201712181408184_ThirdCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712202005049_FourthCreate.resx">
+      <DependentUpon>201712202005049_FourthCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
