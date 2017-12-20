@@ -30,8 +30,3 @@ nav > ul > li a {
     color: white;
     background-color: cornflowerblue;
 }
-
-html, body {
-    background-color: #ccc !important;
-    padding: 0;
-}
