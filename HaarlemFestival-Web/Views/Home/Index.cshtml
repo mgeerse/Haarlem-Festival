@@ -7,29 +7,36 @@
 <link rel="stylesheet" href="../Content/Home.css" />
 
 
+<!--Waarschijnlijk is het, achteraf, toch beter om te Table hier niet te gebruiken.-->
+
 <table>
     <tr>
-        <td style="background-image:url(@Model[0].ImagePath)">
+        <td class="Overlay">
+            <img src="@Model[0].ImagePath" />
             <span class="Subject">@Html.DisplayFor(m => Model[0].Name)</span>
              <br />
-            <span>@Html.DisplayFor(m => Model[0].Description)</span>
+            <span class="Description">@Html.DisplayFor(m => Model[0].Description)</span>
         </td>
-        <td style="background-image:url(@Model[1].ImagePath)">
+        <td class="Overlay">
+            <img src="@Model[1].ImagePath" />
             <span class="Subject">@Html.DisplayFor(m => Model[1].Name)</span>
             <br />
-            <span>@Html.DisplayFor(m => Model[1].Description)</span>
+            <span class="Description">@Html.DisplayFor(m => Model[1].Description)</span>
         </td>
     </tr>
+
     <tr>
-        <td style="background-image:url(@Model[2].ImagePath)">
+        <td class="Overlay">
+            <img src="@Model[2].ImagePath" />
             <span class="Subject">@Html.DisplayFor(m => Model[2].Name)</span>
             <br />
-            <span>@Html.DisplayFor(m => Model[2].Description)</span>
+            <span class="Description">@Html.DisplayFor(m => Model[2].Description)</span>
         </td>
-        <td style="background-image:url(@Model[3].ImagePath)">
+        <td class="Overlay">
+            <img src="@Model[3].ImagePath" />
             <span class="Subject">@Html.DisplayFor(m => Model[3].Name)</span>
             <br />
-            <span>@Html.DisplayFor(m => Model[3].Description)</span>
+            <span class="Description">@Html.DisplayFor(m => Model[3].Description)</span>
         </td>
     </tr>
 </table>
