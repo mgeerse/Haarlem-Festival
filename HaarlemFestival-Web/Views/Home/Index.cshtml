@@ -4,25 +4,32 @@
     Layout = null;
 }
 
-<table style="width:100%; height:100%; text-align: center; border-style:hidden;">
-    <tr >
+<link rel="stylesheet" href="../Content/Home.css" />
+
+
+<table>
+    <tr>
         <td style="background-image:url(@Model[0].ImagePath)">
-            @Html.DisplayFor(m => Model[0].Name) <br />
-            @Html.DisplayFor(m => Model[0].Description)
+            <span class="Subject">@Html.DisplayFor(m => Model[0].Name)</span>
+             <br />
+            <span>@Html.DisplayFor(m => Model[0].Description)</span>
         </td>
         <td style="background-image:url(@Model[1].ImagePath)">
-            @Html.DisplayFor(m => Model[1].Name)<br />
-            @Html.DisplayFor(m => Model[1].Description)
+            <span class="Subject">@Html.DisplayFor(m => Model[1].Name)</span>
+            <br />
+            <span>@Html.DisplayFor(m => Model[1].Description)</span>
         </td>
     </tr>
     <tr>
         <td style="background-image:url(@Model[2].ImagePath)">
-            @Html.DisplayFor(m => Model[2].Name)<br />
-            @Html.DisplayFor(m => Model[2].Description)
+            <span class="Subject">@Html.DisplayFor(m => Model[2].Name)</span>
+            <br />
+            <span>@Html.DisplayFor(m => Model[2].Description)</span>
         </td>
         <td style="background-image:url(@Model[3].ImagePath)">
-            @Html.DisplayFor(m => Model[3].Name)<br />
-            @Html.DisplayFor(m => Model[3].Description)
+            <span class="Subject">@Html.DisplayFor(m => Model[3].Name)</span>
+            <br />
+            <span>@Html.DisplayFor(m => Model[3].Description)</span>
         </td>
     </tr>
 </table>
