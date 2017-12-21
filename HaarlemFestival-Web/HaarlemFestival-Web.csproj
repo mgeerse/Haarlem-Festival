@@ -149,7 +149,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Contexts\FestivalContext.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PagesController.cs" />
@@ -168,21 +168,8 @@
     <Compile Include="Migrations\201712181408184_ThirdCreate.Designer.cs">
       <DependentUpon>201712181408184_ThirdCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712202005049_FourthCreate.cs" />
-    <Compile Include="Migrations\201712202005049_FourthCreate.Designer.cs">
-      <DependentUpon>201712202005049_FourthCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Repositories\SubjectRepository.cs" />
     <Content Include="Content\Checkout\Choose.css" />
-    <Content Include="Content\Home.css" />
-    <Content Include="Content\Images\logo.svg" />
-    <Content Include="Content\Images\logo.png" />
-    <Content Include="Content\Images\Home\Tours.png" />
-    <Content Include="Content\Images\Home\Talking.png" />
-    <Content Include="Content\Images\Home\Restaurants.png" />
-    <Content Include="Content\Images\Home\Jazz.png" />
-    <Content Include="JavaScript.js" />
     <Content Include="MockInsert.sql" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountType.cs" />
@@ -237,15 +224,19 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Pages\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Admin\_Layout.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Admin\_Layout_Guest.cshtml" />
     <Content Include="Views\Checkout\Choose.cshtml" />
     <Content Include="Views\Shared\Checkout\_Layout.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\LoggedIn.cshtml" />
+    <Content Include="Views\Shared\Admin\_Layout_LoggedIn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Views\Pages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -269,9 +260,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712181408184_ThirdCreate.resx">
       <DependentUpon>201712181408184_ThirdCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712202005049_FourthCreate.resx">
-      <DependentUpon>201712202005049_FourthCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
