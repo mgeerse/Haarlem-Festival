@@ -379,6 +379,13 @@
     <Content Include="Views\Jazz\Friday.cshtml" />
     <Content Include="Views\Jazz\Saturday.cshtml" />
     <Content Include="Views\Jazz\Sunday.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Admin\_Layout_LoggedIn.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Checkout\Choose.cshtml" />
+    <Content Include="Views\Shared\Checkout\_Layout.cshtml" />
+    <Content Include="Views\Shared\Admin\_Layout_Guest.cshtml" />
+    <Content Include="Views\Admin\Registration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
