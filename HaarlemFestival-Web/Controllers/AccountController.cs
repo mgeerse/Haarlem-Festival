@@ -12,54 +12,12 @@ namespace HaarlemFestival_Web.Controllers
     {
         FestivalContext db = new FestivalContext();
 
-        //:Registration
+        #region Registration
         [HttpGet]
-        public ActionResult Registration()
+        public ActionResult Register()
         {
             return View();
         }
-
-        //:Registration [POST]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Registration(Account a)
-        {
-            bool status = false;
-            string message = "";
-
-            if(ModelState.IsValid)
-            {
-                //-Username Exist Check
-                if(UsernameExists(a.Username))
-                {
-                    ModelState.AddModelError("UsernameExists", "Username already exists");
-                }
-            }
-            else
-            {
-                message = "Invalid Request";
-            }
-            //-Process form data and write to database
-
-            //-Model validation
-
-            //-Password Hashing
-
-            //-Store data to database
-
-
-
-            return View(a);
-        }
-
-        //:Login
-
-
-        //:Login [POST]
-
-
-        //: Logout
-
 
         [NonAction]
         public bool UsernameExists(string enteredUsername)
@@ -69,5 +27,74 @@ namespace HaarlemFestival_Web.Controllers
             return existingUsername == null ? false : true;
 
         }
+
+        [HttpPost]
+        public ActionResult Register(Account Account)
+        {
+            if(ModelState.IsValid)
+            {
+                using (FestivalContext Db = new FestivalContext())
+                {
+                    Db.Accounts.Add(Account);
+                    Db.SaveChanges();
+                }
+
+                ModelState.Clear();
+                ViewBag.Message = Account.Name + ", your account has been successfully registered!";
+            }
+            return View();
+        }
+        #endregion
+
+        #region login
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(Account Account)
+        {
+            using (FestivalContext Db = new FestivalContext())
+            {
+                Account user = Db.Accounts.Single(u => u.Username == Account.Username && u.Password == Account.Password);
+
+                if(user != null)
+                {
+                    Session["Id"] = user.Id;
+                    Session["Username"] = user.Username;
+
+                    return View("LoggedIn");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Username or password is not correct");
+                }
+            }
+
+            return View("Login");
+        }
+
+        public ActionResult LoggedIn()
+        {
+            if(Session["Id"] != null)
+            {
+                return View("LoggedIn");
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
+        #endregion
+
+        #region Logout
+        public ActionResult Logout(Account User)
+        {
+            Session.Clear();
+            return RedirectToAction("Login");
+        }
+        #endregion
     }
 }

@@ -259,6 +259,8 @@
     <Content Include="Content\NavigationBar.css" />
     <Content Include="Content\Talking.css" />
     <Content Include="JavaScript.js" />
+    <Content Include="Content\Checkout\Choose.css" />
+    <Content Include="MockInsert.sql" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountType.cs" />
     <Compile Include="Models\Activity.cs" />
