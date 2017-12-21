@@ -1,40 +1,15 @@
 ﻿body {
     width: 100%;
+    height: auto;
     margin: 0;
 }
 
-table {
-    border-collapse: collapse;
-    table-layout: fixed;
+img {
+    display: block;
+    height: auto;
     width: 100%;
-    height: 100%;
-    text-align: center;
-    border-style: hidden;
-    flex-direction: row;
-    justify-content: space-between;
+    position: absolute;
 }
-
-tr {
-    margin: 0;
-}
-
-td {
-    width: 50%;
-    height: 50%;
-    table-layout: fixed;
-    word-wrap: break-word;
-    overflow: hidden;
-    position: relative;
-}
-
-    td img {
-        display: block;
-        height: auto;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
 
 .Overlay {
     background: rgba(255, 0, 0, 0.5);
@@ -43,17 +18,27 @@ td {
 .Subject {
     font-family: 'KorolevMilitaryStencil ☞';
     font-size: 80pt;
-    position: relative;
+    position: absolute;
 }
 
-.Description {
+.SubjectBlock {
+    float: left;
+    display: block;
+    width: 50%;
+    height: 50%;
+    display: block;
+    word-wrap: break-word;
+    overflow: hidden;
     position: relative;
+
+
+
+    text-align: center;
+    vertical-align:middle;
 }
 
-td:hover {
-    transition-timing-function: ease-in;
-    transition-duration: 0.5s;
-    transition-property: all;
-    transform: scale(1.08);
-    background-color: transparent;
+.SubjectDescription {
+    text-align:center;
+    position: absolute;
+    vertical-align:middle;
 }

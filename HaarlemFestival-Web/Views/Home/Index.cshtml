@@ -6,37 +6,14 @@
 
 <link rel="stylesheet" href="../Content/Home.css" />
 
+<main>
 
-<!--Waarschijnlijk is het, achteraf, toch beter om te Table hier niet te gebruiken.-->
-
-<table>
-    <tr>
-        <td class="Overlay">
-            <img src="@Model[0].ImagePath" />
-            <span class="Subject">@Html.DisplayFor(m => Model[0].Name)</span>
-             <br />
-            <span class="Description">@Html.DisplayFor(m => Model[0].Description)</span>
-        </td>
-        <td class="Overlay">
-            <img src="@Model[1].ImagePath" />
-            <span class="Subject">@Html.DisplayFor(m => Model[1].Name)</span>
-            <br />
-            <span class="Description">@Html.DisplayFor(m => Model[1].Description)</span>
-        </td>
-    </tr>
-
-    <tr>
-        <td class="Overlay">
-            <img src="@Model[2].ImagePath" />
-            <span class="Subject">@Html.DisplayFor(m => Model[2].Name)</span>
-            <br />
-            <span class="Description">@Html.DisplayFor(m => Model[2].Description)</span>
-        </td>
-        <td class="Overlay">
-            <img src="@Model[3].ImagePath" />
-            <span class="Subject">@Html.DisplayFor(m => Model[3].Name)</span>
-            <br />
-            <span class="Description">@Html.DisplayFor(m => Model[3].Description)</span>
-        </td>
-    </tr>
-</table>
+    @foreach (var item in Model)
+    {
+        <section class="SubjectBlock">
+            <img src="@item.ImagePath" class="SubjectImage"/>
+            <span class="Subject">@item.Name</span> <br />
+            <span class="SubjectDescription">@item.Description</span>
+        </section>
+    }
+</main>
