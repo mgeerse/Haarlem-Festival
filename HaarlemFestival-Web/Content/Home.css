@@ -1,7 +1,33 @@
-﻿body {
+﻿@font-face {
+    font-family: 'Korolev';
+    src: url(../fonts/KorolevMilitaryStencil.ttf);
+}
+
+body {
     width: 100%;
     height: auto;
     margin: 0;
+}
+
+main{
+    margin-top: 35px;
+}
+
+h1{
+    font-family: 'Korolev';
+    position:center;
+    vertical-align:middle;
+    transform: translateY(100%);
+    display:inline-block;
+    font-size:80px;
+}
+
+h2{
+    display:block;
+    position:inherit;
+    white-space:pre-wrap;
+    max-width:30%;
+    visibility:hidden;
 }
 
 img {
@@ -15,30 +41,24 @@ img {
     background: rgba(255, 0, 0, 0.5);
 }
 
-.Subject {
-    font-family: 'KorolevMilitaryStencil ☞';
-    font-size: 80pt;
-    position: absolute;
-}
 
 .SubjectBlock {
     float: left;
     display: block;
     width: 50%;
-    height: 50%;
-    display: block;
+    height: calc(50% - 35px);
     word-wrap: break-word;
     overflow: hidden;
+    vertical-align:middle;
     position: relative;
-
-
-
     text-align: center;
-    vertical-align:middle;
 }
 
-.SubjectDescription {
-    text-align:center;
-    position: absolute;
-    vertical-align:middle;
-}
+/*.SubjectDescription {
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+    display: block;
+    transform: translateY(450%);
+    white-space:pre-line;
+}*/

@@ -10,10 +10,19 @@
 
     @foreach (var item in Model)
     {
+        string Description = item.Description;
+
+        if (item.Description.Contains("<br />"))
+        {
+            Description = item.Description.Replace("<br />", "\n");
+        }
         <section class="SubjectBlock">
-            <img src="@item.ImagePath" class="SubjectImage"/>
-            <span class="Subject">@item.Name</span> <br />
-            <span class="SubjectDescription">@item.Description</span>
+            <img src="@item.ImagePath"/>
+            <h1 >@item.Name</h1> <br />
+            <h2>@Description</h2>
         </section>
     }
+
+
+
 </main>
