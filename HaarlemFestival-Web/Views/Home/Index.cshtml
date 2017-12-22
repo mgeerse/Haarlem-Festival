@@ -5,10 +5,11 @@
 }
 
 <link rel="stylesheet" href="../Content/Home.css" />
-
 <main>
 
-    @foreach (var item in Model)
+    <!--Test zonder Tables-->
+
+    @*@foreach (var item in Model)
     {
         string Description = item.Description;
 
@@ -17,12 +18,43 @@
             Description = item.Description.Replace("<br />", "\n");
         }
         <section class="SubjectBlock">
-            <img src="@item.ImagePath"/>
-            <h1 >@item.Name</h1> <br />
+            <img class="SubjectImage" src="@item.ImagePath" />
+            <h1>@item.Name.ToString()</h1> <br />
             <h2>@Description</h2>
         </section>
-    }
+    }*@
+
+    @*<img id="logo" src="~/Content/Images/logo.png" />*@
 
 
+    <!--Verdere test met Tables-->
+    <!--Ik heb voorkeur naar deze!-->
 
+    <table class="SubjectTable">
+
+        <tr>
+            <td class="SubjectColom" id="Jazz">
+                <h1 class="SubjectTitle">@Model[0].Name</h1> <br />
+                <h2 class="SubjectDescription">@Model[0].Description</h2>
+            </td>
+
+            <td class="SubjectColom" id="Talking">
+                <h1 class="SubjectTitle">@Model[1].Name</h1><br />
+                <h2 class="SubjectDescription">@Model[1].Description</h2>
+            </td>
+        </tr>
+        <tr>
+            <td class="SubjectColom" id="Tours">
+                <h1 class="SubjectTitle">@Model[2].Name</h1> <br />
+                <h2 class="SubjectDescription">@Model[2].Description</h2>
+                
+            </td>
+
+            <td class="SubjectColom" id="Dining">
+                <h1 class="SubjectTitle">@Model[3].Name</h1><br />
+                <h2 class="SubjectDescription">@Model[3].Description</h2>
+            </td>
+        </tr>
+
+    </table>
 </main>

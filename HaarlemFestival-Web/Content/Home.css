@@ -9,49 +9,61 @@ body {
     margin: 0;
 }
 
-main{
+main {
     margin-top: 35px;
+    margin-bottom: 35px;
 }
 
-h1{
+h1, .SubjectTitle {
+    position:relative;
+
     font-family: 'Korolev';
-    position:center;
-    vertical-align:middle;
-    transform: translateY(100%);
+    font-weight: normal;
+
+    margin:auto;
+
+    font-size: 80pt;
+
     display:inline-block;
-    font-size:80px;
+    text-align:center;
+
+    vertical-align:middle;
 }
 
-h2{
-    display:block;
-    position:inherit;
-    white-space:pre-wrap;
-    max-width:30%;
+h2, .SubjectDescription {
+    display: inline-block;
+    white-space: pre-wrap;
+    max-width: 30%;
+    text-align: center;
+    vertical-align:middle;
+    margin: auto;
+    position: relative;
+
     visibility:hidden;
 }
 
 img {
-    display: block;
+}
+
+
+td, .SubjectImage {
+    z-index:1;
     height: auto;
     width: 100%;
-    position: absolute;
 }
 
-.Overlay {
-    background: rgba(255, 0, 0, 0.5);
-}
-
-
-.SubjectBlock {
-    float: left;
-    display: block;
+td, .SubjectColom {
     width: 50%;
-    height: calc(50% - 35px);
-    word-wrap: break-word;
-    overflow: hidden;
-    vertical-align:middle;
-    position: relative;
-    text-align: center;
+    text-align:center;
+}
+
+.SubjectTable {
+    width: 100%;
+    height: calc(100% - 70px);
+
+    display:table;
+
+    border-collapse:collapse;
 }
 
 /*.SubjectDescription {
@@ -62,3 +74,45 @@ img {
     transform: translateY(450%);
     white-space:pre-line;
 }*/
+
+/*.SubjectBlock {
+    float: left;
+    display: block;
+    width: 50%;
+    height: calc(50% - 35px);
+    word-wrap: break-word;
+    overflow: hidden;
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+}*/
+
+#logo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+#Jazz:hover {
+    background-color:transparent;
+    background-image: url(../Content/Images/Home/Jazz.png);
+    transition: background-color 0.5s ease;
+}
+
+#Jazz {
+    background: rgba(255,0,0,1);
+    transition: background-color 0.5s ease;
+    
+}
+
+#Talking {
+    background:url(../Content/Images/Home/Talking.png);
+}
+
+#Tours {
+    background: url(../Content/Images/Home/Tours.png);
+}
+
+#Dining {
+    background: url(../Content/Images/Home/Restaurants.png);
+}

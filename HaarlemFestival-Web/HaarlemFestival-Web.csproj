@@ -176,6 +176,7 @@
     <Compile Include="Repositories\SubjectRepository.cs" />
     <Content Include="Content\Checkout\Choose.css" />
     <Content Include="Content\Home.css" />
+    <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\Home\Tours.png" />
     <Content Include="Content\Images\Home\Talking.png" />
     <Content Include="Content\Images\Home\Restaurants.png" />
