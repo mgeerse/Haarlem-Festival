@@ -94,7 +94,7 @@ td, .SubjectColumn {
     transform: translate(-49%, -48%);
 }
 
-h3#logotekst {
+#logotekst {
     display: block;
     position: fixed;
     font-weight: normal;
@@ -145,31 +145,28 @@ h3#logotekst {
 #WO {
     background-color: rgba(133, 182, 133, 0.75);
 }
-#WO:hover {
-    background-color: transparent;
-    transition: all 0.5s ease;
-    -webkit-transition: all 0.5s;
-}
+    #WO:hover {
+        background-color: transparent;
+        transition: all 0.5s ease;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+    }
 
 #DO {
     background-color: rgba(216, 195, 82, 0.75);
     transition: all 0.5s ease;
     -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
 }
-#DO:hover {
-    background-color: transparent;
-     transition: all 0.5s ease;
-    -webkit-transition: all 0.5s;
-}
-
-#FirstRow {
-    z-index:400;
-    /*outline: 10px solid rgb(118, 115, 115);*/
-}
-
-#SecondRow {
-    /*outline: 10px solid rgb(118, 115, 115);*/
-}
+    #DO:hover {
+        background-color: transparent;
+        transition: all 0.5s ease;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+    }
 
 .overlay {
     margin:0;
