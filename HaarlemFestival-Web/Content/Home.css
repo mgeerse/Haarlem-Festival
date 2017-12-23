@@ -9,61 +9,59 @@ body {
     margin: 0;
 }
 
+tr {
+    max-height: calc(50% - 35px);
+    max-width: 100%;
+}
+
 main {
     margin-top: 35px;
     margin-bottom: 35px;
 }
 
 h1, .SubjectTitle {
-    position:relative;
-
+    display: inline-flex;
     font-family: 'Korolev';
+    color:white;
     font-weight: normal;
-
-    margin:auto;
-
+    margin: auto;
     font-size: 80pt;
-
-    display:inline-block;
-    text-align:center;
-
-    vertical-align:middle;
+    text-align: center;
 }
 
 h2, .SubjectDescription {
-    display: inline-block;
     white-space: pre-wrap;
     max-width: 30%;
     text-align: center;
-    vertical-align:middle;
+    vertical-align: middle;
     margin: auto;
-    position: relative;
-
-    visibility:hidden;
 }
 
-img {
+td {
+    max-height: calc(50% - 35px);
+    width: 50%;
+    max-width: 50%;
 }
 
-
-td, .SubjectImage {
-    z-index:1;
-    height: auto;
+.SubjectImage td {
+    display: block;
     width: 100%;
+    height: auto;
 }
 
 td, .SubjectColom {
+    padding:0;
     width: 50%;
-    text-align:center;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .SubjectTable {
     width: 100%;
     height: calc(100% - 70px);
-
-    display:table;
-
-    border-collapse:collapse;
+    position: relative;
+    display: table;
+    border-collapse: collapse;
 }
 
 /*.SubjectDescription {
@@ -91,22 +89,18 @@ td, .SubjectColom {
     position: fixed;
     top: 50%;
     left: 50%;
+    background-position: center center;
 }
 
 #Jazz:hover {
-    background-color:transparent;
-    background-image: url(../Content/Images/Home/Jazz.png);
-    transition: background-color 0.5s ease;
 }
 
 #Jazz {
-    background: rgba(255,0,0,1);
-    transition: background-color 0.5s ease;
-    
+    background: url(../Content/Images/Home/Jazz.png);
 }
 
 #Talking {
-    background:url(../Content/Images/Home/Talking.png);
+    background: url(../Content/Images/Home/Talking.png);
 }
 
 #Tours {
@@ -115,4 +109,47 @@ td, .SubjectColom {
 
 #Dining {
     background: url(../Content/Images/Home/Restaurants.png);
+}
+
+#JO {
+    background-color: rgba(167, 102, 102, 0.75);
+}
+#JO:hover {
+    background-color: transparent;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s;
+}
+
+#TO {
+    background-color: rgba(89, 128, 162, 0.75);
+}
+#TO:hover {
+    background-color: transparent;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s;
+}
+
+#WO {
+    background-color: rgba(133, 182, 133, 0.75);
+}
+#WO:hover {
+    background-color: transparent;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s;
+}
+
+#DO {
+    background-color: rgba(216, 195, 82, 0.75);
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s;
+}
+#DO:hover {
+    background-color: transparent;
+     transition: all 0.5s ease;
+    -webkit-transition: all 0.5s;
+}
+
+.overlay {
+    margin:0;
+    height: 100%;
 }

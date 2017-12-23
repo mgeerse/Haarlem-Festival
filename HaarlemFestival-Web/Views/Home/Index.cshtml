@@ -4,6 +4,27 @@
     Layout = null;
 }
 
+<script>
+
+    //document.getElementById("Jazz").addEventListener("mouseover", mouseOver);
+    //document.getElementById("Jazz").addEventListener("mouseout", mouseOut);
+
+    //for (item in document.getElementById('Jazz')) {
+    //    item.addEventListener(onmouseover, mouseOver(item));
+    //    item.addEventListener(onmouseleave, mouseOut(item));
+    //}
+
+
+    //function mouseOver(item) {
+    //    item.style.backgroundImage = "url(../Content/Images/Home/Jazz.png)";
+    //}
+
+    //function mouseOver(item) {
+    //    item.style.backgroundColor = red;
+    //}
+      
+</script>
+
 <link rel="stylesheet" href="../Content/Home.css" />
 <main>
 
@@ -34,27 +55,33 @@
 
         <tr>
             <td class="SubjectColom" id="Jazz">
-                <h1 class="SubjectTitle">@Model[0].Name</h1> <br />
-                <h2 class="SubjectDescription">@Model[0].Description</h2>
+                <section class="overlay" id="JO">
+                    <h1 class="SubjectTitle">@Model[0].Name</h1> <br />
+                    @*<h2 class="SubjectDescription">@Model[0].Description</h2>*@
+                </section>
             </td>
 
             <td class="SubjectColom" id="Talking">
-                <h1 class="SubjectTitle">@Model[1].Name</h1><br />
-                <h2 class="SubjectDescription">@Model[1].Description</h2>
+                <section class="overlay" id="TO">
+                    <h1 class="SubjectTitle">@Model[1].Name</h1><br />
+                    @*<h2 class="SubjectDescription">@Model[1].Description</h2>*@
+                </section>
             </td>
         </tr>
         <tr>
             <td class="SubjectColom" id="Tours">
-                <h1 class="SubjectTitle">@Model[2].Name</h1> <br />
-                <h2 class="SubjectDescription">@Model[2].Description</h2>
-                
+                <section class="overlay" id="WO">
+                    <h1 class="SubjectTitle">@Model[2].Name</h1> <br />
+                    @*<h2 class="SubjectDescription">@Model[2].Description</h2>*@
+                </section>
             </td>
 
             <td class="SubjectColom" id="Dining">
-                <h1 class="SubjectTitle">@Model[3].Name</h1><br />
-                <h2 class="SubjectDescription">@Model[3].Description</h2>
+                <section class="overlay" id="DO">
+                    <h1 class="SubjectTitle">@Model[3].Name</h1><br />
+                    @*<h2 class="SubjectDescription">@Model[3].Description</h2>*@
+                </section>
             </td>
         </tr>
-
     </table>
 </main>
