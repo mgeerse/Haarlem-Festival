@@ -3,85 +3,52 @@
 @{
     Layout = null;
 }
-
-<script>
-
-    //document.getElementById("Jazz").addEventListener("mouseover", mouseOver);
-    //document.getElementById("Jazz").addEventListener("mouseout", mouseOut);
-
-    //for (item in document.getElementById('Jazz')) {
-    //    item.addEventListener(onmouseover, mouseOver(item));
-    //    item.addEventListener(onmouseleave, mouseOut(item));
-    //}
-
-
-    //function mouseOver(item) {
-    //    item.style.backgroundImage = "url(../Content/Images/Home/Jazz.png)";
-    //}
-
-    //function mouseOver(item) {
-    //    item.style.backgroundColor = red;
-    //}
-      
-</script>
-
 <link rel="stylesheet" href="../Content/Home.css" />
 <main>
-
-    <!--Test zonder Tables-->
-
-    @*@foreach (var item in Model)
-    {
-        string Description = item.Description;
-
-        if (item.Description.Contains("<br />"))
-        {
-            Description = item.Description.Replace("<br />", "\n");
-        }
-        <section class="SubjectBlock">
-            <img class="SubjectImage" src="@item.ImagePath" />
-            <h1>@item.Name.ToString()</h1> <br />
-            <h2>@Description</h2>
-        </section>
-    }*@
-
-    @*<img id="logo" src="~/Content/Images/logo.png" />*@
-
-
-    <!--Verdere test met Tables-->
-    <!--Ik heb voorkeur naar deze!-->
-
     <table class="SubjectTable">
 
-        <tr>
-            <td class="SubjectColom" id="Jazz">
-                <section class="overlay" id="JO">
-                    <h1 class="SubjectTitle">@Model[0].Name</h1> <br />
-                    @*<h2 class="SubjectDescription">@Model[0].Description</h2>*@
-                </section>
+        <tr id="FirstRow">
+            <td class="SubjectColumn" id="Jazz">
+                <a href="~/Views/Jazz/index.cshtml">
+                    <section class="overlay" id="JO">
+                        <h1 class="SubjectTitle">@Model[0].Name</h1> <br />
+                        @*<h2 class="SubjectDescription">@Model[0].Description</h2>*@
+                    </section>
+                </a>
             </td>
 
-            <td class="SubjectColom" id="Talking">
-                <section class="overlay" id="TO">
-                    <h1 class="SubjectTitle">@Model[1].Name</h1><br />
-                    @*<h2 class="SubjectDescription">@Model[1].Description</h2>*@
-                </section>
+            <td class="SubjectColumn" id="Talking">
+                <a href="~/Views/Talking/index.cshtml">
+                    <section class="overlay" id="TO">
+                        <h1 class="SubjectTitle">@Model[1].Name</h1><br />
+                        @*<h2 class="SubjectDescription">@Model[1].Description</h2>*@
+                    </section>
+                </a>
             </td>
         </tr>
-        <tr>
-            <td class="SubjectColom" id="Tours">
-                <section class="overlay" id="WO">
-                    <h1 class="SubjectTitle">@Model[2].Name</h1> <br />
-                    @*<h2 class="SubjectDescription">@Model[2].Description</h2>*@
-                </section>
+        <tr id="SecondRow">
+            <td class="SubjectColumn" id="Tours">
+                <a href="~/Views/Tours/index.cshtml">
+                    <section class="overlay" id="WO">
+                        <h1 class="SubjectTitle">@Model[2].Name</h1> <br />
+                        @*<h2 class="SubjectDescription">@Model[2].Description</h2>*@
+                    </section>
+                </a>
             </td>
 
-            <td class="SubjectColom" id="Dining">
-                <section class="overlay" id="DO">
-                    <h1 class="SubjectTitle">@Model[3].Name</h1><br />
-                    @*<h2 class="SubjectDescription">@Model[3].Description</h2>*@
-                </section>
+            <td class="SubjectColumn" id="Dining">
+                <a href="~/Views/Dining/index.cshtml">
+                    <section class="overlay" id="DO">
+                        <h1 class="SubjectTitle">@Model[3].Name</h1><br />
+                        @*<h2 class="SubjectDescription">@Model[3].Description</h2>*@
+                    </section>
+                </a>
             </td>
         </tr>
     </table>
+
+    <section id="logo">
+        <img src="~/Content/Images/logo.png" />
+        <center><h3 id="logotekst">Haarlem Festival</h3></center>
+    </section>
 </main>
