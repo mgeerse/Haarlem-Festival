@@ -15,7 +15,7 @@ namespace HaarlemFestival_Web.Controllers
         {
             IEnumerable<Models.Subject> Subjects = SR.GetAllSubjects();
 
-            return View(Subjects);
+            return View("/Views/Pages/Home/index.cshtml",Subjects);
         }
     }
 }
