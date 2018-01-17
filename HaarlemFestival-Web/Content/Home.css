@@ -1,0 +1,174 @@
+﻿@font-face {
+    font-family: 'Korolev';
+    src: url(../fonts/KorolevMilitaryStencil.ttf);
+}
+
+body {
+    min-width:800px;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    background-color:grey;
+
+}
+
+tr {
+    max-height: calc(50% - 35px);
+    max-width: 100%;
+}
+
+main {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+a{
+    display:inline-block;
+    width:100%;
+    height:100%;
+
+    text-decoration:none;
+}
+
+h1, .SubjectTitle {
+    display: inline-flex;
+    font-family: 'Korolev';
+    color:white;
+    font-weight: normal;
+    margin: auto;
+    font-size: 80pt;
+    text-align: center;
+}
+
+h2, .SubjectDescription {
+    white-space: pre-wrap;
+    max-width: 30%;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+}
+
+td {
+    max-height: calc(50% - 35px);
+    width: 50%;
+    max-width: 50%;
+}
+
+.SubjectImage td {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+td, .SubjectColumn {
+    padding: 0;
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.SubjectTable {
+    outline: 10px solid rgb(118, 115, 115);
+    width: 100%;
+    height: calc(100% - 70px);
+    position: relative;
+    display: table;
+    border-collapse: collapse;
+}
+
+/*.SubjectDescription {
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+    display: block;
+    transform: translateY(450%);
+    white-space:pre-line;
+}*/
+
+#logo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    pointer-events:none;
+    -webkit-transform: translate(-49%, -48%);
+    transform: translate(-49%, -48%);
+}
+
+#logotekst {
+    display: block;
+    position: fixed;
+    font-weight: normal;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-51%, -100%);
+    transform: translate(-51%, -100%);
+    font-family: Korolev;
+    font-size: 35px;
+    text-align: center;
+    color: darkgrey;
+}
+
+#Jazz {
+    background: url(../Content/Images/Home/Jazz.png);
+}
+
+#Talking {
+    background: url(../Content/Images/Home/Talking.png);
+}
+
+#Tours {
+    background: url(../Content/Images/Home/Tours.png);
+}
+
+#Dining {
+    background: url(../Content/Images/Home/Restaurants.png);
+}
+
+#JO {
+    background-color: rgba(167, 102, 102, 0.75);
+}
+#JO:hover {
+    background-color: transparent;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s;
+}
+
+#TO {
+    background-color: rgba(89, 128, 162, 0.75);
+}
+#TO:hover {
+    background-color: transparent;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s;
+}
+
+#WO {
+    background-color: rgba(133, 182, 133, 0.75);
+}
+    #WO:hover {
+        background-color: transparent;
+        transition: all 0.5s ease;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+    }
+
+#DO {
+    background-color: rgba(216, 195, 82, 0.75);
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+    #DO:hover {
+        background-color: transparent;
+        transition: all 0.5s ease;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+    }
+
+.overlay {
+    margin:0;
+    height: 100%;
+}

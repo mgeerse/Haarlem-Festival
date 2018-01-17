@@ -160,14 +160,44 @@
     <Compile Include="Migrations\201712041212132_InitialCreate.Designer.cs">
       <DependentUpon>201712041212132_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712061613576_SecondCreate.cs" />
+    <Compile Include="Migrations\201712061613576_SecondCreate.Designer.cs">
+      <DependentUpon>201712061613576_SecondCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712181408184_ThirdCreate.cs" />
+    <Compile Include="Migrations\201712181408184_ThirdCreate.Designer.cs">
+      <DependentUpon>201712181408184_ThirdCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712202005049_FourthCreate.cs" />
+    <Compile Include="Migrations\201712202005049_FourthCreate.Designer.cs">
+      <DependentUpon>201712202005049_FourthCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repositories\SubjectRepository.cs" />
+    <Content Include="Content\Checkout\Choose.css" />
+    <Content Include="Content\Home.css" />
+    <Content Include="Content\Images\logo.svg" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\Home\Tours.png" />
+    <Content Include="Content\Images\Home\Talking.png" />
+    <Content Include="Content\Images\Home\Restaurants.png" />
+    <Content Include="Content\Images\Home\Jazz.png" />
+    <Content Include="JavaScript.js" />
     <Content Include="MockInsert.sql" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountType.cs" />
     <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\Cuisine.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Jazz.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Dining.cs" />
     <Compile Include="Models\Subject.cs" />
+    <Compile Include="Models\Talking.cs" />
     <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\TourGuide.cs" />
+    <Compile Include="Models\TourLocation.cs" />
+    <Compile Include="Models\Walking.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +212,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="fonts\KorolevMilitaryStencil.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -206,7 +237,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Pages\Home\Index.cshtml" />
     <Content Include="Views\Shared\Admin\_Layout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
@@ -234,6 +265,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712041212132_InitialCreate.resx">
       <DependentUpon>201712041212132_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712061613576_SecondCreate.resx">
+      <DependentUpon>201712061613576_SecondCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712181408184_ThirdCreate.resx">
+      <DependentUpon>201712181408184_ThirdCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712202005049_FourthCreate.resx">
+      <DependentUpon>201712202005049_FourthCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

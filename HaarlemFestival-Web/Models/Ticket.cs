@@ -24,5 +24,9 @@ namespace HaarlemFestival_Web.Models
 
         public int CustomerId { get; set; }
         public Customer Customer { get; set; }
+
+        public List<string> QuestionList { get; set; }
+
+        public DateTime SoldAt { get; set; }
     }
 }

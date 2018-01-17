@@ -12,6 +12,7 @@ namespace HaarlemFestival_Web.Models
     /// The Haarlem Festival will start off with four subjects.
     /// More subjects can easily be added.
     /// </summary>
+    
     public class Subject
     {
         [Key]
@@ -20,9 +21,9 @@ namespace HaarlemFestival_Web.Models
         // Non-referencing properties
         public string Name { get; set; }
         public string Description { get; set; }
+        public string ImagePath { get; set; }
 
         // Referencing properties
-
         // A single subject can contain many activities. 
         public virtual ICollection<Activity> Activities { get; set; }
     }
