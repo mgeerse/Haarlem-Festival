@@ -172,6 +172,10 @@
     <Compile Include="Migrations\201712202005049_FourthCreate.Designer.cs">
       <DependentUpon>201712202005049_FourthCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801221024508_TeijeCreate.cs" />
+    <Compile Include="Migrations\201801221024508_TeijeCreate.Designer.cs">
+      <DependentUpon>201801221024508_TeijeCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ViewModels\ActivityListsViewModel.cs" />
     <Compile Include="Repositories\ActivityRepository.cs" />
@@ -279,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712202005049_FourthCreate.resx">
       <DependentUpon>201712202005049_FourthCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801221024508_TeijeCreate.resx">
+      <DependentUpon>201801221024508_TeijeCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
