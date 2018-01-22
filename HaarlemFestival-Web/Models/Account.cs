@@ -11,16 +11,16 @@ namespace HaarlemFestival_Web.Models
         [Key]
         public int Id { get; private set; }
 
-        // Non-referencing properties
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Name Required")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Name is required")]
         public string Name { get; set; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Username Required")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Username is required")]
         public string Username { get; set; }
 
         // TODO: Encrypt passwords. Extra points.
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Password Required")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Password is required")]
         [MinLength(6, ErrorMessage = "Minimum of 6 characters required")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         public AccountType AccountType { get; set; }

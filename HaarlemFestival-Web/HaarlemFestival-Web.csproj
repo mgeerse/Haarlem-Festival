@@ -149,7 +149,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Contexts\FestivalContext.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PagesController.cs" />
@@ -167,6 +167,10 @@
     <Compile Include="Migrations\201712181408184_ThirdCreate.cs" />
     <Compile Include="Migrations\201712181408184_ThirdCreate.Designer.cs">
       <DependentUpon>201712181408184_ThirdCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801171322286_Registration.cs" />
+    <Compile Include="Migrations\201801171322286_Registration.Designer.cs">
+      <DependentUpon>201801171322286_Registration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Content Include="Content\Checkout\Choose.css" />
@@ -225,15 +229,17 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Admin\_Layout_LoggedIn.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\Admin\_Layout_Guest.cshtml" />
     <Content Include="Views\Checkout\Choose.cshtml" />
     <Content Include="Views\Shared\Checkout\_Layout.cshtml" />
-    <Content Include="Views\Shared\Admin\_Layout_Guest.cshtml" />
-    <Content Include="Views\Admin\Registration.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\LoggedIn.cshtml" />
+    <Content Include="Views\Shared\Admin\_Layout_LoggedIn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Helpers\" />
     <Folder Include="Views\Pages\" />
   </ItemGroup>
   <ItemGroup>
@@ -258,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712181408184_ThirdCreate.resx">
       <DependentUpon>201712181408184_ThirdCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801171322286_Registration.resx">
+      <DependentUpon>201801171322286_Registration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
