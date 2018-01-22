@@ -10,6 +10,12 @@ namespace HaarlemFestival_Web.Controllers
 {
     public class AccountController : Controller
     {
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return RedirectToAction("Login");
+        }
+
         #region Registration
         [HttpGet]
         public ActionResult Register()

@@ -172,6 +172,10 @@
     <Compile Include="Migrations\201801171322286_Registration.Designer.cs">
       <DependentUpon>201801171322286_Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801221031023_Login.cs" />
+    <Compile Include="Migrations\201801221031023_Login.Designer.cs">
+      <DependentUpon>201801221031023_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\SubjectRepository.cs" />
     <Content Include="Content\Checkout\Choose.css" />
@@ -268,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801171322286_Registration.resx">
       <DependentUpon>201801171322286_Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801221031023_Login.resx">
+      <DependentUpon>201801221031023_Login.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
