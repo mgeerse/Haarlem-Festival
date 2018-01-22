@@ -12,6 +12,12 @@ namespace HaarlemFestival_Web.Controllers
     {
         FestivalContext db = new FestivalContext();
 
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return RedirectToAction("Login");
+        }
+
         #region Registration
         [HttpGet]
         public ActionResult Register()
