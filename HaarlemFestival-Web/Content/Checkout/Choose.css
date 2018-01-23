@@ -1,4 +1,8 @@
-﻿nav > ul {
+﻿html {
+    min-width: 1280px;
+}
+
+nav > ul {
     padding: 1em;
     display: block;
 }
@@ -36,7 +40,18 @@ html, body {
     padding: 0;
 }
 
-.required:after {
+/* Don't use CSS for adding tags. It's not supported. */
+/*.required:after {
     content: "<sup>*</sup>";
     color: darkred;
+}*/
+
+.required::after {
+    content: "*";
+    color: red;
+    font-size: 100%;
+}
+
+.wrapper-50 > div > label {
+    text-align: right;
 }

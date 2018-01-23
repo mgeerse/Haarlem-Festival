@@ -186,6 +186,7 @@
     <Compile Include="Repositories\TalkingRepository.cs" />
     <Compile Include="Repositories\WalkingRepository.cs" />
     <Content Include="Content\Checkout\Choose.css" />
+    <Content Include="Content\Checkout\Choose.js" />
     <Content Include="Content\Home.css" />
     <Content Include="Content\Images\logo.svg" />
     <Content Include="Content\Images\logo.png" />

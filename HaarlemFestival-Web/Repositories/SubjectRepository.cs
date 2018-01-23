@@ -9,7 +9,7 @@ namespace HaarlemFestival_Web.Repositories
 {
     public class SubjectRepository : IRepository<Subject>
     {
-        private FestivalContext db = new FestivalContext();
+        private FestivalContext context = new FestivalContext();
 
         #region Obsolete methods
 
@@ -23,7 +23,7 @@ namespace HaarlemFestival_Web.Repositories
         [Obsolete("Use the method inferred from the repository instead.")]
         public Subject GetSubject(int SubjectId)
         {
-            Subject Subject = db.Subjects.Find(SubjectId);
+            Subject Subject = context.Subjects.Find(SubjectId);
             return Subject;
         }
 
@@ -36,7 +36,7 @@ namespace HaarlemFestival_Web.Repositories
         [Obsolete("Use the method inferred from the repository instead.")]
         public IList<Subject> GetAllSubjects()
         {
-            return db.Subjects.ToList();
+            return context.Subjects.ToList();
         }
 
         #endregion

@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using HaarlemFestival_Web.Contexts;
 using HaarlemFestival_Web.Models;
 
 namespace HaarlemFestival_Web.Repositories
 {
     public class JazzRepository : IRepository<Jazz>
     {
+
+        private FestivalContext context = new FestivalContext();
+
         public bool Delete(Jazz objectToDelete)
         {
             throw new NotImplementedException();
@@ -15,7 +19,7 @@ namespace HaarlemFestival_Web.Repositories
 
         public IEnumerable<Jazz> GetAll()
         {
-            throw new NotImplementedException();
+            return context.Jazz;
         }
 
         public Jazz GetById(int id)

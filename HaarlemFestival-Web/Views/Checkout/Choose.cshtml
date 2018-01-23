@@ -11,7 +11,22 @@
     <button id="btn-jazz" class="btn-lg">Jazz &#64; Patronaat</button>
     <button id="btn-talking" class="btn-lg">Talking Haarlem</button>
 </section>
-<section id="ticket-choose-content" class="col-sm-4 col-md-4 col-lg-4"></section>
+
+<section id="ticket-choose-content" class="col-sm-4 col-md-4 col-lg-4">
+    @using (Html.BeginForm())
+    {
+        <div class="wrapper-50">
+            <div>
+                @Html.Label("Restaurant", new { @class = "required" })
+                @Html.DropDownListFor(m => m.SelectedItemId, new SelectList(Model.DiningActivities, "Id", "Name"))
+            </div>
+            <div>
+
+            </div>
+        </div>
+    }
+</section>
+
 <section class="col-sm-4 col-md-4 col-lg-4"></section>
 <div class="clearfix"></div>
 
@@ -29,7 +44,7 @@
         </div>
         <div>
             @Html.DropDownListFor(m => m.SelectedItemId, new SelectList(Model.DiningActivities, "Id", "Name"))
-            
+
         </div>
     }
 </template>
