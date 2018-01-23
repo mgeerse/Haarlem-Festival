@@ -1,0 +1,38 @@
+﻿@font-face{
+    font-family: KorolevMilitaryStencil;
+    src: url('../fonts/KorolevMilitaryStencil.ttf') format('truetype');
+}
+
+
+body {
+    background: linear-gradient(rgba(255,255,255, 0.5), rgba(255,255,255, 0.5)), url(Images/Historic/background.jpg);
+}
+
+.article{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-left: thin;
+    border-color: black;
+}
+
+.tekst{
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 5px;
+}
+
+.headerp1{
+    font-family: KorolevMilitaryStencil;
+    color: #003300;
+    text-align: right;
+    margin: 0;
+}
+
+.headerwhole{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+

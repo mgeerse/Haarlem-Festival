@@ -175,7 +175,18 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\SubjectRepository.cs" />
     <Content Include="Content\Checkout\Choose.css" />
+    <Content Include="Content\Historic.css" />
     <Content Include="Content\Home.css" />
+    <Content Include="Content\Images\Historic\1. Grote Markt.jpg" />
+    <Content Include="Content\Images\Historic\2. Grote Kerk.jpg" />
+    <Content Include="Content\Images\Historic\3. De Hallen.jpg" />
+    <Content Include="Content\Images\Historic\4. Proveniershof.jpg" />
+    <Content Include="Content\Images\Historic\5. Jopenkerk.jpg" />
+    <Content Include="Content\Images\Historic\6. Waalse Kerk.jpg" />
+    <Content Include="Content\Images\Historic\7. Molen de Adriaan.jpg" />
+    <Content Include="Content\Images\Historic\8. Amsterdamse Poort.jpg" />
+    <Content Include="Content\Images\Historic\9. Hof van Bakenes.jpg" />
+    <Content Include="Content\Images\Historic\background.jpg" />
     <Content Include="Content\Images\logo.svg" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\Home\Tours.png" />
@@ -243,6 +254,7 @@
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Checkout\Choose.cshtml" />
     <Content Include="Views\Shared\Checkout\_Layout.cshtml" />
+    <Content Include="Views\Pages\Historic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
