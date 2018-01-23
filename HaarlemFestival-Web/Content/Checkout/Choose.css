@@ -32,6 +32,11 @@ nav > ul > li a {
 }
 
 html, body {
-    background-color: #ccc !important;
+    background-color: #fff;
     padding: 0;
+}
+
+.required:after {
+    content: "<sup>*</sup>";
+    color: darkred;
 }

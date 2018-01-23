@@ -1,4 +1,6 @@
-﻿@{
+﻿@using HaarlemFestival_Web.Models
+@model ActivityListsViewModel
+@{
     ViewBag.Title = "Choose";
     Layout = "~/Views/Shared/Checkout/_Layout.cshtml";
 }
@@ -22,7 +24,13 @@
 <template id="opt-dining">
     @using (Html.BeginForm())
     {
-
+        <div>
+            @Html.Label("Restaurant", new { @class = "required" })
+        </div>
+        <div>
+            @Html.DropDownListFor(m => m.SelectedItemId, new SelectList(Model.DiningActivities, "Id", "Name"))
+            
+        </div>
     }
 </template>
 <template id="opt-jazz">
