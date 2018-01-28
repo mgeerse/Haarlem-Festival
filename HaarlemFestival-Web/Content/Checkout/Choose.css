@@ -1,5 +1,9 @@
 ﻿html {
-    min-width: 1280px;
+    min-width: 1920px;
+}
+
+nav {
+    min-width: 100%;
 }
 
 nav > ul {
@@ -7,27 +11,27 @@ nav > ul {
     display: block;
 }
 
-nav > ul:active {
-    display: table;
-    background-color: transparent;
-}
+    nav > ul:active {
+        display: table;
+        background-color: transparent;
+    }
 
-nav > ul > li {
-    list-style-type: none;
-    display: table-cell;
-    width: 20vw;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    text-align: center;
-    font-size: large;
-}
+    nav > ul > li {
+        list-style-type: none;
+        display: table-cell;
+        width: 20vw;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        text-align: center;
+        font-size: large;
+    }
 
-nav > ul > li a {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
+        nav > ul > li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
 
 .btn-lg {
     width: 100%;
@@ -54,4 +58,20 @@ html, body {
 
 .wrapper-50 > div > label {
     text-align: right;
+}
+
+#body-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-container-4 {
+    flex-grow: 1;
+    width: 30%;
+    justify-content: space-between;
+}
+
+#ticket-choose-content {
+    flex-grow: 2;
+    min-width: 500px;
 }

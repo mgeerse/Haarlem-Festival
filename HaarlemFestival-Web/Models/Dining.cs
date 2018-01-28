@@ -10,7 +10,5 @@ namespace HaarlemFestival_Web.Models
     public class Dining : Activity
     {
         public Cuisine Cuisine { get; set; }
-        public int AmountOfSessions { get; set; }
-        public TimeSpan SessionLength { get; set; }
     }
 }

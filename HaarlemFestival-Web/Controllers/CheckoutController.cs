@@ -39,23 +39,7 @@ namespace HaarlemFestival_Web.Controllers
         /// <returns></returns>
         public ActionResult Choose()
         {
-            // TODO Create repositories for the different activities
-
-            // The reason these all are in different lists is because 
-            // everything currently is bound to the same page. On the
-            // order page, the different buttons load different HTML5
-            // <template>s into the order field. We need every activity
-            // separately, because we want them usable for the templates
-            // that they belong to.
-            ActivityListsViewModel model = new ActivityListsViewModel()
-            {
-                WalkingActivities = walkingRepository.GetAll(),
-                TalkingActivities = talkingRepository.GetAll(),
-                DiningActivities = diningRepository.GetAll(),
-                JazzActivities = jazzRepository.GetAll()
-            };
-
-            return View(model);
+            return View();
         }
 
         /// <summary>
@@ -81,6 +65,25 @@ namespace HaarlemFestival_Web.Controllers
         public ActionResult Thanks()
         {
             return View();
+        }
+
+        #endregion
+
+        #region Choosepage partial view rendering
+
+        public ActionResult PartialDining()
+        {
+            DiningViewModel model = new DiningViewModel()
+            {
+                DiningActivities = diningRepository.GetAll().ToList(),
+                SelectedItemId = 0
+            };
+            return PartialView("_Dining", model);
+        }
+
+        public List<Dining> GetTimeslotsForActivity(int id)
+        {
+            return diningRepository.GetAll().Where(m => m.Id == id).ToList();
         }
 
         #endregion

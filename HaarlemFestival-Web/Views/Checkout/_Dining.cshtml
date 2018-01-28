@@ -1,0 +1,18 @@
+﻿@model HaarlemFestival_Web.Models.DiningViewModel
+@{
+    ViewBag.Title = "_Dining";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="wrapper-50">
+        <div>
+            @Html.Label("Restaurant", new { @class = "required" })
+            @Html.DropDownListFor(m => m.SelectedItemId, new SelectList(Model.DiningActivities, "Id", "Name"), new {@id = "dining-restaurants" })
+        </div>
+        <div>
+            @Html.Label("Timeslot", new { @class = "required"})
+
+        </div>
+    </div>
+}
