@@ -183,6 +183,7 @@
     <Content Include="Content\Images\Home\Talking.png" />
     <Content Include="Content\Images\Home\Restaurants.png" />
     <Content Include="Content\Images\Home\Jazz.png" />
+    <Content Include="Content\NavigationBar.css" />
     <Content Include="JavaScript.js" />
     <Content Include="MockInsert.sql" />
     <Compile Include="Models\Account.cs" />
