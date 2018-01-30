@@ -153,6 +153,7 @@
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PagesController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -179,13 +180,18 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\SubjectRepository.cs" />
     <Content Include="Content\Checkout\Choose.css" />
+    <Content Include="Content\Dining.css" />
     <Content Include="Content\Home.css" />
+    <Content Include="Content\Images\Dining\Background.jpg" />
     <Content Include="Content\Images\logo.svg" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\Home\Tours.png" />
     <Content Include="Content\Images\Home\Talking.png" />
     <Content Include="Content\Images\Home\Restaurants.png" />
     <Content Include="Content\Images\Home\Jazz.png" />
+    <Content Include="Content\Images\Talking\Background.jpg" />
+    <Content Include="Content\NavigationBar.css" />
+    <Content Include="Content\Talking.css" />
     <Content Include="JavaScript.js" />
     <Content Include="MockInsert.sql" />
     <Compile Include="Models\Account.cs" />
@@ -247,9 +253,14 @@
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Checkout\Choose.cshtml" />
     <Content Include="Views\Shared\Checkout\_Layout.cshtml" />
+    <Content Include="Views\Shared\Pages\_Layout.cshtml" />
+    <Content Include="Views\Pages\Talking.cshtml" />
+    <Content Include="Views\Pages\Test.cshtml" />
+    <Content Include="Views\Pages\Dining.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

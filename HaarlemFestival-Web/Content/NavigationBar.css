@@ -1,0 +1,29 @@
+﻿@font-face {
+    font-family: 'Korolev';
+    src: url(../fonts/KorolevMilitaryStencil.ttf);
+}
+
+nav {
+    font-family: Korolev;
+    font-size: 25px;
+}
+
+nav ul{
+    text-align: center;
+}
+
+ul {
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: white;
+}
+
+.nav li {
+    display: inline-block;
+    width: 20%;
+}
+
+button:hover{
+    background-color: transparent;
+}
