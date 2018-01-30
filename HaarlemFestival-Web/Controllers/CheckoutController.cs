@@ -81,9 +81,11 @@ namespace HaarlemFestival_Web.Controllers
             return PartialView("_Dining", model);
         }
 
-        public List<Dining> GetTimeslotsForActivity(int id)
+        public List<Dining> GetTimeslotsForRestaurant(Restaurant restaurant)
         {
-            return diningRepository.GetAll().Where(m => m.Id == id).ToList();
+            return diningRepository.GetAll()
+                        .Where(m => m.Restaurant == restaurant)
+                        .ToList();
         }
 
         #endregion

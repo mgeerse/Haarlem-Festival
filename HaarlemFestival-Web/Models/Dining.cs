@@ -9,6 +9,6 @@ namespace HaarlemFestival_Web.Models
     [Table("Dining")]
     public class Dining : Activity
     {
-        public Cuisine Cuisine { get; set; }
+        public Restaurant Restaurant { get; set; }
     }
 }

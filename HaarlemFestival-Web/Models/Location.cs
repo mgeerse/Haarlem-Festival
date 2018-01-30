@@ -11,7 +11,6 @@ namespace HaarlemFestival_Web.Models
         [Key]
         public int Id { get; private set; }
         public string Street { get; set; }
-        public int Number { get; set; }
         public string Postalcode { get; set; }
         public string Name { get; set; }
     }
