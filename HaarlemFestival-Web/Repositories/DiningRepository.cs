@@ -31,7 +31,7 @@ namespace HaarlemFestival_Web.Repositories
 
         public Dining Insert(Dining objectToInsert)
         {
-            context.Dining.Add(objectToInsert);
+            // context.Dining.Add(objectToInsert);
             throw new NotImplementedException();
         }
 

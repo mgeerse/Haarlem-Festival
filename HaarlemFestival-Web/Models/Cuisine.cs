@@ -15,5 +15,8 @@ namespace HaarlemFestival_Web.Models
 
 
         public string Name { get; set; }
+
+
+        public ICollection<Restaurant> Restaurants { get; set; }
     }
 }
