@@ -11,11 +11,15 @@ namespace HaarlemFestival_Web.Controllers
     /// </summary>
     public class PagesController : Controller
     {
-        // GET: Pages
+        /*
+         * Returns the user to the Homepage if no specific page is selected.
+         */
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Home");
         }
+
+        #region View returns for the other pages
 
         public ActionResult Historic()
         {
@@ -36,5 +40,9 @@ namespace HaarlemFestival_Web.Controllers
         {
             return View();
         }
+
+        #endregion
+
+
     }
 }

@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    <link href="~/Content/Checkout/Choose.css" rel="stylesheet" />
-    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css") <!-- Bootstrap, side-wide CSS -->
+    <link href="~/Content/Checkout/Choose.css" rel="stylesheet" /> <!-- Specific section CSS -->
+    @Scripts.Render("~/bundles/modernizr") 
 </head>
 <body>
     <header>
@@ -14,16 +14,15 @@
             <ul>
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 <li>@Html.ActionLink("Historic Tours", "Tours", "Pages")</li>
-                <li>Dining in Haarlem</li>
-                <li>Jazz@Patronaat</li>
-                <li>Talking Haarlem</li>
+                <li>@Html.ActionLink("Dining in Haarlem", "Dining", "Pages")</li>
+                <li>@Html.ActionLink("Jazz@Patronaat", "Jazz", "Pages")</li>
+                <li>@Html.ActionLink("Talking Haarlem", "Talking", "Pages")</li>
             </ul>
         </nav>
     </header>
     <main>
         @RenderBody()
     </main>
-
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
