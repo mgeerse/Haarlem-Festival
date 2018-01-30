@@ -1,9 +1,9 @@
-﻿@font-face {
+﻿@font-face{
     font-family: 'Korolev';
     src: url(../fonts/KorolevMilitaryStencil.ttf);
 }
 
-nav {
+nav{
     font-family: Korolev;
     font-size: 25px;
 }
@@ -12,14 +12,15 @@ nav ul{
     text-align: center;
 }
 
-ul {
-    width: 100%;
-    padding-top: 8px;
-    padding-bottom: 8px;
+ul{
+    padding: 0;
+    margin: 0;
     background-color: white;
+    list-style-type: none;
+    overflow: hidden;
 }
 
-.nav li {
+.nav li{
     display: inline-block;
     width: 20%;
 }

@@ -16,7 +16,6 @@ body{
     height: 60px;
     display: block; /* Make the buttons appear below each other */
     text-align: center;
-    margin-left: 5%;
 }
 
 .btn-group button:not(:last-child) {

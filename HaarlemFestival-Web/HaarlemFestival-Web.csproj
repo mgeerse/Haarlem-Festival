@@ -212,11 +212,6 @@
     <Compile Include="Repositories\DiningRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\JazzRepository.cs" />
-    <Compile Include="Models\ViewModels\ActivityListsViewModel.cs" />
-    <Compile Include="Repositories\ActivityRepository.cs" />
-    <Compile Include="Repositories\DiningRepository.cs" />
-    <Compile Include="Repositories\IRepository.cs" />
-    <Compile Include="Repositories\JazzRepository.cs" />
     <Compile Include="Repositories\SubjectRepository.cs" />
     <Compile Include="Repositories\TalkingRepository.cs" />
     <Compile Include="Repositories\WalkingRepository.cs" />
