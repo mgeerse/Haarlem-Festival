@@ -1,4 +1,5 @@
-﻿using HaarlemFestival_Web.Models;
+﻿using HaarlemFestival_Web.Contexts;
+using HaarlemFestival_Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace HaarlemFestival_Web.Repositories
 {
     public class TalkingRepository : IRepository<Talking>
     {
+
         private FestivalContext context = new FestivalContext();
 
         public bool Delete(Talking objectToDelete)

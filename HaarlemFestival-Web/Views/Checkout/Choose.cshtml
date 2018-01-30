@@ -1,41 +1,20 @@
-﻿@using HaarlemFestival_Web.Models
-@model ActivityListsViewModel
-@{
+﻿@{
     ViewBag.Title = "Choose";
     Layout = "~/Views/Shared/Checkout/_Layout.cshtml";
 }
 
-<section class="col-sm-4 col-md-4 col-lg-4">
-    <button id="btn-historic" class="btn-lg">Historic Tours</button>
-    <button id="btn-dining" class="btn-lg">Dining in Haarlem</button>
-    <button id="btn-jazz" class="btn-lg">Jazz &#64; Patronaat</button>
-    <button id="btn-talking" class="btn-lg">Talking Haarlem</button>
-</section>
-<section id="ticket-choose-content" class="col-sm-4 col-md-4 col-lg-4"></section>
-<section class="col-sm-4 col-md-4 col-lg-4"></section>
+<div class="grid-container-4">
+
+    @*Ajax actions are used to dynamically load content into the ticket picking list.*@
+    @Ajax.ActionLink("Historic Tours", "PartialWalking", "Checkout", new AjaxOptions { UpdateTargetId = "ticket-choose-content" }, new { @class = "btn btn-lg" })
+    @Ajax.ActionLink("Dining in Haarlem", "PartialDining", "Checkout", new AjaxOptions { UpdateTargetId = "ticket-choose-content" }, new { @class = "btn btn-lg" })
+    @Ajax.ActionLink("Jazz @ Patronaat", "PartialJazz", "Checkout", new AjaxOptions { UpdateTargetId = "ticket-choose-content" }, new { @class = "btn btn-lg" })
+    @Ajax.ActionLink("Talking Haarlem", "PartialTalking", "Checkout", new AjaxOptions { UpdateTargetId = "ticket-choose-content" }, new { @class = "btn btn-lg" })
+</div>
+
+<div id="ticket-choose-content" class="grid-container-4">
+    <!-- Press a button first. -->
+</div>
+
+<div class="grid-container-4"></div>
 <div class="clearfix"></div>
-
-<template id="opt-historic">
-    @using (Html.BeginForm())
-    {
-        // TODO toevoegen dagen aan dropdown
-    }
-</template>
-<template id="opt-dining">
-    @using (Html.BeginForm())
-    {
-        <div>
-            @Html.Label("Restaurant", new { @class = "required" })
-        </div>
-        <div>
-            @Html.DropDownListFor(m => m.SelectedItemId, new SelectList(Model.DiningActivities, "Id", "Name"))
-            
-        </div>
-    }
-</template>
-<template id="opt-jazz">
-
-</template>
-<template id="opt-talking">
-
-</template>
