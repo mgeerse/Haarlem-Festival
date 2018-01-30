@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HaarlemFestival_Web.Repositories;
 
 namespace HaarlemFestival_Web.Controllers
 {
@@ -14,6 +15,7 @@ namespace HaarlemFestival_Web.Controllers
         /*
          * Returns the user to the Homepage if no specific page is selected.
          */
+
         public ActionResult Index()
         {
             return RedirectToAction("Index", "Home");
@@ -36,9 +38,12 @@ namespace HaarlemFestival_Web.Controllers
             return View();
         }
 
+        private TalkingRepository talkingRepository = new TalkingRepository();
+
         public ActionResult Talking()
         {
-            return View();
+            var information = talkingRepository.GetAll();
+            return View(information);
         }
 
         #endregion

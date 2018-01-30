@@ -1,13 +1,20 @@
 ﻿@model IEnumerable<HaarlemFestival_Web.Models.Talking>
+
 @{
     ViewBag.Title = "Talking";
     Layout = "~/Views/Shared/Pages/_Layout.cshtml";
 }
+
 <link rel="stylesheet" href="../Content/Talking.css" />
 
 <body>
-
-   
+    <table class="table">
+    @foreach (var information in Model)
+    {
+        <tr>
+            <td>@information.SpeakerOne</td>
+        </tr>
+    }
+            </table>
     <button type="button">Reserveren</button>
-
 </body>

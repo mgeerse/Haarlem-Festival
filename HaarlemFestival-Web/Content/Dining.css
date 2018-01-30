@@ -19,11 +19,11 @@ body{
     margin-left: 5%;
 }
 
-    .btn-group button:not(:last-child) {
-        border-bottom: none; /* Prevent double borders */
-    }
+.btn-group button:not(:last-child) {
+border-bottom: none; /* Prevent double borders */
+}
 
-    /* Add a background color on hover */
-    .btn-group button:hover {
-        background-color: transparent;
-    } 
+/* Add a background color on hover */
+.btn-group button:hover {
+background-color: transparent;
+} 
