@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace HaarlemFestival_Web.Controllers
 {
-    public class AdminController : Controller
+    public class AccountController : Controller
     {
         // GET: Admin
         public ActionResult Index()
