@@ -203,10 +203,6 @@
     <Compile Include="Migrations\201801231326044_ChangeDining.Designer.cs">
       <DependentUpon>201801231326044_ChangeDining.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801221031023_Login.cs" />
-    <Compile Include="Migrations\201801221031023_Login.Designer.cs">
-      <DependentUpon>201801221031023_Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Models\ViewModels\DiningViewModel.cs" />
@@ -273,7 +269,6 @@
     <Compile Include="Models\Jazz.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Dining.cs" />
-    <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\Talking.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\TourGuide.cs" />
@@ -396,10 +391,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Account\" />
-    <Folder Include="Views\Test\" />
     <Folder Include="Helpers\" />
-    <Folder Include="Views\Pages\" />
+    <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

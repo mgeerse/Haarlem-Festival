@@ -9,10 +9,9 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-static-top">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="icon-bar"></span>
-        </button>
+    <nav class="navbar navbar-fixed-top navbar-default">
+        <h4 class="col-lg-2">@Session["Username"].ToString()</h4>
+        
     </nav>
 
     <div class="container body-content">

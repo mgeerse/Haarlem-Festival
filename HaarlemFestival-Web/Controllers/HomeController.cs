@@ -9,8 +9,6 @@ namespace HaarlemFestival_Web.Controllers
 {
     public class HomeController : Controller
     {
-        private Repositories.SubjectRepository SR = new Repositories.SubjectRepository();
-
         public ActionResult Index()
         {
             IEnumerable<Models.Subject> Subjects = SR.GetAll();
