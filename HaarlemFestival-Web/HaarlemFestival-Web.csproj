@@ -225,7 +225,29 @@
     <Content Include="Content\Dining.css" />
     <Content Include="Content\Home.css" />
     <Content Include="Content\Images\Dining\Background.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\ChrisAllen.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\Evolve.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\FoxMayors.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\GareDuNord.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\GumboKings.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\HanBennink.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\JonnaFrazer.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\LillithMerlot.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\MylesSanko.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\NtjamRosie.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\Rilan.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\Ruis.png" />
+    <Content Include="Content\Images\Jazz\Artists\SoulSix.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\TheFamilyXL.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\TheNordians.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\TomThomsomAssemble.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\UncleSeu.jpg" />
+    <Content Include="Content\Images\Jazz\Artists\WickedJazzSounds.png" />
     <Content Include="Content\Images\Jazz\background.jpg" />
+    <Content Include="Content\Images\Jazz\Carousel\Carousel1.jpg" />
+    <Content Include="Content\Images\Jazz\Carousel\Carousel2.jpg" />
+    <Content Include="Content\Images\Jazz\Carousel\Carousel3.jpg" />
+    <Content Include="Content\Images\Jazz\Carousel\Carousel4.jpg" />
     <Content Include="Content\Images\logo.svg" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\Home\Tours.png" />
@@ -337,7 +359,6 @@
     <Content Include="Views\Shared\Pages\_Layout.cshtml" />
     <Content Include="Views\Pages\Talking.cshtml" />
     <Content Include="Views\Pages\Test.cshtml" />
-    <Content Include="Views\Pages\Dining.cshtml" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -350,12 +371,14 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\Pages\_Layout.cshtml" />
-    <Content Include="Views\Pages\Talking.cshtml" />
     <Content Include="Views\Pages\Test.cshtml" />
     <Content Include="Views\Pages\Dining.cshtml" />
     <Content Include="Views\Pages\Jazz.cshtml" />
-    <Content Include="Views\Pages\Jazz\Infomation.cshtml" />
-    <Content Include="Views\Pages\Jazz\Band.cshtml" />
+    <Content Include="Views\Jazz\Thursday.cshtml" />
+    <Content Include="Views\Jazz\Band.cshtml" />
+    <Content Include="Views\Jazz\Friday.cshtml" />
+    <Content Include="Views\Jazz\Saturday.cshtml" />
+    <Content Include="Views\Jazz\Sunday.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,17 +12,62 @@ namespace HaarlemFestival_Web.Controllers
     {
         JazzRepository JR = new JazzRepository();
         
-        // GET: Jazz
-        public ActionResult Information(string Day)
+        public ActionResult Thursday()
         {
-            List<Jazz> list = JR.GetByDay(Day);
+            List<Jazz> list = JR.GetByDay("Thursday");
 
-            if (list != null)
+            if (list.Count != 0)
             {
                 return View(list);
             }
             else
             {
+                //De dag heeft geen inhoud
+                return View("~/Views/Pages/Jazz");
+            }
+        }
+
+        public ActionResult Friday()
+        {
+            List<Jazz> list = JR.GetByDay("Friday");
+
+            if (list.Count != 0)
+            {
+                return View(list);
+            }
+            else
+            {
+                //De dag heeft geen inhoud
+                return View("~/Views/Pages/Jazz");
+            }
+        }
+
+        public ActionResult Saturday()
+        {
+            List<Jazz> list = JR.GetByDay("Saturday");
+
+            if (list.Count != 0)
+            {
+                return View(list);
+            }
+            else
+            {
+                //De dag heeft geen inhoud
+                return View("~/Views/Pages/Jazz");
+            }
+        }
+
+        public ActionResult Sunday()
+        {
+            List<Jazz> list = JR.GetByDay("Sunday");
+
+            if (list.Count != 0)
+            {
+                return View(list);
+            }
+            else
+            {
+                //De dag heeft geen inhoud
                 return View("~/Views/Pages/Jazz");
             }
         }

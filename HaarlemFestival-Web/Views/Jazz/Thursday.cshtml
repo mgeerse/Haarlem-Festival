@@ -1,0 +1,44 @@
+﻿@model List<HaarlemFestival_Web.Models.Jazz>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Jazz.css" />
+
+<header id="DayMakeMooi">
+    <h1 id="DayTitel">
+        Haarlem Festival
+    </h1>
+    <h2 id="DayOnderTitel">
+        Enjoy Jazz at the patronaat & Grote Markt
+    </h2>
+    <img src="~/Content/Images/logo.png" alt="Haarlem Festival Logo" id="Daylogo" />
+</header>
+
+
+<a href="/Pages/Jazz">&larr; Go back</a>
+
+
+<main>
+    <section id="intro">
+        Welcome to the timetable of Thursday. Here you'll find information about bands such as @Model.First().Artist and @Model.Last().Artist.
+        This includes things such as when they'll play and in which hall you can find them.
+    </section>
+
+    @foreach (var item in Model)
+    {
+        <section class="ArtistWrapper">
+            <h1 class="ArtistName">@item.Artist.ToString()</h1>
+            <h2 class="ArtistPlaying">Playing from @item.StartTime.ToShortTimeString() untill @item.EndTime.ToShortTimeString() in the @item.Hall</h2>
+            <img src="@item.ImagePath" alt="@item.Artist.ToString()" class="ArtistImage" />
+            <p class="ArtistDescription">
+                @item.Description
+            </p>
+        </section>
+    }
+
+    <section id="BuyTickets">
+        <a href="~/Views/Checkout/_Jazz.cshtml"></a>
+    </section>
+</main>

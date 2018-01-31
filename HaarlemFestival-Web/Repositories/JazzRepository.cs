@@ -15,6 +15,7 @@ namespace HaarlemFestival_Web.Repositories
         {
             int _Day = 0;
 
+            //Day omzetten naar een int
             if (Day == "Thursday")
             {
                 _Day = 26;
@@ -30,6 +31,12 @@ namespace HaarlemFestival_Web.Repositories
             else if (Day == "Sunday")
             {
                 _Day = 29;
+            }
+
+            if (_Day == 0)
+            {
+                //Dag is niet correct
+                return new List<Jazz>();
             }
 
             return context.Jazz.Where(x => (x.StartTime.Day == _Day)).ToList();
