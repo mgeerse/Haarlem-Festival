@@ -17,12 +17,12 @@ VALUES ('Paul Witteman', 'Paul Witteman is from mothers side from the musical fa
 INSERT INTO Interviewees (Name, Description)
 VALUES ('Brigitte Kaandorp', 'Brigitte Kaandorp grew up in Haarlem in a Roman Catholic family as the third of four children. She attended the lower Sint Willibrordusschool in Haarlem. She spent her high school time at the Trinity Lyceum there. She studied Dutch at the University of Amsterdam for two and a half years, but did not complete this study. During this period, she regularly performed in cafés, youth centers and for students with self-written songs. A week after she dropped out of school, she won the Cameretten Festival.');
 
-INSERT INTO Talking (SpeakerOne_Id, SpeakerTwo_Id)
-VALUES (1, 2);
+INSERT INTO Talking (Id, SpeakerOne_Id, SpeakerTwo_Id)
+VALUES (489, 1, 2);
 
 INSERT INTO Talking (Id, SpeakerOne_Id, SpeakerTwo_Id)
-VALUES (3, 4);
+VALUES (488, 3, 4);
 
-INSERT INTO Talking (SpeakerOne_Id, SpeakerTwo_Id)
-VALUES (5, 6);
+INSERT INTO Talking (Id, SpeakerOne_Id, SpeakerTwo_Id)
+VALUES (490, 5, 6);
 

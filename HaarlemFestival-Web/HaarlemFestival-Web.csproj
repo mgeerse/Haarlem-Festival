@@ -245,6 +245,9 @@
     <Content Include="Content\Images\Home\Restaurants.png" />
     <Content Include="Content\Images\Home\Jazz.png" />
     <Content Include="Content\Images\Talking\Background.jpg" />
+    <Content Include="Content\Images\Talking\femkexjob.PNG" />
+    <Content Include="Content\Images\Talking\paulxbrigitte.PNG" />
+    <Content Include="Content\Images\Talking\robxgiel.PNG" />
     <Content Include="Content\NavigationBar.css" />
     <Content Include="Content\Talking.css" />
     <Content Include="JavaScript.js" />

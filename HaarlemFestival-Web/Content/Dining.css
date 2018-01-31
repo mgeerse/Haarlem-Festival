@@ -1,4 +1,4 @@
-﻿@font-face {
+﻿@font-face{
     font-family: 'Korolev';
     src: url(../fonts/KorolevMilitaryStencil.ttf);
 }
@@ -8,21 +8,21 @@ body{
     background-size: cover;
 }
 
-.btn-group button {
+.btn-group button{
     background-color: orange; /* Green background */
     border: solid orange; /* Green border */
     color: white; /* White text */
-    width: 200px;
+    width: 150px;
     height: 60px;
     display: block; /* Make the buttons appear below each other */
     text-align: center;
 }
 
-.btn-group button:not(:last-child) {
+.btn-group button:not(:last-child){
 border-bottom: none; /* Prevent double borders */
 }
 
 /* Add a background color on hover */
-.btn-group button:hover {
+.btn-group button:hover{
 background-color: transparent;
 } 

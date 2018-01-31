@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using HaarlemFestival_Web.Repositories;
+using HaarlemFestival_Web.Models;
 
 namespace HaarlemFestival_Web.Controllers
 {
@@ -42,12 +43,10 @@ namespace HaarlemFestival_Web.Controllers
 
         public ActionResult Talking()
         {
-            var information = talkingRepository.GetAll();
+            IEnumerable<Talking> information = talkingRepository.GetAll().ToList();
             return View(information);
         }
 
         #endregion
-
-
     }
 }

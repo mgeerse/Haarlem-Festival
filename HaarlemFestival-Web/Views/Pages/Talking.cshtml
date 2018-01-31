@@ -8,14 +8,33 @@
 
 <body>
     <table class="table">
-        @foreach (var information in Model)
-        {
-        <tr>
-            <td>@information.Name[1];</td>
-            <td>@information.Name[2];</td>
-        </tr>
-        }
-    </table>
+            @foreach (var information in Model)
+            {
+            <tr>
+                <td>@information.SpeakerOne.Name;</td>
+                <td>@information.SpeakerTwo.Name;</td>
+            </tr>
+            }
+        </table>
 
+    <br />
+    <br />
+    <table style="width:90%">
+        <tr>
+            <td><img src="../Content/Images/Talking/femkexjob.PNG" alt="Femke meets Job " width="450" height="150"></td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td><img src="../Content/Images/Talking/robxgiel.PNG" alt="Rob meets Giel" width="450" height="150"></td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td><img src="../Content/Images/Talking/paulxbrigitte.PNG" alt="Paul meets Brigitte" width="450" height="150"></td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+    </table>
     <button type="button">Reserveren</button>
 </body>
