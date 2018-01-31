@@ -167,6 +167,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JazzController.cs" />
     <Compile Include="Controllers\PagesController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
@@ -227,6 +228,7 @@
     <Content Include="Content\Dining.css" />
     <Content Include="Content\Home.css" />
     <Content Include="Content\Images\Dining\Background.jpg" />
+    <Content Include="Content\Images\Jazz\background.jpg" />
     <Content Include="Content\Images\logo.svg" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\Home\Tours.png" />
@@ -234,6 +236,7 @@
     <Content Include="Content\Images\Home\Restaurants.png" />
     <Content Include="Content\Images\Home\Jazz.png" />
     <Content Include="Content\Images\Talking\Background.jpg" />
+    <Content Include="Content\Jazz.css" />
     <Content Include="Content\NavigationBar.css" />
     <Content Include="Content\Talking.css" />
     <Content Include="JavaScript.js" />
@@ -350,6 +353,9 @@
     <Content Include="Views\Pages\Talking.cshtml" />
     <Content Include="Views\Pages\Test.cshtml" />
     <Content Include="Views\Pages\Dining.cshtml" />
+    <Content Include="Views\Pages\Jazz.cshtml" />
+    <Content Include="Views\Pages\Jazz\Infomation.cshtml" />
+    <Content Include="Views\Pages\Jazz\Band.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

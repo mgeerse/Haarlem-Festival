@@ -1,0 +1,27 @@
+﻿@model IEnumerable<HaarlemFestival_Web.Models.Jazz>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Jazz.css" />
+
+<main>
+    <section id="intro">
+        On this page, the timetable of the selected day is shown along with information about the bands that are going to play this day. <br />
+        @Request.Url.Query.ToString()
+
+    </section>
+
+    @foreach (var item in Model)
+    {
+        <section class="ArtistWrapper">
+            <img src="@item.ImagePath" alt="@item.Artist.ToString()" class="ArtistImage" />
+            <h1 class="ArtistName">@item.Artist.ToString()</h1>
+            <h2>Playing from @item.StartTime.ToShortTimeString() untill @item.EndTime.ToShortTimeString()</h2>
+            <p>
+                @item.Description
+            </p>
+        </section>
+    }
+</main>

@@ -1,0 +1,82 @@
+﻿@font-face {
+    font-family: 'Korolev';
+    src: url(../fonts/KorolevMilitaryStencil.ttf);
+}
+
+#Days {
+    background-color: rgba(0, 0, 0, 0.79);
+    padding: 15px 25px;
+    display: block;
+    float:right;
+    width:45%;
+    transform: translateY(5%);
+}
+
+.Day {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#755200+0,c47900+98 */
+    background: #755200; /* Old browsers */
+    background: -moz-linear-gradient(left, #755200 0%, #c47900 98%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #755200 0%,#c47900 98%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #755200 0%,#c47900 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#755200', endColorstr='#c47900',GradientType=1 ); /* IE6-9 */
+    box-shadow: white 0px 0px 10px;
+    padding: 5px 15px;
+    display: block;
+    margin: 15px 0px;
+}
+
+#MakeMooi {
+    background-color: rgba(0, 0, 0, 0.79);
+    max-width: 45%;
+    margin-right: 0px;
+}
+
+#infoTekst {
+    display: block;
+
+    background-color: rgba(0, 0, 0, 0.79);
+    margin-top: 0px;
+    max-width: 45%;
+    padding: 15px 25px;
+    color: white;
+    text-align: center;
+
+    transform: translateY(-25%);
+}
+
+body {
+    padding-top: 0;
+    width: 100%;
+    background-image: url(Images/Jazz/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform: translate(8%,-115%);
+}
+
+#Titel {
+    text-align: right;
+    transform: translateX(-20.5%);
+    text-shadow: 0px 0px 10px black;
+    color: saddlebrown;
+    z-index: 100;
+    position: relative;
+    font-family: Korolev;
+    font-size: 50px;
+}
+
+#OnderTitel {
+    text-align: right;
+    transform: translate(-5%,-5%);
+    text-shadow: 0px 0px 10px black;
+    color: saddlebrown;
+    z-index: 100;
+    position: relative;
+    font-family: Korolev;
+    font-size: 22px;
+}
