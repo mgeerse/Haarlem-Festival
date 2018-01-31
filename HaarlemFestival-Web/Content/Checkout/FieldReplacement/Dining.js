@@ -1,22 +1,23 @@
-﻿function GetTimeslots(_restaurantId) {
+﻿$("#restaurants").change(function () {
     var processMessage = "<option value='0'> Please wait...</option>";
-    $("#restaurant-timeslots").html(processMessage).show();
-    var url = "/Checkout/GetTimeslotsForActivity";
+    $("#dining-timeslots").html(processMessage).show();
+    var url = "/Checkout/GetTimeslotsForRestaurant";
 
     $.ajax({
         url: url,
-        data: { restaurantId: _restaurantId },
         cache: false,
+        dataType: "json",
         type: "POST",
         success: function (data) {
-            var markup = "<option value='0'>Select City</option>";
+            alert(JSON.stringify(data));
+            var markup = "<option value='0'>Select a timeslot</option>";
             for (var x = 0; x < data.length; x++) {
-                markup += "<option value=" + data[x].Value + ">" + data[x].Text + "</option>";
+                markup += "<option value=" + data[x].Id + ">" + data[x].StartTime + " - " + data[x].EndTime + "</option>";
             }
-            $("#ddlcity").html(markup).show();
+            $("#dining-timeslots").html(markup).show();
         },
         error: function (reponse) {
             alert("error : " + reponse);
         }
     });
-}
+});

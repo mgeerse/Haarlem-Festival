@@ -7,12 +7,59 @@
 {
     <div class="wrapper-50">
         <div>
-            @Html.Label("Restaurant", new { @class = "required" })
-            @Html.DropDownListFor(m => m.SelectedItemId, new SelectList(Model.DiningActivities, "Id", "Name"), new {@id = "dining-restaurants" })
+            <label class="col-md-6" for="restaurant">Restaurant</label>
+            <select class="col-md-6" id="restaurant"></select>
         </div>
         <div>
-            @Html.Label("Timeslot", new { @class = "required"})
-
+            <label for="timeslot">Timeslot</label>
+            <select id="timeslot"></select>
+        </div>
+        <div>
+            <label>Amount of adults</label>
+            <input class="number" type="number" id="adult-count" />
+        </div>
+        <div>
+            <label>Amount of children</label>
+            <input class="number" type="number" id="child-count" />
+        </div>
+        <div>
+            <label>Comments</label>
+            <input type="text"/>
         </div>
     </div>
 }
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.getJSON('/Checkout/GetRestaurants', null, function (data) {
+            $.each(data, function () {
+                $('#restaurant').append('<option value=' +
+                    this.Id + '>' + this.Name + '</option>');
+            });
+            $.getJSON('/Checkout/GetActivitiesForRestaurant', { restaurantId: $('#restaurant').val() }, function (data) {
+                $.each(data, function () {
+                    $('#timeslot').append('<option value=' +
+                        this.Id + '>' + this.StartTime + ' - ' + this.EndTime + '</option>');
+                });
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                alert('Error getting activities!');
+            });
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            alert('Error getting restaurants!');
+        });
+
+        $('#restaurant').change(function () {
+            $('#timeslot option').remove();
+            $.getJSON('/Checkout/GetActivitiesForRestaurant', { restaurantId: $('#restaurant').val() }, function (data) {
+                $.each(data, function () {
+                    var startString = '' + this.StartTime;
+                    var endString = '' + this.EndTime;
+                    $('#timeslot').append('<option value=' +
+                        this.Id + '>' + startString.substring(11, 16) + ' - ' + endString.substring(11, 16) + '</option>');
+                });
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                alert('Error getting activities!');
+            });
+        });
+    });
+</script>

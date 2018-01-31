@@ -2,6 +2,7 @@
 using HaarlemFestival_Web.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -19,7 +20,7 @@ namespace HaarlemFestival_Web.Repositories
 
         public IEnumerable<Activity> GetAll()
         {
-            return context.Activities;
+            return context.Activities.Include(m => m.Location).Include(m => m.Subject).Include(m => m.Tickets);
         }
 
         public Activity GetById(int id)

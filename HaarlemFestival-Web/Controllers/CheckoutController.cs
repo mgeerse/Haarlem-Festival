@@ -5,12 +5,15 @@ using System.Web;
 using System.Web.Mvc;
 using HaarlemFestival_Web.Models;
 using HaarlemFestival_Web.Repositories;
+using Newtonsoft.Json;
 
 namespace HaarlemFestival_Web.Controllers
 {
 
     public class CheckoutController : Controller
     {
+
+        private RestaurantRepository restaurantRepository = new RestaurantRepository();
 
         private WalkingRepository walkingRepository = new WalkingRepository();
         private DiningRepository diningRepository = new DiningRepository();
@@ -75,17 +78,33 @@ namespace HaarlemFestival_Web.Controllers
         {
             DiningViewModel model = new DiningViewModel()
             {
+                Restaurants = restaurantRepository.GetAll().ToList(),
+                SelectedRestaurant = 0,
                 DiningActivities = diningRepository.GetAll().ToList(),
-                SelectedItemId = 0
+                SelectedDiningActivity = 0
             };
             return PartialView("_Dining", model);
         }
 
-        public List<Dining> GetTimeslotsForRestaurant(Restaurant restaurant)
+        public ActionResult GetRestaurants()
         {
-            return diningRepository.GetAll()
-                        .Where(m => m.Restaurant == restaurant)
-                        .ToList();
+            return Json(restaurantRepository.GetAll().ToList(), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetActivitiesForRestaurant(int restaurantId = 0)
+        {
+            List<Dining> diningActivities = diningRepository.GetAll().ToList();
+            if(restaurantId != 0)
+            {
+                diningActivities = diningActivities.Where(m => m.Restaurant.Id == restaurantId).ToList();
+            }
+            var list = JsonConvert.SerializeObject(diningActivities,
+            Formatting.None,
+            new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            });
+            return Content(list, "application/json");
         }
 
         #endregion
