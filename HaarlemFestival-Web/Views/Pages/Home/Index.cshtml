@@ -1,46 +1,41 @@
-﻿@model IList<HaarlemFestival_Web.Models.Subject>
-
-@{
+﻿@{
     Layout = null;
 }
+
 <link rel="stylesheet" href="../Content/Home.css" />
+
 <main>
     <table class="SubjectTable">
-
         <tr id="FirstRow">
             <td class="SubjectColumn" id="Jazz">
-                <a href="~/Views/Pages/Jazz/index.cshtml">
+                <a href="~/Pages/Jazz">
                     <section class="overlay" id="JO">
-                        <h1 class="SubjectTitle">@Model[0].Name</h1> <br />
-                        @*<h2 class="SubjectDescription">@Model[0].Description</h2>*@
+                        <h1 class="SubjectTitle">Jazz@Haarlem</h1> <br />
                     </section>
                 </a>
             </td>
 
             <td class="SubjectColumn" id="Talking">
-                <a href="~/Views/Pages/Talking/index.cshtml">
+                <a href="~/Pages/Talking">
                     <section class="overlay" id="TO">
-                        <h1 class="SubjectTitle">@Model[1].Name</h1><br />
-                        @*<h2 class="SubjectDescription">@Model[1].Description</h2>*@
+                        <h1 class="SubjectTitle">Talking Haarlem</h1><br />
                     </section>
                 </a>
             </td>
         </tr>
         <tr id="SecondRow">
             <td class="SubjectColumn" id="Tours">
-                <a href="~/Views/Pages/Tours/index.cshtml">
+                <a href="~/Pages/Tours">
                     <section class="overlay" id="WO">
-                        <h1 class="SubjectTitle">@Model[2].Name</h1> <br />
-                        @*<h2 class="SubjectDescription">@Model[2].Description</h2>*@
+                        <h1 class="SubjectTitle">Historic Tours</h1> <br />
                     </section>
                 </a>
             </td>
 
             <td class="SubjectColumn" id="Dining">
-                <a href="~/Views/Pages/Dining/index.cshtml">
+                <a href="~/Pages/Dining">
                     <section class="overlay" id="DO">
-                        <h1 class="SubjectTitle">@Model[3].Name</h1><br />
-                        @*<h2 class="SubjectDescription">@Model[3].Description</h2>*@
+                        <h1 class="SubjectTitle">Dining</h1><br />
                     </section>
                 </a>
             </td>
