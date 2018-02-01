@@ -4,29 +4,38 @@
 }
 
 
-body {
-    background: linear-gradient(rgba(255,255,255, 0.5), rgba(255,255,255, 0.5)), url(Images/Historic/background.jpg);
+body{
+    background-image: url(Images/Historic/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .article{
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.75);
     padding-bottom: 5px;
     padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-left: thin;
     border-color: black;
 }
 
-.tekst{
-    background-color: rgba(255, 255, 255, 0.5);
+.text {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.75);
     text-align: center;
+    margin: 10px;
     padding: 5px;
 }
 
+.map{
+    padding: 10px;
+}
 .headerp1{
     font-family: KorolevMilitaryStencil;
     color: #003300;
     text-align: right;
-    margin: 0;
+    margin: 10px;
 }
 
 .headerwhole{
@@ -34,5 +43,158 @@ body {
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-right: 10px;
 }
 
+.locations{
+    display: flex;
+    text-align: center;
+}
+
+.schedule1{
+    text-align: right;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-right: 0px !important;
+}
+
+.schedule2{
+    text-align: left;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 0px !important;
+}
+
+.information{
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 20px !important;
+}
+
+.location{
+    padding-top: 5px;
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 20px;
+    margin-bottom: 50px !important;
+    margin-right: -5px !important;
+}
+
+
+/*From here for the buttons on the map*/
+.button{
+    background-color: #003300;
+    color: white;
+    border: hidden;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+}
+
+.button1{
+    position: absolute;
+    top: 140px;
+    left: 480px;
+}
+
+.button2{
+    position: absolute;
+    top: 27px;
+    left: 370px;
+}
+
+.button3{
+    position: absolute;
+    top: 70px;
+    left: 320px;
+}
+
+.button4{
+    position: absolute;
+    top: 60px;
+    left: 270px;
+}
+
+.button5{
+    position: absolute;
+    top: 125px;
+    left: 230px;
+}
+
+.button6{
+    position: absolute;
+    top: 140px;
+    left: 190px;
+}
+
+.button7{
+    background-color: #128105;
+    position: absolute;
+    top: 100px;
+    left: 199px;
+}
+
+.button8{
+    position: absolute;
+    top: 110px;
+    left: 20px;
+}
+
+.button9{
+    position: absolute;
+    top: 280px;
+    left: 67px;
+}
+/*Till here (buttons on map)*/
+
+/*To make the popups*/
+.popup .show {
+    visibility: visible;
+}
+/* Popup container - can be anything you want */
+.popup {
+    display: block;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 525px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    left: 50%;
+    margin-left: 100px;
+    text-align: center;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+        visibility: visible;
+}
+/*Till here (popups) */
+
+.reserveButton{
+    font-family: KorolevMilitaryStencil;
+    font-size: 1.7em;
+    padding: 10px;
+    color: #003300;
+    padding-left: 40px;
+    padding-right: 40px;
+}

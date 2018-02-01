@@ -198,6 +198,9 @@
     <Content Include="Content\Images\Historic\8. Amsterdamse Poort.jpg" />
     <Content Include="Content\Images\Historic\9. Hof van Bakenes.jpg" />
     <Content Include="Content\Images\Historic\background.jpg" />
+    <Content Include="Content\Images\Historic\plattegrond haarlem.jpg" />
+    <Content Include="Content\Images\Historic\plattegrond_haarlem2.jpg" />
+    <Content Include="Content\Images\Historic\plattegrond_haarlem3.jpg" />
     <Content Include="Content\Images\logo.svg" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\Home\Tours.png" />

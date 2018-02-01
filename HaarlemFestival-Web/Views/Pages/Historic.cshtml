@@ -2,16 +2,10 @@
 @{
     ViewBag.Title = "Historic";
 }
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="~/Content/Historic.css" />
-</head>
-<body>
+
     
-    <!-- lijst met te bezoeken plaatsen -> dynamic panel
-    // rooster van tourtijden // deel 1
-    // rooster van tourtijden // deel 2
-    // een google map   -->
+    <!-- lijst met te bezoeken plaatsen -> dynamic panel -->
+
     <section class="headerwhole">
         <header class="col-md-6">
             <h1 class="headerp1">HISTORIC TOURS</h1>
@@ -27,9 +21,77 @@
 
     <div class="clearfix"></div>
 
-    <section class="tekst">
-            These are the locations the tour visits. Click on a location to find out more information about the location:
+<section class="text">
+    <section class="col-md-2 schedule1">
+        <b>
+            Thursday,
+            <br />Languages:
+            <br />Time:
+            <br />
+            <br />Friday,
+            <br />Languages:
+            <br />Time:
+            <br />
+            <br />
+            <br />Saturday,
+            <br />Languages:
+            <br />Time:
+        </b>
+    </section>
+    <section class="col-md-4 schedule2">
+        27-07-2018
+        <br />Dutch and English.
+        <br />10:00 AM, 01:00 PM or 04:00 PM.
+        <br />
+        <br />28-07-2018
+        <br />Dutch, English and Chinese*.
+        <br />10:00 AM, 01:00 PM or 04:00 PM.
+        <br />*Chinese tour will be held at 01:00 PM
+        <br />
+        <br />29-07-2018
+        <br />Dutch, English and Chinese*.
+        <br />10:00 AM, 01:00 PM or 04:00 PM.
+        <br />*Chinese tour will be held at 01:00 PM or at 04:00 PM.
+    </section>
+    <section class="col-md-6 information">
+        The duration of the tour is two and a half hour.
+        <br />Children under the age of 12 and strollers are not allowed.
+        <br />Prices are €17,50 per participant. A family ticket (4 participants) costs €60.
+        <br />Reservation is mandatory.
+    </section>
+</section>
 
+
+<section class="locations">
+    <section class="col-md-6 map">
+        <button class="popup btn button button1" onclick="DisplayInfo1()">
+            <span id="Popup1"  class="popuptext">
+                Amsterdamse Poort
+                The Amsterdamse Poort is an old city gate. It was created in 1355 and it is the only city gate left from the original twelve city gates. It was used as a defense gate, for example in the Eighty Years' War. It will be the eighth place the tour visits.
+            </span>
+        </button>
+        <button class="button button2">MA</button>
+        <button class="button button3">HB</button>
+        <button class="button button4">WK</button>
+        <button class="button button5">SB</button>
+        <button class="button button6">HA</button>
+        <button class="button button7">GM</button>
+        <button class="button button8">JK</button>
+        <button class="button button9">PH</button>
+
+        <img src="~/Content/Images/Historic/plattegrond_haarlem3.jpg" alt="Map of Haarlem" height="400" width="540" />
+    </section>
+    <script>
+        function DisplayInfo1() {
+            var popup = document.getElementById("Popup1");
+            popup.classList.toggle("show");
+        }
+    </script>
+    <section class="col-md-6">
+        <section class="text location">
+            Click on a location on the map to find out more information about the location:
+            <br />These are the locations the tour visits.
+            <br />
             <br />Grote Markt (Start)
             <br />Church of St. Bavo
             <br />De Hallen
@@ -40,15 +102,15 @@
             <br />Amsterdamse Poort
             <br />Hof van Bakenes
             <br />Grote Markt (End)
-    </section>
 
-    <section>
-        <section class="tekst">
-            The duration of the tour is two and a half hour.
-            <br />Children under the age of 12 and strollers are not allowed.
-            <br />Prices are €17,50 per participant. A family ticket (4 participants) costs €60.
-            <br />Reservation is mandatory.
+            
         </section>
+        <div class="container">
+            <div class="row">
+                <div>
+                    <button class="reserveButton" type="submit">RESERVE</button>
+                </div>
+            </div>
+        </div>
     </section>
-</body>
-</html>
+</section>
