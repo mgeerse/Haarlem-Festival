@@ -4,7 +4,43 @@
 }
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Checkout", "AddTicketToCart", FormMethod.Post, new { id = "order" }))
 {
-
+    <div class="row">
+        <label class="col-md-6 required">Day</label>
+        <select class="col-md-6" id="walking-day">
+            <option value="0">Thursday, Dutch</option>
+            <option value="1">Thursday, English</option>
+            <option value="2">Friday, Dutch</option>
+            <option value="3">Friday, English</option>
+            <option value="4">Friday, Chinese</option>
+            <option value="5">Saturday, Dutch</option>
+            <option value="6">Saturday, English</option>
+            <option value="7">Saturday, Chinese</option>
+        </select>
+    </div>
+    <div class="row">
+        <label class="col-md-6 required">Amount of participants</label>
+        <select class="col-md-6">
+            @for (int i = 1; i <= 12; i++)
+            {
+                if (i % 4 == 0)
+                {
+                    <option value="@i">@i  participants (@(i / 4) familyticket(s))</option>
+                }
+                else
+                {
+                    <option value="@i">@i  participants</option>
+                }
+            }
+        </select>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><span style="color:red">*</span> = The field is required.</div>
+        <div class="col-md-6 btn"><input class="btn" type="submit" form="order" value="Add to cart" /></div>
+    </div>
 }
+
+<script type="text/javascript">
+
+</script>

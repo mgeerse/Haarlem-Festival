@@ -3,29 +3,31 @@
     ViewBag.Title = "_Dining";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("AddTicketToCart", "Checkout", FormMethod.Post, new { id = "order" }))
 {
-    <div class="wrapper-50">
-        <div>
-            <label class="col-md-6" for="restaurant">Restaurant</label>
-            <select class="col-md-6" id="restaurant"></select>
-        </div>
-        <div>
-            <label for="timeslot">Timeslot</label>
-            <select id="timeslot"></select>
-        </div>
-        <div>
-            <label>Amount of adults</label>
-            <input class="number" type="number" id="adult-count" />
-        </div>
-        <div>
-            <label>Amount of children</label>
-            <input class="number" type="number" id="child-count" />
-        </div>
-        <div>
-            <label>Comments</label>
-            <input type="text"/>
-        </div>
+    <div class="row">
+        <label class="col-md-6 required" for="restaurant">Restaurant</label>
+        <select class="col-md-6" id="restaurant"></select>
+    </div>
+    <div class="row">
+        <label class="col-md-6 required" for="timeslot">Timeslot</label>
+        <select class="col-md-6" id="timeslot"></select>
+    </div>
+    <div class="row">
+        <label class="col-md-6 required">Amount of adults</label>
+        <div><input class="number col-md-6" width="100" type="number" id="adult-count" value="0" /></div>
+    </div>
+    <div class="row">
+        <label class="col-md-6">Amount of children</label>
+        <div><input class="col-md-6" width="100" type="number" id="child-count" value="0" /></div>
+    </div>
+    <div class="row">
+        <label class="col-md-6">Comments</label>
+        <textarea class="col-md-6" placeholder="Allergies, comments etc."></textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><span style="color:red">*</span> = The field is required.</div>
+        <div class="col-md-6 btn"><input type="submit" class="btn" form="order" value="Add to cart" /></div>
     </div>
 }
 
@@ -36,10 +38,12 @@
                 $('#restaurant').append('<option value=' +
                     this.Id + '>' + this.Name + '</option>');
             });
-            $.getJSON('/Checkout/GetActivitiesForRestaurant', { restaurantId: $('#restaurant').val() }, function (data) {
+            $.getJSON('/Checkout/GetActivitiesForRestaurant', { day: $('#restaurant').val() }, function (data) {
                 $.each(data, function () {
+                    var startString = '' + this.StartTime;
+                    var endString = '' + this.EndTime;
                     $('#timeslot').append('<option value=' +
-                        this.Id + '>' + this.StartTime + ' - ' + this.EndTime + '</option>');
+                        this.Id + '>' + startString.substring(11, 16) + ' - ' + endString.substring(11, 16) + '</option>');
                 });
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 alert('Error getting activities!');
@@ -50,7 +54,7 @@
 
         $('#restaurant').change(function () {
             $('#timeslot option').remove();
-            $.getJSON('/Checkout/GetActivitiesForRestaurant', { restaurantId: $('#restaurant').val() }, function (data) {
+            $.getJSON('/Checkout/GetActivitiesForRestaurant', { day: $('#restaurant').val() }, function (data) {
                 $.each(data, function () {
                     var startString = '' + this.StartTime;
                     var endString = '' + this.EndTime;
