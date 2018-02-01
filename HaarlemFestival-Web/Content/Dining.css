@@ -25,4 +25,10 @@ border-bottom: none; /* Prevent double borders */
 /* Add a background color on hover */
 .btn-group button:hover{
 background-color: transparent;
-} 
+}
+
+
+/*.white-header {
+    background-color: white;
+    color: black;
+}*/

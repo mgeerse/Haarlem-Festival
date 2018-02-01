@@ -10,13 +10,50 @@
     <link rel="stylesheet" href="../Content/NavigationBar.css" />
 </head>
 <body>
-        <div class= "topnav">
-                <a href="../Pages/Home/Index">Home</a>
-                <a href="../Pages/Historic">Historic Tours</a>
-                <a href="../Pages/Dining">Dining in Haarlem</a>
-                <a href="../Pages/Jazz">Jazz@Patronaat</a>
-                <a href="../Pages/Talking">Talking Haarlem</a>
-        </div>
+    <div class="topnav">
+
+        @if (Request.Url.AbsolutePath.Contains("Historic"))
+        {
+            <a href="../Pages/Home/Index">Home</a>
+            <a href="../Pages/Historic" id="historic" class="active">Historic Tours</a>
+            <a href="../Pages/Dining" id="dining">Dining in Haarlem</a>
+            <a href="../Pages/Jazz" id="jazz">Jazz@Patronaat</a>
+            <a href="../Pages/Talking" id="talking">Talking Haarlem</a>
+        }
+        else if (Request.Url.AbsolutePath.Contains("Dining"))
+        {
+            <a href="../Pages/Home/Index">Home</a>
+            <a href="../Pages/Historic" id="historic">Historic Tours</a>
+            <a href="../Pages/Dining" id="dining" class="active">Dining in Haarlem</a>
+            <a href="../Pages/Jazz" id="jazz">Jazz@Patronaat</a>
+            <a href="../Pages/Talking" id="talking">Talking Haarlem</a>
+        }
+        else if (Request.Url.AbsolutePath.Contains("Jazz"))
+        {
+            <a href="../Pages/Home/Index">Home</a>
+            <a href="../Pages/Historic" id="historic">Historic Tours</a>
+            <a href="../Pages/Dining" id="dining">Dining in Haarlem</a>
+            <a href="../Pages/Jazz" id="jazz" class="active">Jazz@Patronaat</a>
+            <a href="../Pages/Talking" id="talking">Talking Haarlem</a>
+        }
+        else if (Request.Url.AbsolutePath.Contains("Talking"))
+        {
+            <a href="../Pages/Home/Index">Home</a>
+            <a href="../Pages/Historic" id="historic">Historic Tours</a>
+            <a href="../Pages/Dining" id="dining">Dining in Haarlem</a>
+            <a href="../Pages/Jazz" id="jazz">Jazz@Patronaat</a>
+            <a href="../Pages/Talking" id="talking" class="active">Talking Haarlem</a>
+        }
+        else
+        {
+            <a href="../Pages/Home/Index">Home</a>
+            <a href="../Pages/Historic" id="historic">Historic Tours</a>
+            <a href="../Pages/Dining" id="dining">Dining in Haarlem</a>
+            <a href="../Pages/Jazz" id="jazz">Jazz@Patronaat</a>
+            <a href="../Pages/Talking" id="talking">Talking Haarlem</a>
+        }
+
+    </div>
     <div class="container body-content">
         @RenderBody()
     </div>
