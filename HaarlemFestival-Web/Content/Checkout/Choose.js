@@ -1,1 +1,0 @@
-﻿$(".wrapper-50").children().children().addClass("col-sm-6", "col-md-6", "col-lg-6");
