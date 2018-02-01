@@ -223,8 +223,19 @@
     <Content Include="Content\Checkout\Choose.css" />
     <Content Include="Content\Checkout\FormVerification\Dining.js" />
     <Content Include="Content\Dining.css" />
+    <Content Include="Content\Historic.css" />
     <Content Include="Content\Home.css" />
     <Content Include="Content\Images\Dining\Background.jpg" />
+    <Content Include="Content\Images\Historic\1. Grote Markt.jpg" />
+    <Content Include="Content\Images\Historic\2. Grote Kerk.jpg" />
+    <Content Include="Content\Images\Historic\3. De Hallen.jpg" />
+    <Content Include="Content\Images\Historic\4. Proveniershof.jpg" />
+    <Content Include="Content\Images\Historic\5. Jopenkerk.jpg" />
+    <Content Include="Content\Images\Historic\6. Waalse Kerk.jpg" />
+    <Content Include="Content\Images\Historic\7. Molen de Adriaan.jpg" />
+    <Content Include="Content\Images\Historic\8. Amsterdamse Poort.jpg" />
+    <Content Include="Content\Images\Historic\9. Hof van Bakenes.jpg" />
+    <Content Include="Content\Images\Historic\background.jpg" />
     <Content Include="Content\Images\logo.svg" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\Home\Tours.png" />
@@ -232,6 +243,9 @@
     <Content Include="Content\Images\Home\Restaurants.png" />
     <Content Include="Content\Images\Home\Jazz.png" />
     <Content Include="Content\Images\Talking\Background.jpg" />
+    <Content Include="Content\Images\Talking\femkexjob.PNG" />
+    <Content Include="Content\Images\Talking\paulxbrigitte.PNG" />
+    <Content Include="Content\Images\Talking\robxgiel.PNG" />
     <Content Include="Content\NavigationBar.css" />
     <Content Include="Content\Talking.css" />
     <Content Include="JavaScript.js" />
@@ -347,6 +361,10 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Shared\Pages\_Layout.cshtml" />
+    <Content Include="Views\Pages\Talking.cshtml" />
+    <Content Include="Views\Pages\Dining.cshtml" />
+    <Content Include="Views\Pages\Historic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

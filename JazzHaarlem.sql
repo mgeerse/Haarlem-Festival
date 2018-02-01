@@ -1,0 +1,18 @@
+﻿INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (464, 'Gumbo Kings', 'Main Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (465, 'Evolve', 'Main Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (466, 'Ntjam Rosie', 'Main Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (467, 'Wicked Jazz Sounds', 'Second Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (468, 'Tom Thomsom Assemble', 'Second Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (469, 'Jonna Frazer', 'Second Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (470, 'Fox & The Mayors', 'Main Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (471, 'Uncle Sue', 'Main Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (472, 'Chris Allen', 'Main Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (473, 'Myles Sanko', 'Second Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (474, 'Ruis Sountsystem', 'Second Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (475, 'The Family XL', 'Second Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (476, 'Gare du Nord', 'Main Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (477, 'Rilan & The Bombardiers', 'Main Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (478, 'Soul Six', 'Main Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (479, 'Han Bennink', 'Third Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (480, 'The Nordanians', 'Third Hall', 0);
+INSERT INTO Jazz (Id, Artist, Hall, ImagePath) VALUES (481, 'Lilith Merlot', 'Third Hall', 0);
