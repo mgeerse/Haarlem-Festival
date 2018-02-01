@@ -8,25 +8,6 @@ body{
     background-size: cover;
 }
 
-button{
-    width: 150px;
-    height: 40px;
-    bottom: 6%;
-    background-color: #fff;
-    color: black;
-    font-family: Korolev;
-    font-size: 20px;
-    text-align: center;
-    position: absolute;
-    right: 20px;
-}
-
-button:hover{
-    background-color: midnightblue;
-    color: white;
-    cursor: pointer;
-}
-
 h1, p{
     font-family: Korolev;
     color: white;
@@ -101,3 +82,23 @@ input[name=tabs] {
 #tab1:checked ~ #tab-content1, #tab2:checked ~ #tab-content2, #tab3:checked ~ #tab-content3, #tab4:checked ~ #tab-content4, #tab5:checked ~ #tab-content5 {
     display: block;
 }
+
+.reserveButton {
+    width: 150px;
+    height: 40px;
+    bottom: 6%;
+    background-color: #fff;
+    color: black;
+    font-family: Korolev;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    right: 20px;
+    font-family: Korolev;
+}
+
+    .reserveButton:hover {
+        background-color: midnightblue;
+        color: white;
+        cursor: pointer;
+    }
