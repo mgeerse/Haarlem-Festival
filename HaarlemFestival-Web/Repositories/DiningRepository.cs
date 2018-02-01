@@ -21,11 +21,7 @@ namespace HaarlemFestival_Web.Repositories
 
         public IEnumerable<Dining> GetAll()
         {
-            return context.Dining
-                .Include(m => m.Location)
-                .Include(m => m.Subject)
-                .Include(m => m.Tickets)
-                .Include(m => m.Restaurant);
+            return context.Dining;
         }
 
         public Dining GetById(int id)
