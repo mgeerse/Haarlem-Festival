@@ -234,6 +234,7 @@
     <Content Include="Content\Historic.css" />
     <Content Include="Content\Home.css" />
     <Content Include="Content\Images\Dining\Background.jpg" />
+    <Content Include="Content\Images\Home\historic.jpg" />
     <Content Include="Content\Images\Jazz\Artists\ChrisAllen.jpg" />
     <Content Include="Content\Images\Jazz\Artists\Evolve.jpg" />
     <Content Include="Content\Images\Jazz\Artists\FoxMayors.jpg" />
@@ -269,7 +270,7 @@
     <Content Include="Content\Images\Historic\background.jpg" />
     <Content Include="Content\Images\logo.svg" />
     <Content Include="Content\Images\logo.png" />
-    <Content Include="Content\Images\Home\Tours.png" />
+    <Content Include="Content\Images\Home\Historic.png" />
     <Content Include="Content\Images\Home\Talking.png" />
     <Content Include="Content\Images\Home\Restaurants.png" />
     <Content Include="Content\Images\Home\Jazz.png" />
@@ -399,7 +400,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-	<Content Include="Views\Pages\Talking.cshtml" />
+    <Content Include="Views\Pages\Talking.cshtml" />
     <Content Include="Views\Shared\Pages\_Layout.cshtml" />
     <Content Include="Views\Pages\Test.cshtml" />
     <Content Include="Views\Pages\Dining.cshtml" />
