@@ -5,6 +5,7 @@
 }
 
 <link rel="stylesheet" href="../Content/Dining.css" />
+<script src="~/Scripts/jquery-3.3.1.js"></script>
 
 <head>
     @*<script>
@@ -19,16 +20,124 @@
     </script>*@
 </head>
 <body>
-    <div class="btn-group">
-        <button>Show all</button>
-        <button>@Model[0].Restaurant.Cuisines</button>
-        <button>@Model[1].Restaurant.Cuisines</button>
-        <button>@Model[2].Restaurant.Cuisines</button>
-        <button>@Model[3].Restaurant.Cuisines</button>
-        <button>@Model[4].Restaurant.Cuisines</button>
-        <button>@Model[5].Restaurant.Cuisines</button>
-        <button>@Model[6].Restaurant.Cuisines</button>
-        <button>@Model[7].Restaurant.Cuisines</button>
-        <button>@Model[8].Restaurant.Cuisines</button>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="button" id="all">Show all</div>
+                <div class="button" id="dutch">Dutch</div>
+                <div class="button" id="fish">Fish &amp; Seafood</div>
+                <div class="button" id="euro">European</div>
+                <div class="button" id="french">French</div>
+                <div class="button" id="international">International</div>
+                <div class="button" id="asian">Asian</div>
+                <div class="button" id="modern">Modern</div>
+                <div class="button" id="steakhouse">Steakhouse</div>
+                <div class="button" id="argentinian">Argentinian</div>
+            </div>
+            <div class="col-12" id="restaurantbtn">
+
+            </div>
+            <div class="col-4" id="restaurantname" style="background-color: orange; margin-top: 50px; padding: 20px">
+                <h1 style="font-family: KorolevMilitaryStencil">Dining In Haarlem</h1>
+                <p>
+                    Over the years, Haarlem has become the home for many types of cuisine. From our national Dutch dishes of potatoes, to the highly-seasoned dishes of the eastern countries, to the refined tastes of masterchefs available worldwide, all of them combine in this town to form a network of restaurants for you to choose from.
+
+                    As a visitor of the Haarlem Festival, you are entitled to special offers during your stay. Special timeslots and savings apply to anyone with free time in their festival programme!
+
+                    To find out which restaurants serve which cuisines, click on a cuisine above.
+                   </p>
+            </div>
+
+
+            <style>
+                .button, .restbtn {
+                    display: inline-block;
+                    background-color: orange;
+                    padding: 15px;
+                    margin: 15px 0 0;
+                    font-family: KorolevMilitaryStencil;
+                }
+            </style>
+            <script>
+                $(document).ready(function () {
+                    $('#restaurantbtn').html('<div class="button" id="mr-and-mrs">Mr and Mrs.</div>\
+                                    <div class="button" id="ratatouille"> Ratatouille</div>\
+                                    <div class="button" id="ml">ML</div>\
+                                    <div class="button" id="fris">Fris</div>\
+                                    <div class="button" id="specktakel">Specktakel</div>\
+                                    <div class="button" id="brinkmann">Brinkmann</div>\
+                                    <div class="button" id="toujours">Toujours</div>\
+                                    <div class="button" id="golden-bull">The Golden Bull</div>');
+                    $('.button').click(function () {
+                        $('.active').removeClass('active');
+                        $(this).addClass('active');
+                    });
+                    $('#all').click(function () {
+                        $('#restaurantbtn').html('<div class="button" id="mr-and-mrs">Mr and Mrs.</div>\
+                                    <div class="button" id="ratatouille" > Ratatouille</div>\
+                                    <div class="button" id="ml">ML</div>\
+                                    <div class="button" id="fris">Fris</div>\
+                                    <div class="button" id="specktakel">Specktakel</div>\
+                                    <div class="button" id="brinkmann">Brinkmann</div>\
+                                    <div class="button" id="toujours">Toujours</div>\
+                                    <div class="button" id="golden-bull">The Golden Bull</div>');
+                    });
+                    $('#dutch').click(function () {
+                        $('#restaurantbtn').html('<div class="button" id= "ratatouille" > Ratatouille</div>\                        <div class="button" id="ml">ML</div>\
+                                    <div class="button" id="fris">Fris</div>\
+                                    <div class="button" id="specktakel">Specktakel</div>');
+                    });
+                    $('#fish').click(function () {
+                        $('#restaurantbtn').html('<div class="button" id="mr-and-mrs">Mr and Mrs.</div>\
+                                                            <div class="button" id="ml">ML</div>\
+                                                            <div class="button" id="fris">Fris</div>\
+                                    ');
+                    });
+                    $('#euro').click(function () {
+                        $('#restaurantbtn').html('<div class="button" id="brinkmann">Brinkmann</div>\
+                                    <div class="button" id="toujours">Toujours</div>\
+                                    <div class="button" id="golden-bull">The Golden Bull</div>\
+                                    ');
+                    });
+                    $('#french').click(function () {
+                        $('#restaurantbtn').html('<div class="button" id="mr-and-mrs">Mr and Mrs.</div>\
+                                                            <div class="button" id="ml">ML</div>\
+                                                            <div class="button" id="fris">Fris</div>\
+                                    ');
+                    });
+                    $('#international').click(function () {
+
+                        $('#restaurantbtn').html('<div class="button" id="mr-and-mrs">Mr and Mrs.</div>\
+                                                            <div class="button" id="ml">ML</div>\
+                                                            <div class="button" id="fris">Fris</div>\
+                                    ');
+                    });
+                    $('#asian').click(function () {
+                        $('#restaurantbtn').html('<div class="button" id="mr-and-mrs">Mr and Mrs.</div>\
+                                                            <div class="button" id="ml">ML</div>\
+                                                            <div class="button" id="fris">Fris</div>\
+                                    ');
+                    });
+                    $('#modern').click(function () {
+                        $('#restaurantbtn').html('<div class="button" id="mr-and-mrs">Mr and Mrs.</div>\
+                                                            <div class="button" id="ml">ML</div>\
+                                                            <div class="button" id="fris">Fris</div>\
+                                    ');
+                    });
+                    $('#steakhouse').click(function () {
+                        $('#restaurantbtn').html('<div class="button" id="mr-and-mrs">Mr and Mrs.</div>\
+                                                            <div class="button" id="ml">ML</div>\
+                                                            <div class="button" id="fris">Fris</div>\
+                                    ');
+                    });
+                    $('#argentinian').click(function () {
+                        $('#restaurantbtn').html('<div class="button" id="mr-and-mrs">Mr and Mrs.</div>\
+                                                            <div class="button" id="ml">ML</div>\
+                                                            <div class="button" id="fris">Fris</div>\
+                                    ');
+                    });
+                });
+            </script>
+        </div>
     </div>
 </body>
