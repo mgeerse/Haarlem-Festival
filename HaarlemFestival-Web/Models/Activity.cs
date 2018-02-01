@@ -35,6 +35,7 @@ namespace HaarlemFestival_Web.Models
         public int LocationId { get; set; }
         public Location Location { get; set; }
         public int SubjectId { get; set; }
+        public Subject Subject { get; set; }
 
         public virtual ICollection<Ticket> Tickets { get; set; }
     }

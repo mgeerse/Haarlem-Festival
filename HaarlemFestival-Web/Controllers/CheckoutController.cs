@@ -86,7 +86,7 @@ namespace HaarlemFestival_Web.Controllers
                 Restaurants = restaurantRepository.GetAll().ToList(),
                 SelectedRestaurant = 0,
                 DiningActivities = diningRepository.GetAll().ToList(),
-                SelectedDiningActivity = 0
+                SelectedItemId = 0
             };
             return PartialView("_Dining", model);
         }
