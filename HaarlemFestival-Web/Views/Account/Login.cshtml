@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Login";
+    ViewBag.Message = "";
     Layout = "~/Views/Shared/Admin/_Layout_Guest.cshtml";
 }
 
@@ -35,6 +36,12 @@
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Login" class="btn btn-default" />
             </div>
+            @if (ViewBag.Message != null)
+            {
+                <div class="form-group">
+                    <div class="col-md-10">@ViewBag.Message</div>
+                </div>
+            }
         </div>
     </div>
 }

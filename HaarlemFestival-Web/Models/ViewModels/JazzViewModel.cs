@@ -7,14 +7,9 @@ using System.Web;
 namespace HaarlemFestival_Web.Models
 {
     [NotMapped]
-    public class DiningViewModel : Dining
+    public class JazzViewModel : Jazz
     {
-        public List<Dining> DiningActivities { get; set; }
-        public int SelectedItemId { get; set; }
-
-        public DiningViewModel() { }
-
-        public DiningViewModel(string Name, string Description, int Capacity, decimal Price, DateTime StartTime, DateTime EndTime, int SubjectId)
+        public JazzViewModel(string Name, string Description, int Capacity, decimal Price, DateTime StartTime, DateTime EndTime, int SubjectId)
         {
             this.Name = Name;
             this.Description = Description;

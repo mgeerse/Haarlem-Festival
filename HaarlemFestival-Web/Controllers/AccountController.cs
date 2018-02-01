@@ -19,11 +19,11 @@ namespace HaarlemFestival_Web.Controllers
         }
 
         #region Registration
-            [HttpGet]
-            public ActionResult Register()
-            {
-                return View();
-            }
+        [HttpGet]
+        public ActionResult Register()
+        {
+            return View();
+        }
 
         [NonAction]
         public bool UsernameExists(string enteredUsername)
@@ -34,73 +34,75 @@ namespace HaarlemFestival_Web.Controllers
 
         }
 
-            [HttpPost]
-            public ActionResult Register(Account Account)
-            {
-                if(ModelState.IsValid)
-                {
-                    using (FestivalContext Db = new FestivalContext())
-                    {
-                        Db.Accounts.Add(Account);
-                        Db.SaveChanges();
-                    }
-
-                    ModelState.Clear();
-                    ViewBag.Message = Account.Name + ", your account has been successfully registered!";
-                }
-                return View();
-            }
-        #endregion
-
-        #region login
-            [HttpGet]
-            public ActionResult Login()
-            {
-                return View();
-            }
-
-            [HttpPost]
-            public ActionResult Login(Account Account)
+        [HttpPost]
+        public ActionResult Register(Account Account)
+        {
+            if (ModelState.IsValid)
             {
                 using (FestivalContext Db = new FestivalContext())
                 {
-                    Account user = Db.Accounts.Single(u => u.Username == Account.Username && u.Password == Account.Password);
-
-                    if(user != null)
-                    {
-                        Session["Id"] = user.Id;
-                        Session["Username"] = user.Username;
-
-                        return View("LoggedIn");
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", "Username or password is not correct");
-                    }
+                    Db.Accounts.Add(Account);
+                    Db.SaveChanges();
                 }
 
-                return View("Login");
+                ModelState.Clear();
+                ViewBag.Message = Account.Name + ", your account has been successfully registered!";
             }
+            return View();
+        }
+        #endregion
 
-            public ActionResult LoggedIn()
+        #region login
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(Account Account)
+        {
+            using (FestivalContext Db = new FestivalContext())
             {
-                if(Session["Id"] != null)
+                Account user = Db.Accounts.FirstOrDefault(u => u.Username == Account.Username && u.Password == Account.Password);
+
+                if (user != null)
                 {
-                    return View("LoggedIn");
+                    Session["Id"] = user.Id;
+                    Session["Username"] = user.Username;
+
+                    return RedirectToAction("../Dashboard/Index");
                 }
                 else
                 {
-                    return RedirectToAction("Login");
+                    ModelState.AddModelError("", "Username or password is not correct");
                 }
             }
+            ViewBag.Message = "The username or password is incorrect.";
+
+            return View("Login");
+        }
+
+        [HttpGet]
+        public ActionResult LoggedIn()
+        {
+            if (Session["Id"] != null)
+            {
+                return View("LoggedIn");
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
         #endregion
 
         #region Logout
-            public ActionResult Logout(Account User)
-            {
-                Session.Clear();
-                return RedirectToAction("Login");
-            }
+        public ActionResult Logout(Account User)
+        {
+            Session.Clear();
+            return RedirectToAction("Login");
+        }
         #endregion
     }
 }
