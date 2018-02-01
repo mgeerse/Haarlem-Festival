@@ -1,15 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace HaarlemFestival_Web.Models
 {
-    public class JazzViewModel
+    [NotMapped]
+    public class JazzViewModel : Jazz
     {
-        public int SelectedDay { get; set; }
-
-        public List<Jazz> JazzActivities { get; set; }
-        public int SelectedJazzActivity { get; set; }
+        public JazzViewModel(string Name, string Description, int Capacity, decimal Price, DateTime StartTime, DateTime EndTime, int SubjectId)
+        {
+            this.Name = Name;
+            this.Description = Description;
+            this.Capacity = Capacity;
+            this.Price = Price;
+            this.StartTime = StartTime;
+            this.EndTime = EndTime;
+            this.SubjectId = SubjectId;
+        }
     }
 }
