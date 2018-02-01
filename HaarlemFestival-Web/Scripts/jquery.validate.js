@@ -1,9 +1,17 @@
 /*!
+<<<<<<< HEAD
  * jQuery Validation Plugin v1.17.0
  *
  * https://jqueryvalidation.org/
  *
  * Copyright (c) 2017 Jörn Zaefferer
+=======
+ * jQuery Validation Plugin v1.16.0
+ *
+ * http://jqueryvalidation.org/
+ *
+ * Copyright (c) 2016 Jörn Zaefferer
+>>>>>>> FixNuGet
  * Released under the MIT license
  */
 (function( factory ) {
@@ -17,7 +25,6 @@
 }(function( $ ) {
 
 $.extend( $.fn, {
-
 	// https://jqueryvalidation.org/validate/
 	validate: function( options ) {
 
@@ -85,7 +92,6 @@ $.extend( $.fn, {
 					if ( validator.settings.submitHandler ) {
 						result = validator.settings.submitHandler.call( validator, validator.currentForm, event );
 						if ( hidden ) {
-
 							// And clean up afterwards; thanks to no-block-scope, hidden can be referenced
 							hidden.remove();
 						}
@@ -140,6 +146,7 @@ $.extend( $.fn, {
 	},
 
 	// https://jqueryvalidation.org/rules/
+
 	rules: function( command, argument ) {
 		var element = this[ 0 ],
 			settings, staticRules, existingRules, data, param, filtered;
@@ -413,7 +420,6 @@ $.extend( $.validator, {
 				// Set form expando on contenteditable
 				if ( !this.form && this.hasAttribute( "contenteditable" ) ) {
 					this.form = $( this ).closest( "form" )[ 0 ];
-					this.name = $( this ).attr( "name" );
 				}
 
 				var validator = $.data( this.form, "validator" ),
@@ -438,6 +444,10 @@ $.extend( $.validator, {
 			if ( this.settings.invalidHandler ) {
 				$( this.currentForm ).on( "invalid-form.validate", this.settings.invalidHandler );
 			}
+
+			// Add aria-required to any Static/Data/Class required fields before first validation
+			// Screen readers require this attribute to be present before the initial submission http://www.w3.org/TR/WCAG-TECHS/ARIA2.html
+			$( this.currentForm ).find( "[required], [data-rule-required], .required" ).attr( "aria-required", "true" );
 		},
 
 		// https://jqueryvalidation.org/Validator.form/
@@ -648,7 +658,6 @@ $.extend( $.validator, {
 					this.form = $( this ).closest( "form" )[ 0 ];
 					this.name = name;
 				}
-
 				// Select only the first element for each name, and only those with rules specified
 				if ( name in rulesCache || !validator.objectLength( $( this ).rules() ) ) {
 					return false;
@@ -775,7 +784,6 @@ $.extend( $.validator, {
 				rule = { method: method, parameters: rules[ method ] };
 				try {
 					result = $.validator.methods[ method ].call( this, val, element, rule.parameters );
-
 					// If a method indicates that the field is optional and therefore valid,
 					// don't mark it as valid when there are no other rules
 					if ( result === "dependency-mismatch" && rulesCount === 1 ) {
@@ -1107,7 +1115,6 @@ $.extend( $.validator, {
 			$( element ).removeClass( this.settings.pendingClass );
 			if ( valid && this.pendingRequest === 0 && this.formSubmitted && this.form() ) {
 				$( this.currentForm ).submit();
-
 				// Remove the hidden input that was used as a replacement for the
 				// missing submit button. The hidden input is added by `handle()`
 				// to ensure that the value of the used submit button is passed on
@@ -1115,7 +1122,6 @@ $.extend( $.validator, {
 				if ( this.submitButton ) {
 					$( "input:hidden[name='" + this.submitButton.name + "']", this.currentForm ).remove();
 				}
-
 				this.formSubmitted = false;
 			} else if ( !valid && this.pendingRequest === 0 && this.formSubmitted ) {
 				$( this.currentForm ).triggerHandler( "invalid-form", [ this ] );

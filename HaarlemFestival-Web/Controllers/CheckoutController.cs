@@ -5,12 +5,15 @@ using System.Web;
 using System.Web.Mvc;
 using HaarlemFestival_Web.Models;
 using HaarlemFestival_Web.Repositories;
+using Newtonsoft.Json;
 
 namespace HaarlemFestival_Web.Controllers
 {
 
     public class CheckoutController : Controller
     {
+
+        private RestaurantRepository restaurantRepository = new RestaurantRepository();
 
         private WalkingRepository walkingRepository = new WalkingRepository();
         private DiningRepository diningRepository = new DiningRepository();
@@ -71,21 +74,115 @@ namespace HaarlemFestival_Web.Controllers
 
         #region Choosepage partial view rendering
 
+        public ActionResult PartialWalking()
+        {
+            return PartialView("_Walking");
+        }
+
         public ActionResult PartialDining()
         {
             DiningViewModel model = new DiningViewModel()
             {
+                Restaurants = restaurantRepository.GetAll().ToList(),
+                SelectedRestaurant = 0,
                 DiningActivities = diningRepository.GetAll().ToList(),
                 SelectedItemId = 0
             };
             return PartialView("_Dining", model);
         }
 
-        public List<Dining> GetTimeslotsForRestaurant(Restaurant restaurant)
+        public ActionResult PartialJazz()
         {
-            return diningRepository.GetAll()
-                        .Where(m => m.Restaurant == restaurant)
-                        .ToList();
+            return PartialView("_Jazz");
+        }
+
+        public ActionResult PartialTalking()
+        {
+            return PartialView("_Talking");
+        }
+
+        public ActionResult GetWalkingActivities()
+        {
+            return Json(walkingRepository.GetAll().ToList(), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetWalkingTimes(int walkingDay = 0)
+        {
+            List<Walking> walkingActivities = walkingRepository.GetAll().ToList();
+            switch (walkingDay)
+            {
+                case 1:
+                    walkingActivities = walkingActivities.Where(m => m.StartTime.DayOfWeek == DayOfWeek.Thursday).ToList();
+                    break;
+                case 2:
+                    walkingActivities = walkingActivities.Where(m => m.StartTime.DayOfWeek == DayOfWeek.Friday).ToList();
+                    break;
+                case 3:
+                    walkingActivities = walkingActivities.Where(m => m.StartTime.DayOfWeek == DayOfWeek.Saturday).ToList();
+                    break;
+            }
+            var list = JsonConvert.SerializeObject(walkingActivities,
+                Formatting.None,
+                new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            return Content(list, "application/json");
+        }
+
+        public ActionResult GetRestaurants()
+        {
+            return Json(restaurantRepository.GetAll().ToList(), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetActivitiesForRestaurant(int restaurantId = 0)
+        {
+            List<Dining> diningActivities = diningRepository.GetAll().ToList();
+            if (restaurantId != 0)
+            {
+                diningActivities = diningActivities.Where(m => m.Restaurant.Id == restaurantId).ToList();
+            }
+            var list = JsonConvert.SerializeObject(diningActivities,
+                Formatting.None,
+                new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            return Content(list, "application/json");
+        }
+
+        public ActionResult GetJazzDays()
+        {
+            return Json(jazzRepository.GetAll().ToList(), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetJazzBandsForDay(int day = 0)
+        {
+            List<Jazz> jazzActivities = jazzRepository.GetAll().ToList();
+            switch (day)
+            {
+                case 0:
+                    jazzActivities = jazzActivities.Where(m => m.StartTime.DayOfWeek == DayOfWeek.Thursday).ToList();
+                    break;
+                case 1:
+                    jazzActivities = jazzActivities.Where(m => m.StartTime.DayOfWeek == DayOfWeek.Friday).ToList();
+                    break;
+                case 2:
+                    jazzActivities = jazzActivities.Where(m => m.StartTime.DayOfWeek == DayOfWeek.Saturday).ToList();
+                    break;
+            }
+            var list = JsonConvert.SerializeObject(jazzActivities,
+                Formatting.None,
+                new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            return Content(list, "application/json");
+        }
+
+        public ActionResult GetTalking()
+        {
+            return Json(talkingRepository.GetAll().ToList(), JsonRequestBehavior.AllowGet);
         }
 
         #endregion

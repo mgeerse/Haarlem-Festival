@@ -1,7 +1,41 @@
 ﻿
 @{
-    ViewBag.Title = "_Talking";
+    ViewBag.Title = "Talking";
 }
 
-<h2>_Talking</h2>
 
+@using (Html.BeginForm("Checkout", "AddTicketToCart", FormMethod.Post, new { id = "order" }))
+{
+    <div class="row">
+        <label class="col-md-6 required" for="talking">Speakers</label>
+        <select class="col-md-6" id="talking"></select>
+    </div>
+    <div class="row">
+        <label class="col-md-6 required" for="amount">Amount of people</label>
+        <select class="col-md-6" id="amount">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+    </div>
+    <div class="row">
+        <label class="col-md-6" for="comments">Comments</label>
+        <textarea class="col-md-6" placeholder="Do you have any questions for the speakers?"></textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><span style="color:red">*</span> = The field is required.</div>
+        <div class="col-md-6 btn"><input class="btn" type="button" value="Add to cart" form="order" /></div>
+    </div>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.getJSON('/Checkout/GetTalking', null, function (data) {
+            $.each(data, function () {
+                $('#talking').append('<option value=' +
+                    this.Id + '>' + this.Name + '</option>');
+            });
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            alert('Error getting Talking events!');
+        });
+    });
+</script>

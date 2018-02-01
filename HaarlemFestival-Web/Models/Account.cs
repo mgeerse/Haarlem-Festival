@@ -12,21 +12,16 @@ namespace HaarlemFestival_Web.Models
         [Key]
         public int Id { get; private set; }
 
-        [Required(ErrorMessage = "The 'Name' field cannot be empty.")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Name is required")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "The 'Username' field cannot be empty.")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Username is required")]
         public string Username { get; set; }
 
-        // TODO: Encrypt passwords. Extra points.
-        [Required(ErrorMessage = "The 'Password' field cannot be empty.")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Password is required")]
+        [MinLength(6, ErrorMessage = "Minimum of 6 characters required")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-
-        //[NotMapped]
-        //[Compare("Password", ErrorMessage = "Passwords must be equal.")]
-        //[DataType(DataType.Password)]
-        //public string ConfirmPassword { get; set; }
 
         public AccountType AccountType { get; set; }
     }

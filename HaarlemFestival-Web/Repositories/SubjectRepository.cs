@@ -57,7 +57,7 @@ namespace HaarlemFestival_Web.Repositories
         /// <returns></returns>
         public IEnumerable<Subject> GetAll()
         {
-            throw new NotImplementedException();
+            return context.Subjects.ToList();
         }
 
         /// <summary>

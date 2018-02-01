@@ -12,7 +12,7 @@ namespace HaarlemFestival_Web.Models
     /// The Haarlem Festival will start off with four subjects.
     /// More subjects can easily be added.
     /// </summary>
-    
+
     public class Subject
     {
         [Key]
