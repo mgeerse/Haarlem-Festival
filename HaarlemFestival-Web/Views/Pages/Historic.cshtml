@@ -1,25 +1,25 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Historic";
+    Layout = "~/Views/Shared/Pages/_Layout.cshtml";
 }
+<link rel="stylesheet" href="~/Content/Historic.css"/>
 
-    
-    <!-- lijst met te bezoeken plaatsen -> dynamic panel -->
+<!-- lijst met te bezoeken plaatsen -> dynamic panel -->
 
-    <section class="headerwhole">
-        <header class="col-md-6">
-            <h1 class="headerp1">HISTORIC TOURS</h1>
-            <h2 class="headerp1">A historic walking tour through Haarlem</h2>
-        </header>
+<section class="headerwhole">
+    <header class="col-md-6">
+        <h1 class="headerp1">HISTORIC TOURS</h1>
+        <h3 class="headerp1">A historic walking tour through Haarlem</h3>
+    </header>
 
-        <section class="article col-md-6" >
-            This is the page of the Historic Tour through Haarlem. Would you like to learn more about Haarkem and its history?
-            This is the perfect chance! On the 27th, 28th and 29th of July 2018 the Haarlem Festival organizes a Historic Tour through Haarlem.
-            The tour will be held in Dutch, English and Chinese.
-        </section>
+    <section class="article col-md-6">
+        This is the page of the Historic Tour through Haarlem. Would you like to learn more about Haarkem and its history?
+        This is the perfect chance! On the 27th, 28th and 29th of July 2018 the Haarlem Festival organizes a Historic Tour through Haarlem.
+        The tour will be held in Dutch, English and Chinese.
     </section>
+</section>
 
-    <div class="clearfix"></div>
+<div class="clearfix"></div>
 
 <section class="text">
     <section class="col-md-2 schedule1">
@@ -64,7 +64,7 @@
 
 <section class="locations">
     <section class="col-md-6 map">
-        <button id="MyImg" alt="The Amsterdamse Poort is an old city gate. It was created in 1355 and it is the only city gate left from the original twelve city gates. It was used as a defense gate, for example in the Eighty Years' War. It will be the eighth place the tour visits." class="button button1">AP</button>
+        <button id="myImg" class="button button1">AP</button>
         <button class="button button2">MA</button>
         <button class="button button3">HB</button>
         <button class="button button4">WK</button>
@@ -84,7 +84,7 @@
         <span class="close">&times;</span>
 
         <!-- Modal Content (The Image) -->
-        <img src="~/Content/Images/Historic/8. Amsterdamse Poort.jpg" class="modal-content" id="img01">
+        <img alt="The Amsterdamse Poort is an old city gate. It was created in 1355 and it is the only city gate left from the original twelve city gates. It was used as a defense gate, for example in the Eighty Years War. It will be the eighth place the tour visits." src="~/Content/Images/Historic/8AmsterdamsePoort.jpg" class="modal-content" id="img01">
 
         <!-- Modal Caption (Image Text) -->
         <div id="caption"></div>
@@ -112,6 +112,7 @@
             modal.style.display = "none";
         }
     </script>
+
     <section class="col-md-6">
         <section class="text location">
             Click on a location on the map to find out more information about the location:

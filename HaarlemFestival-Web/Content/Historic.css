@@ -18,6 +18,7 @@ body{
     padding-right: 10px;
     border-left: thin;
     border-color: black;
+    font-family: Arial;
 }
 
 .text {
@@ -26,6 +27,7 @@ body{
     text-align: center;
     margin: 10px;
     padding: 5px;
+    font-family: Arial;
 }
 
 .map{
@@ -51,36 +53,40 @@ body{
     text-align: center;
 }
 
-.schedule1{
+.schedule1 {
     text-align: right;
     padding-left: 10px;
     padding-bottom: 5px;
     padding-top: 5px;
     padding-right: 0px !important;
+    font-family: Arial;
 }
 
-.schedule2{
+.schedule2 {
     text-align: left;
     padding-right: 10px;
     padding-bottom: 5px;
     padding-top: 5px;
     padding-left: 0px !important;
+    font-family: Arial;
 }
 
-.information{
+.information {
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
     margin-bottom: 20px !important;
+    font-family: Arial;
 }
 
-.location{
+.location {
     padding-top: 5px;
     text-align: center;
     vertical-align: middle;
     padding-left: 20px;
-    margin-bottom: 50px !important;
+    margin-bottom: 10px !important;
     margin-right: -5px !important;
+    font-family: Arial;
 }
 
 
@@ -96,7 +102,7 @@ body{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 30%;
     position: absolute;
     width: 40px;
     height: 40px;
@@ -157,39 +163,6 @@ body{
     left: 67px;
 }
 /*Till here (buttons on map)*/
-
-/*To make the popups*/
-.popup .show {
-    visibility: visible;
-}
-/* Popup container - can be anything you want */
-.popup {
-    display: block;
-    cursor: pointer;
-    user-select: none;
-}
-
-/* The actual popup */
-.popup .popuptext {
-    visibility: hidden;
-    width: 525px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
-    position: absolute;
-    left: 50%;
-    margin-left: 100px;
-    text-align: center;
-}
-
-/* Toggle this class - hide and show the popup */
-.popup .show {
-        visibility: visible;
-}
-/*Till here (popups) */
-
 
 
 
