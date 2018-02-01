@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HaarlemFestival_Web.Models.Dining>
+﻿@model List<HaarlemFestival_Web.Models.Dining>
 @{
     ViewBag.Title = "Dining";
     Layout = "~/Views/Shared/Pages/_Layout.cshtml";
@@ -9,14 +9,14 @@
 <body>
     <div class="btn-group">
         <button>Show all</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
+        <button>@Model[0].Restaurant.Cuisines</button>
+        <button>@Model[1].Restaurant.Cuisines</button>
+        <button>@Model[2].Restaurant.Cuisines</button>
+        <button>@Model[3].Restaurant.Cuisines</button>
+        <button>@Model[4].Restaurant.Cuisines</button>
+        <button>@Model[5].Restaurant.Cuisines</button>
+        <button>@Model[6].Restaurant.Cuisines</button>
+        <button>@Model[7].Restaurant.Cuisines</button>
+        <button>@Model[8].Restaurant.Cuisines</button>
     </div>
 </body>

@@ -33,7 +33,7 @@ namespace HaarlemFestival_Web.Controllers
 
         public ActionResult Dining()
         {
-            IEnumerable<Dining> information = diningRepository.GetAll();
+            IEnumerable<Dining> information = diningRepository.GetAll().ToList();
             return View(information);
         }
 
