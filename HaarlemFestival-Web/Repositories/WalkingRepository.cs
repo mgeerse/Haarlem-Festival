@@ -1,4 +1,5 @@
-﻿using HaarlemFestival_Web.Models;
+﻿using HaarlemFestival_Web.Contexts;
+using HaarlemFestival_Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,9 @@ namespace HaarlemFestival_Web.Repositories
 {
     public class WalkingRepository : IRepository<Walking>
     {
+
+        private FestivalContext context = new FestivalContext();
+
         public bool Delete(Walking objectToDelete)
         {
             throw new NotImplementedException();
@@ -15,7 +19,7 @@ namespace HaarlemFestival_Web.Repositories
 
         public IEnumerable<Walking> GetAll()
         {
-            throw new NotImplementedException();
+            return context.Walking;
         }
 
         public Walking GetById(int id)

@@ -13,7 +13,7 @@ namespace HaarlemFestival_Web.Controllers
 
         public ActionResult Index()
         {
-            IEnumerable<Models.Subject> Subjects = SR.GetAllSubjects();
+            IEnumerable<Models.Subject> Subjects = SR.GetAll();
 
             return View("/Views/Pages/Home/index.cshtml",Subjects);
         }

@@ -1,0 +1,183 @@
+﻿@font-face {
+    font-family: 'Korolev';
+    src: url(../fonts/KorolevMilitaryStencil.ttf);
+}
+
+#a.netteLink {
+    color: dimgrey !important;
+    font-family: Korolev;
+}
+
+#buyTicketsWrapper {
+    box-shadow: black 0 0 50px;
+    border-style: dotted;
+    background-color: gold;
+    position: absolute;
+    float: right;
+    transform: translate(180%, -115%);
+}
+
+#buyTickets {
+    color: red;
+    font-size: 50px;
+    font-family: Korolev;
+    display: inline-block;
+}
+
+.ArtistWrapper {
+    background-color: sandybrown;
+    margin: 20px 0px;
+}
+
+.ArtistImage {
+    width: 250px;
+    height: 250px;
+    outline: 2px solid black;
+    object-fit: cover;
+}
+
+.ArtistName {
+    width: 100%;
+    background-color: black;
+    color: saddlebrown;
+}
+
+.ArtistPlaying {
+    font-size: 18px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+
+.ArtistDescription {
+    padding: 0px 20px 5px 10px;
+    white-space: pre-line;
+    margin-top: 0;
+    width: 75%;
+    float: right;
+}
+
+#intro {
+    background-color: black;
+    padding: 10px 10px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+    font-size: 25px;
+    color: chocolate;
+    text-align: center;
+}
+
+#Days {
+    background-color: rgba(0, 0, 0, 0.79);
+    padding: 15px 25px;
+    float: right;
+    width: 45%;
+    transform: translate(-12%,5%);
+    display: block;
+    
+}
+
+.Day {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#755200+0,c47900+98 */
+    background: #755200; /* Old browsers */
+    background: -moz-linear-gradient(left, #755200 0%, #c47900 98%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #755200 0%,#c47900 98%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #755200 0%,#c47900 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#755200', endColorstr='#c47900',GradientType=1 ); /* IE6-9 */
+    box-shadow: white 0px 0px 10px;
+    padding: 5px 15px;
+    display: block;
+    margin: 15px 0px;
+}
+
+#goBack {
+    align-self: center;
+}
+
+#MakeMooi {
+    background-color: rgba(0, 0, 0, 0.79);
+    max-width: 45%;
+    margin-right: 0px;
+}
+
+#infoTekst {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.79);
+    margin-top: 0;
+    max-width: 45%;
+    padding: 15px 25px;
+    color: white;
+    text-align: center;
+    transform: translateY(-25%);
+}
+
+body {
+    padding-top: 0;
+    width: 100%;
+    background-image: url(Images/Jazz/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform: translate(8%,-115%);
+}
+
+#Titel {
+    text-align: right;
+    transform: translateX(-20.5%);
+    text-shadow: 0 0 10px black;
+    color: saddlebrown;
+    z-index: 100;
+    position: relative;
+    font-family: Korolev;
+    font-size: 50px;
+}
+
+#OnderTitel {
+    text-align: right;
+    transform: translate(-5%,-5%);
+    text-shadow: 0 0 10px black;
+    color: saddlebrown;
+    z-index: 100;
+    position: relative;
+    font-family: Korolev;
+    font-size: 22px;
+}
+
+#DayMakeMooi {
+    margin-top: 150px;
+    height: 100px;
+}
+
+#Daylogo {
+    width: 100%;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform: translate(500%, -135%);
+}
+
+
+#DayTitel {
+    margin: 0px 25%;
+    text-align: right;
+    transform: translateX(-20.5%);
+    text-shadow: 0 0 10px black;
+    color: saddlebrown;
+    z-index: 100;
+    position: relative;
+    font-family: Korolev;
+    font-size: 50px;
+}
+
+#DayOnderTitel {
+    margin: 0px 25%;
+    width: 100%;
+    font-family: Korolev;
+    text-shadow: 0 0 10px black;
+    color: saddlebrown;
+}

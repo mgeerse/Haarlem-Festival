@@ -1,0 +1,19 @@
+﻿@font-face {
+    font-family: 'Korolev';
+    src: url(../fonts/KorolevMilitaryStencil.ttf);
+}
+
+body{
+    background-image: url(../Content/Images/Talking/Background.jpg);
+    background-size: cover;
+}
+
+button{
+    position: absolute;
+    margin-right: 50px;
+    width: 200px;
+    height: 75px;
+    bottom: 8%;
+    background-color: #fff;
+    color: #666666;
+}
