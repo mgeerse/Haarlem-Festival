@@ -237,6 +237,9 @@
     <Content Include="Content\Images\Historic\1GroteMarkt.jpg" />
     <Content Include="Content\Images\Historic\2GroteKerk.jpg" />
     <Content Include="Content\Images\Historic\8AmsterdamsePoort.jpg" />
+    <Content Include="Content\Images\Home\Dining.png" />
+    <Content Include="Content\Images\Home\Historic.png" />
+    <Content Include="Content\Images\Home\Talking.png" />
     <Content Include="Content\Images\Jazz\Artists\ChrisAllen.jpg" />
     <Content Include="Content\Images\Jazz\Artists\Evolve.jpg" />
     <Content Include="Content\Images\Jazz\Artists\FoxMayors.jpg" />
@@ -267,9 +270,6 @@
     <Content Include="Content\Images\Historic\plattegrond_haarlem3.jpg" />
     <Content Include="Content\Images\logo.svg" />
     <Content Include="Content\Images\logo.png" />
-    <Content Include="Content\Images\Home\Tours.png" />
-    <Content Include="Content\Images\Home\Talking.png" />
-    <Content Include="Content\Images\Home\Restaurants.png" />
     <Content Include="Content\Images\Home\Jazz.png" />
     <Content Include="Content\Images\Talking\Background.jpg" />
     <Content Include="Content\Images\Talking\femkexjob.PNG" />
