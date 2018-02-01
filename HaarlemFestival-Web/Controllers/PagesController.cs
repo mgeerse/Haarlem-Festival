@@ -29,9 +29,12 @@ namespace HaarlemFestival_Web.Controllers
             return View();
         }
 
+        private DiningRepository diningRepository = new DiningRepository();
+
         public ActionResult Dining()
         {
-            return View();
+            IEnumerable<Dining> information = diningRepository.GetAll();
+            return View(information);
         }
 
         public ActionResult Jazz()

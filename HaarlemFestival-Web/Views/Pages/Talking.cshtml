@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HaarlemFestival_Web.Models.Talking>
+﻿@model List<HaarlemFestival_Web.Models.Talking>
 @{
     ViewBag.Title = "Talking";
     Layout = "~/Views/Shared/Pages/_Layout.cshtml";
@@ -7,34 +7,48 @@
 <link rel="stylesheet" href="../Content/Talking.css" />
 
 <body>
-    <table class="table">
-            @foreach (var information in Model)
-            {
-            <tr>
-                <td>@information.SpeakerOne.Name;</td>
-                <td>@information.SpeakerTwo.Name;</td>
-            </tr>
-            }
-        </table>
+    <br />
+    <h1>Talking Haarlem</h1>
+    <p>The place where famous people interview each other</p>
 
-    <br />
-    <br />
-    <table style="width:90%">
+    <input type="radio" name="tabs" id="tab1" checked="checked">
+    <label for="tab1">Information</label>
+    <input type="radio" name="tabs" id="tab2">
+    <label for="tab2">Thursday</label>
+    <input type="radio" name="tabs" id="tab3">
+    <label for="tab3">Friday</label>
+    <input type="radio" name="tabs" id="tab4">
+    <label for="tab4">Saturday</label>
+    <input type="radio" name="tabs" id="tab5">
+
+    <table>
         <tr>
-            <td><img src="../Content/Images/Talking/femkexjob.PNG" alt="Femke meets Job " width="450" height="150"></td>
-            <td>2</td>
-            <td>3</td>
+            <td><img src="../Content/Images/Talking/robxgiel.PNG" alt="Rob meets Giel" width="600" height="160"></td>
         </tr>
         <tr>
-            <td><img src="../Content/Images/Talking/robxgiel.PNG" alt="Rob meets Giel" width="450" height="150"></td>
-            <td>Smith</td>
-            <td>50</td>
+            <td><img src="../Content/Images/Talking/femkexjob.PNG" alt="Femke meets Job " width="600" height="160"></td>
         </tr>
         <tr>
-            <td><img src="../Content/Images/Talking/paulxbrigitte.PNG" alt="Paul meets Brigitte" width="450" height="150"></td>
-            <td>Jackson</td>
-            <td>94</td>
+            <td><img src="../Content/Images/Talking/paulxbrigitte.PNG" alt="Paul meets Brigitte" width="600" height="160"></td>
         </tr>
     </table>
-    <button type="button">Reserveren</button>
+
+    <div id="tab-content1" class="tab-content">
+        <h2>Talking Haarlem is an event where two famous people are going to interview each other about Haarlem. They are going to talk about their career and what Haarlem has done for them. This event is free but reservation is mandatory. Please keep in mind that you can order a maximum of two tickets per day</h2>
+        <p></p>
+    </div>
+    <div id="tab-content2" class="tab-content">
+        <h2>@Model[0].SpeakerOne.Name <br /> @Model[0].SpeakerOne.Description <br /> <br /> @Model[0].SpeakerTwo.Name <br /> @Model[0].SpeakerTwo.Description</h2>
+        <p></p>
+    </div>
+    <div id="tab-content3" class="tab-content">
+        <h2>@Model[1].SpeakerOne.Name <br /> @Model[1].SpeakerOne.Description <br /> <br /> @Model[1].SpeakerTwo.Name <br /> @Model[1].SpeakerTwo.Description</h2>
+        <p></p>
+    </div>
+    <div id="tab-content4" class="tab-content">
+        <h2>@Model[2].SpeakerOne.Name <br /> @Model[2].SpeakerOne.Description <br /> <br /> @Model[2].SpeakerTwo.Name <br /> @Model[2].SpeakerTwo.Description</h2>
+        <p></p>
+    </div>
+        <br />
+        <button type="button">Reserve</button>
 </body>
