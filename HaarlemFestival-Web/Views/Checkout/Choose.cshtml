@@ -2,19 +2,29 @@
     ViewBag.Title = "Choose";
     Layout = "~/Views/Shared/Checkout/_Layout.cshtml";
 }
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
 
-<div class="grid-container-4">
+            @*Ajax actions are used to dynamically load content into the ticket picking list.*@
+            @Ajax.ActionLink("Historic Tours", "PartialWalking", "Checkout", new AjaxOptions { UpdateTargetId = "ticket-choose-content" }, new { @class = "btn btn-lg" })
+            @Ajax.ActionLink("Dining in Haarlem", "PartialDining", "Checkout", new AjaxOptions { UpdateTargetId = "ticket-choose-content" }, new { @class = "btn btn-lg" })
+            @Ajax.ActionLink("Jazz @ Patronaat", "PartialJazz", "Checkout", new AjaxOptions { UpdateTargetId = "ticket-choose-content" }, new { @class = "btn btn-lg" })
+            @Ajax.ActionLink("Talking Haarlem", "PartialTalking", "Checkout", new AjaxOptions { UpdateTargetId = "ticket-choose-content" }, new { @class = "btn btn-lg" })
+        </div>
 
-    @*Ajax actions are used to dynamically load content into the ticket picking list.*@
-    @Ajax.ActionLink("Historic Tours", "PartialWalking", "Checkout", new AjaxOptions { UpdateTargetId = "ticket-choose-content" }, new { @class = "btn btn-lg" })
-    @Ajax.ActionLink("Dining in Haarlem", "PartialDining", "Checkout", new AjaxOptions { UpdateTargetId = "ticket-choose-content" }, new { @class = "btn btn-lg" })
-    @Ajax.ActionLink("Jazz @ Patronaat", "PartialJazz", "Checkout", new AjaxOptions { UpdateTargetId = "ticket-choose-content" }, new { @class = "btn btn-lg" })
-    @Ajax.ActionLink("Talking Haarlem", "PartialTalking", "Checkout", new AjaxOptions { UpdateTargetId = "ticket-choose-content" }, new { @class = "btn btn-lg" })
+        <div id="ticket-choose-content" class="col-md-4">
+            <!-- Press a button first. -->
+        </div>
+
+        <div id="shoppingcart" class="col-md-4">
+            
+        </div>
+    </div>
 </div>
-
-<div id="ticket-choose-content" class="grid-container-4">
-    <!-- Press a button first. -->
-</div>
-
-<div class="grid-container-4"></div>
-<div class="clearfix"></div>
+<script>
+    $('btn.order').click(function () {
+        var element = '<div></div>';
+        $('#shoppingcart').add();
+    });
+</script>

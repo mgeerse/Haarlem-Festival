@@ -159,9 +159,12 @@
     <Compile Include="Contexts\FestivalContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JazzController.cs" />
     <Compile Include="Controllers\PagesController.cs" />
+    <Compile Include="Models\ViewModels\JazzViewModel.cs" />
+    <Compile Include="Repositories\RestaurantRepository.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -205,7 +208,11 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Restaurant.cs" />
+    <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\ViewModels\DiningViewModel.cs" />
+    <Compile Include="Models\ViewModels\EventViewModel.cs" />
+    <Compile Include="Models\ViewModels\TalkingViewModel.cs" />
+    <Compile Include="Models\ViewModels\WalkingViewModel.cs" />
     <Compile Include="Repositories\ActivityRepository.cs" />
     <Compile Include="Repositories\DiningRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
@@ -213,6 +220,8 @@
     <Compile Include="Repositories\SubjectRepository.cs" />
     <Compile Include="Repositories\TalkingRepository.cs" />
     <Compile Include="Repositories\WalkingRepository.cs" />
+    <Content Include="Content\Admin.css" />
+    <Content Include="Content\Admin.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -220,9 +229,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Checkout\Choose.css" />
-    <Content Include="Content\Checkout\Choose.js" />
-    <Content Include="Content\Checkout\FieldReplacement\Dining.js" />
+    <Content Include="Content\Checkout\FormVerification\Dining.js" />
     <Content Include="Content\Dining.css" />
+    <Content Include="Content\Historic.css" />
     <Content Include="Content\Home.css" />
     <Content Include="Content\Images\Dining\Background.jpg" />
     <Content Include="Content\Images\Jazz\Artists\ChrisAllen.jpg" />
@@ -258,6 +267,16 @@
     <Content Include="Content\Images\Historic\8. Amsterdamse Poort.jpg" />
     <Content Include="Content\Images\Historic\9. Hof van Bakenes.jpg" />
     <Content Include="Content\Images\Historic\background.jpg" />
+    <Content Include="Content\Images\Historic\1. Grote Markt.jpg" />
+    <Content Include="Content\Images\Historic\2. Grote Kerk.jpg" />
+    <Content Include="Content\Images\Historic\3. De Hallen.jpg" />
+    <Content Include="Content\Images\Historic\4. Proveniershof.jpg" />
+    <Content Include="Content\Images\Historic\5. Jopenkerk.jpg" />
+    <Content Include="Content\Images\Historic\6. Waalse Kerk.jpg" />
+    <Content Include="Content\Images\Historic\7. Molen de Adriaan.jpg" />
+    <Content Include="Content\Images\Historic\8. Amsterdamse Poort.jpg" />
+    <Content Include="Content\Images\Historic\9. Hof van Bakenes.jpg" />
+    <Content Include="Content\Images\Historic\background.jpg" />
     <Content Include="Content\Images\Historic\plattegrond haarlem.jpg" />
     <Content Include="Content\Images\Historic\plattegrond_haarlem2.jpg" />
     <Content Include="Content\Images\Historic\plattegrond_haarlem3.jpg" />
@@ -268,10 +287,15 @@
     <Content Include="Content\Images\Home\Restaurants.png" />
     <Content Include="Content\Images\Home\Jazz.png" />
     <Content Include="Content\Images\Talking\Background.jpg" />
+    <Content Include="Content\Images\Talking\femkexjob.PNG" />
+    <Content Include="Content\Images\Talking\paulxbrigitte.PNG" />
+    <Content Include="Content\Images\Talking\robxgiel.PNG" />
     <Content Include="Content\Jazz.css" />
     <Content Include="Content\NavigationBar.css" />
     <Content Include="Content\Talking.css" />
     <Content Include="JavaScript.js" />
+    <Content Include="Content\Checkout\Choose.css" />
+    <Content Include="MockInsert.sql" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountType.cs" />
     <Compile Include="Models\Activity.cs" />
@@ -280,7 +304,6 @@
     <Compile Include="Models\Jazz.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Dining.cs" />
-    <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\Talking.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\TourGuide.cs" />
@@ -291,6 +314,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -320,11 +346,15 @@
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
@@ -362,7 +392,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Pages\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Account\_Layout.cshtml" />
     <Content Include="Views\Checkout\Choose.cshtml" />
     <Content Include="Views\Shared\Checkout\_Layout.cshtml" />
     <Content Include="Views\Checkout\_Dining.cshtml" />
@@ -383,6 +412,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+	<Content Include="Views\Pages\Talking.cshtml" />
     <Content Include="Views\Shared\Pages\_Layout.cshtml" />
     <Content Include="Views\Pages\Test.cshtml" />
     <Content Include="Views\Pages\Dining.cshtml" />
@@ -392,11 +422,51 @@
     <Content Include="Views\Jazz\Friday.cshtml" />
     <Content Include="Views\Jazz\Saturday.cshtml" />
     <Content Include="Views\Jazz\Sunday.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Admin\_Layout_Guest.cshtml" />
+    <Content Include="Views\Checkout\Choose.cshtml" />
+    <Content Include="Views\Shared\Checkout\_Layout.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Shared\Admin\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Aside.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\TicketSalesAttendance.cshtml" />
+    <Content Include="Views\Dashboard\TimeTable.cshtml" />
+    <Content Include="Views\Dashboard\PageContent.cshtml" />
+    <Content Include="Views\Dashboard\EventDetails.cshtml" />
+    <Content Include="Views\Dashboard\PersonalInfo.cshtml" />
+    <Content Include="Views\Dashboard\EditEvent.cshtml" />
+    <Content Include="Views\Shared\_EditJazz.cshtml" />
+    <Content Include="Views\Shared\_EditTalking.cshtml" />
+    <Content Include="Views\Shared\_EditWalking.cshtml" />
+    <Content Include="Views\Shared\_EditDining.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Account\" />
+    <Folder Include="Helpers\" />
     <Folder Include="Views\Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712041212132_InitialCreate.resx">
@@ -433,6 +503,12 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -462,13 +538,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

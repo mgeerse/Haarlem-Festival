@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HaarlemFestival_Web.Repositories;
+using HaarlemFestival_Web.Models;
 
 namespace HaarlemFestival_Web.Controllers
 {
@@ -14,6 +16,7 @@ namespace HaarlemFestival_Web.Controllers
         /*
          * Returns the user to the Homepage if no specific page is selected.
          */
+
         public ActionResult Index()
         {
             return RedirectToAction("Index", "Home");
@@ -26,9 +29,12 @@ namespace HaarlemFestival_Web.Controllers
             return View();
         }
 
+        private DiningRepository diningRepository = new DiningRepository();
+
         public ActionResult Dining()
         {
-            return View();
+            IEnumerable<Dining> information = diningRepository.GetAll();
+            return View(information);
         }
 
         public ActionResult Jazz()
@@ -36,13 +42,14 @@ namespace HaarlemFestival_Web.Controllers
             return View();
         }
 
+        private TalkingRepository talkingRepository = new TalkingRepository();
+
         public ActionResult Talking()
         {
-            return View();
+            IEnumerable<Talking> information = talkingRepository.GetAll().ToList();
+            return View(information);
         }
 
         #endregion
-
-
     }
 }

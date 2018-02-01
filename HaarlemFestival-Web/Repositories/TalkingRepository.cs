@@ -4,12 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 
 namespace HaarlemFestival_Web.Repositories
 {
     public class TalkingRepository : IRepository<Talking>
     {
-
         private FestivalContext context = new FestivalContext();
 
         public bool Delete(Talking objectToDelete)
@@ -19,7 +19,8 @@ namespace HaarlemFestival_Web.Repositories
 
         public IEnumerable<Talking> GetAll()
         {
-            return context.Talking;
+            IEnumerable<Talking> talking = context.Talking.Include(model => model.SpeakerOne).Include(model =>model.SpeakerTwo);
+            return talking;
         }
 
         public Talking GetById(int id)
