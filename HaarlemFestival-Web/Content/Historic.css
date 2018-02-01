@@ -200,11 +200,13 @@ body{
     color: #003300;
     padding-left: 40px;
     padding-right: 40px;
+    background-color: white;
 }
 
+
+
+
 /* Model images from here*/
-
-
 
 /* Style the Image Used to Trigger the Modal */
 #myImg {
