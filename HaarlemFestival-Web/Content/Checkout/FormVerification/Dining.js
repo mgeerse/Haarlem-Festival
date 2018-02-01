@@ -1,0 +1,4 @@
+﻿//TODO
+$('document').ready(function () {
+
+});

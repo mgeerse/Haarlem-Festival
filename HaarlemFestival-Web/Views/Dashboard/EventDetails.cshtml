@@ -1,0 +1,57 @@
+﻿@using HaarlemFestival_Web.Models
+@using HaarlemFestival_Web.Models.ViewModels
+@model EventViewModel
+
+@{
+    ViewBag.Title = "EventDetails";
+    Layout = "~/Views/Shared/Admin/_Layout.cshtml";
+}
+
+<h2>@Html.ActionLink("Dashboard", "Index") > Manage Event Specific Details</h2>
+
+<input type="text" id="myInput" placeholder="Filter by Main Event..">
+
+<table id="myTable">
+    <tr class="header">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Capacity</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Main Event</th>
+        <th>Location</th>
+        <th>Price</th>
+        <th> </th>
+    </tr>
+    
+    @foreach (Activity a in Model.ActivitiesList)
+    {
+        if (a != null)
+        {
+            <tr>
+                <td>@a.Id</td>
+                <td>@a.Name</td>
+                <td>@a.Description</td>
+                <td>@a.Capacity</td>
+                <td>@a.StartTime</td>
+                <td>@a.EndTime</td>
+                <td>@Model.GetSubjectById(a.SubjectId)</td>
+                <td>@Model.GetLocationById(a.LocationId)</td>
+                <td>@a.Price</td>
+                <td>
+                    @Html.ActionLink(linkText: "Edit",
+                 actionName: "EditEvent",
+                 controllerName: "Dashboard",
+                 routeValues: new { id = a.Id, subjectId = a.SubjectId },
+                 htmlAttributes: new { @class = "icon-1 info-tooltip", @Title = "Edit" })
+            </td>
+        </tr>
+        }
+        else
+        {
+            continue;
+        }
+
+    }
+</table>

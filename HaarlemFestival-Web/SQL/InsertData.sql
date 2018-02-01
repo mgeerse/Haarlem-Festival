@@ -85,7 +85,9 @@ VALUES
 ('Argentinian');
 
 -- Possible issues with inserting tourguides due to changing IDs.
-INSERT INTO Walking (Id, TourGuideId) VALUES (1, 11),
+INSERT INTO Walking (Id, TourGuideId) 
+VALUES 
+(1, 11),
 (2, 12),
 (3, 13),
 (4, 14),

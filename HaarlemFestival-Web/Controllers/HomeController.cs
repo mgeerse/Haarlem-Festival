@@ -4,16 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using HaarlemFestival_Web.Contexts;
+using HaarlemFestival_Web.Repositories;
 
 namespace HaarlemFestival_Web.Controllers
 {
     public class HomeController : Controller
     {
-        private Repositories.SubjectRepository SR = new Repositories.SubjectRepository();
-
         public ActionResult Index()
         {
-            IEnumerable<Models.Subject> Subjects = SR.GetAllSubjects();
+            SubjectRepository SR = new SubjectRepository();
+
+            IEnumerable<Models.Subject> Subjects = SR.GetAll();
 
             return View("/Views/Pages/Home/index.cshtml",Subjects);
         }

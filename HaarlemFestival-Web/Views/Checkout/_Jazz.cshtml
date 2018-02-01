@@ -1,7 +1,55 @@
-﻿
+﻿@model HaarlemFestival_Web.Models.JazzViewModel
 @{
-    ViewBag.Title = "_Jazz";
+    ViewBag.Title = "_Dining";
 }
 
-<h2>_Jazz</h2>
+@using (Html.BeginForm("Checkout", "AddTicketToCart", FormMethod.Post, new { id = "order" }))
+{
+    <div class="row">
+        <label class="col-md-6 required" for="day">Day</label>
+        <select class="col-md-6" id="day">
+            <option value="0">Thursday</option>
+            <option value="1">Friday</option>
+            <option value="2">Saturday</option>
+        </select>
+    </div>
+    <div class="row">
+        <label class="col-md-6 required" for="band">Band</label>
+        <select class="col-md-6" id="band"></select>
+    </div>
+    <div class="row">
+        <label class="col-md-6 required">Amount of tickets</label>
+        <div><input class="number col-md-6" width="100" type="number" id="ticket-count" value="1" /></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><span style="color:red">*</span> = The field is required.</div>
+        <div class="col-md-6 btn"><input type="submit" class="btn" form="order" value="Add to cart" /></div>
+    </div>
+}
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.getJSON('/Checkout/GetJazzBandsForDay', { day: $('#day').val() }, function (data) {
+            $.each(data, function () {
+                $('#band').append('<option value=' +
+                    this.Id + '>' + this.Name + '</option>');
+            });
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            alert('Error getting activities!');
+        });
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        alert('Error getting restaurants!');
+    });
+
+    $('#day').change(function () {
+        $('#band option').remove();
+        $.getJSON('/Checkout/GetJazzBandsForDay', { day: $('#day').val() }, function (data) {
+            $.each(data, function () {
+                $('#band').append('<option value=' +
+                    this.Id + '>' + this.Name + '</option>');
+            });
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            alert('Error getting activities!');
+        });
+    });
+</script>

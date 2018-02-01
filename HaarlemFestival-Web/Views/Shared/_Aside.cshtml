@@ -1,0 +1,91 @@
+﻿<div class="col-lg-2 aside border-left border-bottom border-right mb-3 rounded">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    <span class="glyphicon glyphicon-folder-close">
+                                    </span>Overview
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            @Html.ActionLink("Dashboard", "Index")
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            @Html.ActionLink("Ticket Sales & Attendance", "TicketSalesAttendance")
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            @Html.ActionLink("Timetable", "Timetable")
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                    <span class="glyphicon glyphicon-th">
+                                    </span>Manage Event
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            @Html.ActionLink("Manage Event Page Content", "PageContent")
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            @Html.ActionLink("Manage Event Specific Details", "EventDetails")
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                    <span class="glyphicon glyphicon-user">
+                                    </span>Account
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            @Html.ActionLink("Personal Information", "PersonalInfo")
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        @Html.ActionLink("Logout", "../Account/Logout")
+    </div>
+</div>
