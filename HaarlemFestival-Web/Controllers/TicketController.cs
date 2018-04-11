@@ -27,9 +27,8 @@ namespace HaarlemFestival_Web.Controllers
                 talking = talkingRepository.GetAll(),
                 tickets = ticketRepository.GetAll()
             };
-            
 
-            return View("~/Views/Ticket/Index.cshtml");
+            return View("~/Views/Ticket/Index.cshtml", availableTicket);
         }
     }
 }
