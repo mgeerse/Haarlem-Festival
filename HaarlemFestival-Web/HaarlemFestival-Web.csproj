@@ -163,8 +163,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JazzController.cs" />
     <Compile Include="Controllers\PagesController.cs" />
+    <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Models\ViewModels\JazzDay.cs" />
     <Compile Include="Models\ViewModels\JazzViewModel.cs" />
+    <Compile Include="Repositories\Class1.cs" />
     <Compile Include="Repositories\RestaurantRepository.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
@@ -433,11 +435,13 @@
     <Content Include="Views\Shared\_EditDining.cshtml" />
     <Content Include="Views\Pages\Historic.cshtml" />
     <Content Include="Views\Jazz\Day.cshtml" />
+    <Content Include="Views\Tickets\Buy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Helpers\" />
     <Folder Include="Views\Test\" />
+    <Folder Include="Views\Ticket\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
