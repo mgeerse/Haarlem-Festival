@@ -15,7 +15,9 @@ namespace HaarlemFestival_Web.Repositories
         {
             List<string> Days = new List<string>();
 
-            Days.AddRange(GetAll().Select(x => x.StartTime.ToShortDateString()).Distinct());
+            Days.AddRange(
+                GetAll().
+                Select(x => x.StartTime.ToShortDateString()).Distinct());
 
             return Days;
         }
