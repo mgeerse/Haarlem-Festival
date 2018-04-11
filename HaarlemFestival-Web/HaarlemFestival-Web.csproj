@@ -164,9 +164,26 @@
     <Compile Include="Controllers\JazzController.cs" />
     <Compile Include="Controllers\PagesController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
+    <Compile Include="Migrations\201804111900527_LocationsInRestaurants.cs" />
+    <Compile Include="Migrations\201804111900527_LocationsInRestaurants.Designer.cs">
+      <DependentUpon>201804111900527_LocationsInRestaurants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804111903384_RestaurantInLocation.cs" />
+    <Compile Include="Migrations\201804111903384_RestaurantInLocation.Designer.cs">
+      <DependentUpon>201804111903384_RestaurantInLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804111911387_WalkingInLocation.cs" />
+    <Compile Include="Migrations\201804111911387_WalkingInLocation.Designer.cs">
+      <DependentUpon>201804111911387_WalkingInLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804111914488_removeWalkingFromLocation.cs" />
+    <Compile Include="Migrations\201804111914488_removeWalkingFromLocation.Designer.cs">
+      <DependentUpon>201804111914488_removeWalkingFromLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModels\AvailableTicket.cs" />
     <Compile Include="Models\ViewModels\JazzDay.cs" />
     <Compile Include="Models\ViewModels\JazzViewModel.cs" />
-    <Compile Include="Repositories\Class1.cs" />
+    <Compile Include="Repositories\TicketRepository.cs" />
     <Compile Include="Repositories\RestaurantRepository.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
@@ -435,13 +452,11 @@
     <Content Include="Views\Shared\_EditDining.cshtml" />
     <Content Include="Views\Pages\Historic.cshtml" />
     <Content Include="Views\Jazz\Day.cshtml" />
-    <Content Include="Views\Tickets\Buy.cshtml" />
+    <Content Include="Views\Ticket\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Helpers\" />
-    <Folder Include="Views\Test\" />
-    <Folder Include="Views\Ticket\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -482,6 +497,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801311358424_AccountTable.resx">
       <DependentUpon>201801311358424_AccountTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804111900527_LocationsInRestaurants.resx">
+      <DependentUpon>201804111900527_LocationsInRestaurants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804111903384_RestaurantInLocation.resx">
+      <DependentUpon>201804111903384_RestaurantInLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804111911387_WalkingInLocation.resx">
+      <DependentUpon>201804111911387_WalkingInLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804111914488_removeWalkingFromLocation.resx">
+      <DependentUpon>201804111914488_removeWalkingFromLocation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

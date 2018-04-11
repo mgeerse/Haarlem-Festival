@@ -13,5 +13,7 @@ namespace HaarlemFestival_Web.Models
         public string Street { get; set; }
         public string Postalcode { get; set; }
         public string Name { get; set; }
+        
+        public virtual Restaurant Restaurant { get; set; }
     }
 }
