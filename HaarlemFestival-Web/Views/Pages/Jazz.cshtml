@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<string>
+@{
     ViewBag.Title = "Jazz";
     Layout = "~/Views/Shared/Pages/_Layout.cshtml";
 }
@@ -25,10 +26,16 @@
 
 
     <section id="Days">
-        <h1 class="Day"><a class="netteLink" href="/Jazz/Thursday">THURSDAY 26-08-2018</a></h1>
-        <h1 class="Day"><a class="netteLink" href="/Jazz/Friday">FRIDAY 27-08-2018</a></h1>
-        <h1 class="Day"><a class="netteLink" href="/Jazz/Saturday">SATURDAY 28-08-2018</a></h1>
-        <h1 class="Day"><a class="netteLink" href="/Jazz/Sunday">SUNDAY 29-08-2018</a></h1>
+        @foreach (var Day in Model)
+        {
+            <h1 class="Day"><a class="netteLink" href="/Jazz/Day=@Day">@Day</a></h1>
+        }
+        <!--
+            <h1 class="Day"><a class="netteLink" href="/Jazz/Thursday">THURSDAY 26-08-2018</a></h1>
+            <h1 class="Day"><a class="netteLink" href="/Jazz/Friday">FRIDAY 27-08-2018</a></h1>
+            <h1 class="Day"><a class="netteLink" href="/Jazz/Saturday">SATURDAY 28-08-2018</a></h1>
+            <h1 class="Day"><a class="netteLink" href="/Jazz/Sunday">SUNDAY 29-08-2018</a></h1>
+        -->
     </section>
 
     <section id="infoTekst">

@@ -402,11 +402,6 @@
     <Content Include="Views\Pages\Test.cshtml" />
     <Content Include="Views\Pages\Dining.cshtml" />
     <Content Include="Views\Pages\Jazz.cshtml" />
-    <Content Include="Views\Jazz\Thursday.cshtml" />
-    <Content Include="Views\Jazz\Band.cshtml" />
-    <Content Include="Views\Jazz\Friday.cshtml" />
-    <Content Include="Views\Jazz\Saturday.cshtml" />
-    <Content Include="Views\Jazz\Sunday.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Admin\_Layout_Guest.cshtml" />
     <Content Include="Views\Checkout\Choose.cshtml" />
@@ -436,6 +431,7 @@
     <Content Include="Views\Shared\_EditWalking.cshtml" />
     <Content Include="Views\Shared\_EditDining.cshtml" />
     <Content Include="Views\Pages\Historic.cshtml" />
+    <Content Include="Views\Jazz\Days.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

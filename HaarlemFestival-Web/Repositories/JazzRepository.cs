@@ -11,35 +11,18 @@ namespace HaarlemFestival_Web.Repositories
     {
         private FestivalContext context = new FestivalContext();
 
+        public List<string> GetDays()
+        {
+            List<string> Days = new List<string>();
+
+            Days.AddRange(GetAll().Select(x => x.StartTime.ToShortDateString()).Distinct());
+
+            return Days;
+        }
+
         public List<Jazz> GetByDay(string Day)
         {
-            int _Day = 0;
-
-            //Day omzetten naar een int
-            if (Day == "Thursday")
-            {
-                _Day = 26;
-            }
-            else if (Day == "Friday")
-            {
-                _Day = 27;
-            }
-            else if (Day == "Saturday")
-            {
-                _Day = 28;
-            }
-            else if (Day == "Sunday")
-            {
-                _Day = 29;
-            }
-
-            if (_Day == 0)
-            {
-                //Dag is niet correct
-                return new List<Jazz>();
-            }
-
-            return context.Jazz.Where(x => (x.StartTime.Day == _Day)).ToList();
+            return GetAll().Where(x => x.StartTime.ToShortDateString() == Day).ToList();
         }
 
 
