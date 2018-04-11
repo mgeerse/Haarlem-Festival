@@ -14,18 +14,19 @@ namespace HaarlemFestival_Web.Controllers
 
         public ActionResult Day(string Date)
         {
-            if (!DateTime.TryParse(Date, out DateTime dateTime))
+            if ((!DateTime.TryParse(Date, out DateTime dateTime) || jazzRepository.GetByDay(Date).Count == 0))
             {
                 return View("~/Views/Pages/Jazz.cshtml", jazzRepository.GetDays());
             }
-
-            JazzDay jazzDay = new JazzDay
+            else
             {
-                Jazzs = jazzRepository.GetByDay(Date),
-                Date = dateTime.DayOfWeek.ToString()
-            };
-
-            return View("~/Views/Jazz/Day.cshtml", jazzDay);
+                JazzDay jazzDay = new JazzDay
+                {
+                    Jazzs = jazzRepository.GetByDay(Date),
+                    Date = dateTime.DayOfWeek.ToString()
+                };
+                return View("~/Views/Jazz/Day.cshtml", jazzDay);
+            }
         }
     }
 }
