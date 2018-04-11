@@ -10,11 +10,14 @@ namespace HaarlemFestival_Web.Controllers
 {
     public class JazzController : Controller
     {
-        JazzRepository jazzRepository = new JazzRepository();
+        private JazzRepository jazzRepository = new JazzRepository();
 
         public ActionResult Day(string Date)
         {
-            DateTime dateTime = DateTime.Parse(Date);
+            if (!DateTime.TryParse(Date, out DateTime dateTime))
+            {
+                return View("~/Views/Pages/Jazz.cshtml", jazzRepository.GetDays());
+            }
 
             JazzDay jazzDay = new JazzDay
             {
