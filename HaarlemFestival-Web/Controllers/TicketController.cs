@@ -73,7 +73,7 @@ namespace HaarlemFestival_Web.Controllers
             //Send mail
             SmtpClient smtpClient = new SmtpClient("smtp.live.com", 25);
 
-            smtpClient.Credentials = new System.Net.NetworkCredential("mgeerse@hotmail.com", "1koolland&");
+            smtpClient.Credentials = new System.Net.NetworkCredential("mgeerse@hotmail.com", "wachtwoordmaarverborgenhe;)");
             smtpClient.UseDefaultCredentials = true;
             smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtpClient.EnableSsl = true;
@@ -111,25 +111,37 @@ namespace HaarlemFestival_Web.Controllers
             //Nu de gegevens van tickets uit shoppingCart sturen naar de database!
 
 
+            //FIX ME / FIXME:
+            //Crash bij het toevoegen van een ticket EN customer in de database!
+            //Error-code:
+            //An entity object cannot be referenced by multiple instances of IEntityChangeTracker.
+            //
+            //Het heeft er mee te maken dat Ticket door meerdere contexten wordt gevolgd, zoals in JazzRepository.context, customerRepository.context
+            //en ook ActivityRepository.context.
+            //
+            //Meer informatie:
+            //
+            //https://stackoverflow.com/questions/10191734/entity-object-cannot-be-referenced-by-multiple-instances-of-ientitychangetracker?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+            //
+            //I am so fucked
+
+
+
+            //foreach (var item in shoppingCart.tickets)
+            //{
+            //    ticketRepository.Insert(item);
+            //}
+
             //En dan nog de customer in de database zetten
-            Customer customer = new Customer
-            {
-                FirstName = Firstname,
-                LastName = Sirname,
-                EmailAddress = Email,
-                Tickets = shoppingCart.tickets
-            };
+            //Customer customer = new Customer
+            //{
+            //    FirstName = Firstname,
+            //    LastName = Sirname,
+            //    EmailAddress = Email,
+            //    Tickets = shoppingCart.tickets
+            //};
 
-            customerRepository.Insert(customer);
-
-            List<Ticket> customerTickets = shoppingCart.tickets;
-            List<Ticket> escape = new List<Ticket>();
-            foreach (var item in customerTickets)
-            {
-                Ticket ticket = item;
-                escape.Add(ticket);
-            }
-
+            //customerRepository.Insert(customer);
 
             return View("~/Views/Ticket/Thanks");
         }
