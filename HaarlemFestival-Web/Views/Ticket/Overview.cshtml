@@ -1,4 +1,5 @@
-﻿@model List<HaarlemFestival_Web.Models.Ticket>
+﻿@model HaarlemFestival_Web.Models.ShoppingCart
+
 @{
     ViewBag.Title = "Order Tickets";
     Layout = "~/Views/Shared/Pages/_Layout.cshtml";
@@ -7,36 +8,36 @@
 <h2>Your tickets - overview</h2>
 
 
-@if (Model.Count != 0)
+@if (Model.tickets.Count != 0)
 {
-
-
     <table class="table-primary" style="width:100%">
         <tr class="table-responsive-md">
-            <th>Event</th>
-            <th>Price</th>
+            <th>DEV</th>
+            <th>Name</th>
             <th>Amount</th>
+            <th>Price per ticket</th>
+            <th>Total price</th>
             <th>Date</th>
             <th>Time</th>
-            <th>Location</th>
         </tr>
 
-        @foreach (var item in Model)
+        @foreach (var item in Model.tickets)
         {
-            using (Html.BeginForm("EditTicket", "Ticket", FormMethod.Post, new { TicketId = Html.Value("Id"), Option = Html.Value("submit"), Amount = Html.Value("amount") }))
+            using (Html.BeginForm("EditTicket", "Ticket", FormMethod.Post, new { TicketId = Html.Value("TicketId"), Amount = Html.Value("Amount"), Option = Html.Value("submit") }))
             {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Activity.Name</td>
+            <td><input type="number" name="amount" value="@item.Amount" /></td>
+            <td>&euro;@item.Price</td>
+            <td>&euro;@(item.Price * item.Amount)</td>
+            <td>@item.Activity.StartTime.ToShortDateString()</td>
+            <td>@item.Activity.StartTime.ToShortTimeString() - @item.Activity.EndTime.ToShortTimeString()</td>
 
-                <tr>
-                    <td hidden="hidden"><input hidden="hidden" name="Id" value="@item.Id" /></td>
-                    <td><input type="number" name="amount" value="@item.Amount" /></td>
-                    <td>@item.Price</td>
-                    <td>@item.Amount</td>
-                    <td>@item.Activity.StartTime.ToShortDateString()</td>
-                    <td>@item.Activity.StartTime.ToShortTimeString() - @item.Activity.EndTime.ToShortTimeString()</td>
-                    <td>@item.Id</td>
-                    <td><input class="btn-warning" name="submit" value="Update Amount" type="submit" /></td>
-                    <td><input class="btn-warning" name="submit" value="Remove Ticket" type="submit" /></td>
-                </tr>
+            <td><input type="number" name="TicketId" hidden="hidden" value="@item.Id" /></td>
+            <td><input class="btn-warning" name="submit" value="Update Amount" type="submit" /></td>
+            <td><input class="btn-warning" name="submit" value="Remove Ticket" type="submit" /></td>
+        </tr>
             }
         }
 
@@ -50,3 +51,5 @@ else
 
     <a href="~/Ticket/" class="alert-info">Order tickets here</a>
 }
+
+<a href="/Ticket/Index">Back to all tickets</a>

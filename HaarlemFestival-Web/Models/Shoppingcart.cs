@@ -10,9 +10,9 @@ namespace HaarlemFestival_Web.Models
     {
         //Maarten Geerse
 
+        public List<int> UsedIds = new List<int>();
 
-
-        private TicketRepository ticketRepository = new TicketRepository();
+        private TicketRepository ticketRepository = TicketRepository.instance;
         //Singleton
         public static readonly ShoppingCart UniqueInstance;
 
@@ -34,23 +34,40 @@ namespace HaarlemFestival_Web.Models
             }
         }
 
+        public int GetNewId()
+        {
+            if (UsedIds.Count == 0)
+            {
+                UsedIds.Add(0);
+                return 0;
+            }
+            return UsedIds.Last() + 1;
+        }
         public void AddTicket(Ticket ticket)
         {
+            //Shoppingcart moet zijn eigen Id's bijhouden totdat deze in de database gaan.
+            //In de database worden ze weggehaald en gebruikt de database haar eigen nummering hiervoor.
+            ticket.Id = UsedIds.Last() + 1;
+
             tickets.Add(ticket);
-            ticketRepository.Insert(ticket);
+        }
+
+        public Ticket UpdateTicketAmount(int Id, int Amount)
+        {
+            Ticket ticket = tickets.Where(m => m.Id == Id).Single();
+            ticket.Amount = Amount;
+            return ticket;
         }
 
         public void RemoveTicketByObject(Ticket ticket)
         {
             tickets.Remove(ticket);
-            ticketRepository.Delete(ticket);
         }
 
-        public void RemoveTicketByInt(int Id)
+        public void RemoveTicketById(int Id)
         {
             Ticket ticket = tickets.Where(m => m.Id == Id).Single();
             tickets.Remove(ticket);
-            ticketRepository.Delete(ticket);
         }
 
         public decimal GetTotal()
