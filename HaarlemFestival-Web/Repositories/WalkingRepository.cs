@@ -34,7 +34,20 @@ namespace HaarlemFestival_Web.Repositories
 
         public Walking Update(Walking objectToUpdate)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Walking oudObject = context.Walking.Single(x => (x.Id == objectToUpdate.Id));
+
+                oudObject = objectToUpdate;
+
+                context.SaveChanges();
+
+                return objectToUpdate;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

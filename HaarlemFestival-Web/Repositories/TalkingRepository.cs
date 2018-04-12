@@ -19,7 +19,7 @@ namespace HaarlemFestival_Web.Repositories
 
         public IEnumerable<Talking> GetAll()
         {
-            IEnumerable<Talking> talking = context.Talking.Include(model => model.SpeakerOne).Include(model =>model.SpeakerTwo);
+            IEnumerable<Talking> talking = context.Talking.Include(model => model.SpeakerOne).Include(model => model.SpeakerTwo);
             return talking;
         }
 
@@ -35,7 +35,20 @@ namespace HaarlemFestival_Web.Repositories
 
         public Talking Update(Talking objectToUpdate)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Talking oudObject = context.Talking.Single(x => (x.Id == objectToUpdate.Id));
+
+                oudObject = objectToUpdate;
+
+                context.SaveChanges();
+
+                return objectToUpdate;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

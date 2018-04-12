@@ -41,7 +41,20 @@ namespace HaarlemFestival_Web.Repositories
 
         public Dining Update(Dining objectToUpdate)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Dining oudObject = context.Dining.Single(x => (x.Id == objectToUpdate.Id));
+
+                oudObject = objectToUpdate;
+
+                context.SaveChanges();
+
+                return objectToUpdate;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

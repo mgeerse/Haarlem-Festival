@@ -1,21 +1,38 @@
-﻿@{
-    ViewBag.Title = Model.Date + " - Information";
+﻿@model HaarlemFestival_Web.Models.ViewModels.AvailableTicket
+@{
+    ViewBag.Title = "Order Tickets";
     Layout = "~/Views/Shared/Pages/_Layout.cshtml";
+
+    //var test = Model.GetType().GetProperties().OfType<IEnumerable<object>>();
 }
 <h2>Ticket Overview</h2>
 
 <section>
-    <p>
-        <!--Hier komen de tickets voor Jazz-->
-    </p>
-    <p>
+    @*foreach (var item in Model.GetType().GetProperties().OfType<IEnumerable<object>>())
+        {
+            Console.Write(item);
+        }*@
 
-    </p>
+    
 
-    <p>
+    @foreach (var item in Model.jazz)
+    {
+        @item.Artist
+        @item.Capacity
+        @item.Description
 
-    </p>
-    <p>
+    }
+    @foreach (var item in Model.dining)
+    {
 
-    </p>
+    }
+    @foreach (var item in Model.talking)
+    {
+
+    }
+    @foreach (var item in Model.walking)
+    {
+
+    }
+
 </section>

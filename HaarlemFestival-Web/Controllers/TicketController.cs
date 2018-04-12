@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using HaarlemFestival_Web.Repositories;
 using HaarlemFestival_Web.Models.ViewModels;
+using HaarlemFestival_Web.Models;
 namespace HaarlemFestival_Web.Controllers
 {
     public class TicketController : Controller
@@ -23,10 +24,12 @@ namespace HaarlemFestival_Web.Controllers
             {
                 jazz = jazzRepository.GetAll(),
                 dining = diningRepository.GetAll(),
-                walking = walkingRepository.GetAll(),
                 talking = talkingRepository.GetAll(),
-                tickets = ticketRepository.GetAll()
+                walking = walkingRepository.GetAll()
             };
+
+            //Er moet een tickets left gemaakt worden
+            //Bij elke bestelling moet er in de database {amount} van de capacity af gaan
 
             return View("~/Views/Ticket/Index.cshtml", availableTicket);
         }
