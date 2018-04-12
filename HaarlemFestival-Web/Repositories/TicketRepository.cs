@@ -11,6 +11,22 @@ namespace HaarlemFestival_Web.Repositories
     {
         private FestivalContext db = new FestivalContext();
 
+        public static TicketRepository instance = null;
+
+        private TicketRepository() { }
+
+        public static TicketRepository Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new TicketRepository();
+                }
+                return instance;
+            }
+        }
+
         public IEnumerable<Ticket> GetAll()
         {
             return db.Tickets;
@@ -32,7 +48,15 @@ namespace HaarlemFestival_Web.Repositories
         //De onderstaande methodes hoeven niet geïmplementeerd te worden
         public bool Delete(Ticket objectToDelete)
         {
-            throw new NotImplementedException();
+            try
+            {
+                db.Tickets.Remove(objectToDelete);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public Ticket Update(Ticket objectToUpdate)

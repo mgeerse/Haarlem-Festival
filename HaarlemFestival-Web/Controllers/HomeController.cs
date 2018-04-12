@@ -12,7 +12,7 @@ namespace HaarlemFestival_Web.Controllers
     {
         public ActionResult Index()
         {
-            SubjectRepository SR = new SubjectRepository();
+            SubjectRepository SR = SubjectRepository.Instance;
 
             IEnumerable<Models.Subject> Subjects = SR.GetAll();
 

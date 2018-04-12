@@ -13,16 +13,17 @@
             Console.Write(item);
         }*@
 
-    @if (Model.JustOrdered)
+    @if (Model.shoppingCart.tickets.Count != 0)
     {
         <section class="text-success border-success">
-            <b>Your tickets have succesfully been added to your basket.</b>
-            <b>Your basket can be found <a class="text-info" href="/Ticket/Overview"></a></b>
+            <b>Sweet! Your tickets have succesfully been added to your basket.</b>
+            <b>Your basket can be found <a class="text-info" href="/Ticket/Overview">by clicking here</a></b>
         </section>
     }
 
     <table style="width:100%">
         <tr class="table-primary">
+            <td>DEV</td>
             <th>Amount</th>
             <th>Artist</th>
             <th>Tickets Left</th>
@@ -33,12 +34,12 @@
         </tr>
         @foreach (var item in Model.jazz)
         {
-            using (Html.BeginForm("OrderJazzTicket", "Ticket", FormMethod.Post, new { Id = Html.Value("Id"), Amount = Html.ValueFor(m => m.Amount) }))
+            using (Html.BeginForm("OrderJazzTicket", "Ticket", FormMethod.Post, new { Id = Html.Value("Id"), Amount = Html.ValueFor(m => m.Amount) } ))
             {
                 Html.ValidationSummary();
-                <tr>
-                    <td hidden="hidden"><input hidden="hidden" name="Id" value="@item.Id" /></td>
-                    <td><input type="number" min="0" name="Amount" /></td>
+                <tr style="border-top-style:solid; border-top-width:1px; border-top-color:black">
+                    <td><input  name="Id" value="@item.Id" /></td>
+                    <td><input type="number" min="0" name="Amount" value="0"/></td>
                     <td>@item.Artist</td>
                     @if (item.Capacity == -1)
                     {
