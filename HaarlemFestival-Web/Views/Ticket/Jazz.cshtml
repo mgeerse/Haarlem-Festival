@@ -1,0 +1,54 @@
+﻿@model HaarlemFestival_Web.Models.ViewModels.JazzTicket
+@{
+    ViewBag.Title = "Order Tickets";
+    Layout = "~/Views/Shared/Pages/_Layout.cshtml";
+
+    //var test = Model.GetType().GetProperties().OfType<IEnumerable<object>>();
+}
+<h2>Jazz Ticket Overview</h2>
+
+<section>
+    @*foreach (var item in Model.GetType().GetProperties().OfType<IEnumerable<object>>())
+        {
+            Console.Write(item);
+        }*@
+
+    <table style="width:100%">
+        <tr class="table-primary">
+            <th>Amount</th>
+            <th>Artist</th>
+            <th>Tickets Left</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.jazz)
+        {
+            using (Html.BeginForm("OrderJazzTicket", "Ticket", new { Id = item.Id, Amount = Html.ValueFor(m => m.Amount)}))
+            {
+                Html.ValidationSummary();
+                <tr>
+                    <td><input type="number" min="0" id="Amount"/></td>
+                    <td>@item.Artist</td>
+                    @if (item.Capacity == -1)
+                    {
+                        <td>&infin;</td>
+                    }
+                    else if (item.Capacity == 0)
+                    {
+                        <td>Tickets sold out!</td>
+                    }
+                    else
+                    {
+                        <td>@item.Capacity</td>
+                    }
+                    <td>@item.StartTime.ToShortDateString()</td>
+                    <td>@item.StartTime.ToShortTimeString() - @item.EndTime.ToShortTimeString()</td>
+                    <td>@item.Hall</td>
+                    <td><input class="btn-info" type="submit" value="Add Item to Basket" /></td>
+                </tr>
+            }
+        }
+    </table>
+</section>

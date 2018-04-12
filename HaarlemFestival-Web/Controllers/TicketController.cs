@@ -17,21 +17,31 @@ namespace HaarlemFestival_Web.Controllers
         private WalkingRepository walkingRepository = new WalkingRepository();
         private TalkingRepository talkingRepository = new TalkingRepository();
 
+
         // GET: Ticket
         public ActionResult Index()
         {
-            AvailableTicket availableTicket = new AvailableTicket
+            return View("~/Views/Ticket/Index.cshtml");
+        }
+
+
+        public ActionResult Jazz()
+        {
+            JazzTicket JazzTicket = new JazzTicket
             {
-                jazz = jazzRepository.GetAll(),
-                dining = diningRepository.GetAll(),
-                talking = talkingRepository.GetAll(),
-                walking = walkingRepository.GetAll()
+                jazz = jazzRepository.GetAll()
             };
 
             //Er moet een tickets left gemaakt worden
             //Bij elke bestelling moet er in de database {amount} van de capacity af gaan
 
-            return View("~/Views/Ticket/Index.cshtml", availableTicket);
+            return View("~/Views/Ticket/Jazz.cshtml", JazzTicket);
+        }
+
+        [HttpPost]
+        public ActionResult OrderJazzTicket(int Id, int Amount)
+        {
+            return View("~/Views/Ticket/Jazz.aspx");
         }
     }
 }

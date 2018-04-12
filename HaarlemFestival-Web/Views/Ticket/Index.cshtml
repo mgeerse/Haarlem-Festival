@@ -1,38 +1,172 @@
-﻿@model HaarlemFestival_Web.Models.ViewModels.AvailableTicket
-@{
+﻿@{
     ViewBag.Title = "Order Tickets";
     Layout = "~/Views/Shared/Pages/_Layout.cshtml";
 
     //var test = Model.GetType().GetProperties().OfType<IEnumerable<object>>();
-}
-<h2>Ticket Overview</h2>
 
-<section>
-    @*foreach (var item in Model.GetType().GetProperties().OfType<IEnumerable<object>>())
+
+#line default
+#line hidden
+
+#line 3 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+    foreach (var item in Model.jazz){
+
+
+        using (Html.BeginForm("AddJazzTicket", "TicketController", item.Id))
+
+
+
+
+#line default
+#line hidden
+
+#line 4 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+            __o = item.Artist;
+
+
+#line default
+#line hidden
+
+#line 5 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+        if (item.Capacity == -1)
         {
-            Console.Write(item);
-        }*@
 
-    
+        }
+        else {
 
-    @foreach (var item in Model.jazz)
-    {
-        @item.Artist
-        @item.Capacity
-        @item.Description
+        }
 
-    }
-    @foreach (var item in Model.dining)
-    {
+#line default
+#line hidden
 
-    }
-    @foreach (var item in Model.talking)
-    {
+#line 6 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+        __o = item.Capacity;
 
-    }
-    @foreach (var item in Model.walking)
-    {
 
-    }
+#line default
+#line hidden
 
-</section>
+#line 7 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+        __o = item.StartTime.ToShortDateString();
+
+
+#line default
+#line hidden
+
+#line 8 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views
+        Ticket\Index.cshtml"
+        __o = item.StartTime.ToShortTimeString();
+
+
+#line default
+#line hidden
+
+#line 9 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+        __o = item.EndTime.ToShortTimeString();
+
+
+#line default
+#line hidden
+
+#line 10 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+        __o = item.Hall;
+
+
+
+
+
+
+#line default
+#line hidden
+
+#line 11 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"{
+        }
+        }
+        else { }
+
+
+#line default
+#line hidden
+
+#line 6 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+        __o = item.Capacity;
+
+
+#line default
+#line hidden
+
+#line 7 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+
+
+#line default
+#line hidden
+
+#line 8 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+        __o = item.StartTime.ToShortDateString();
+
+
+#line default
+#line hidden
+
+#line 9 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+        __o = item.StartTime.ToShortTimeString();
+
+
+#line default
+#line hidden
+
+#line 10 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+        __o = item.EndTime.ToShortTimeString();
+
+
+#line default
+#line hidden
+
+        {
+#line 11 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+            __o = item.Hall;
+
+
+#line default
+#line hidden
+
+#line 12 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+            {            }
+        }
+
+
+#line default
+#line hidden
+
+#line 6 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+            __o = item.Capacity;
+
+
+#line default
+#line hidden
+
+#line 7 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+
+
+#line default
+#line hidden
+
+#line 8 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+            __o = item.StartTime.ToShortDateString();
+
+
+#line default
+#line hidden
+
+#line 9 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+            __o = item.StartTime.ToShortTimeString();
+
+
+#line default
+#line hidden
+
+#line 10 "C:\Users\mgeer\Documents\GitHub\Haarlem-Festival\HaarlemFestival-Web\Views\Ticket\Index.cshtml"
+            __o = <h2>Index</h2>
+
+
+<a href="~/Ticket/Jazz/">Order jazz tickets here</a>
