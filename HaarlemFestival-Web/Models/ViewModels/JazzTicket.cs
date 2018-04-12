@@ -21,5 +21,7 @@ namespace HaarlemFestival_Web.Models.ViewModels
         [Display(Name = "Amount")]
         [Range(0, int.MaxValue, ErrorMessage = "Not a valid number has been given")]
         public int Amount;
+
+        public bool JustOrdered;
     }
 }

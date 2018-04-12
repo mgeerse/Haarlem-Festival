@@ -1,4 +1,4 @@
-﻿@model HaarlemFestival_Web.Models.ViewModels.JazzTicket
+﻿@model void Execket
 @{
     ViewBag.Title = "Order Tickets";
     Layout = "~/Views/Shared/Pages/_Layout.cshtml";
@@ -12,6 +12,14 @@
         {
             Console.Write(item);
         }*@
+
+    @if (Model.JustOrdered)
+    {
+        <section class="text-success border-success">
+            <b>Your tickets have succesfully been added to your basket.</b>
+            <b>Your basket can be found <a class="text-info" href="/Ticket/Overview"></a></b>
+        </section>
+    }
 
     <table style="width:100%">
         <tr class="table-primary">
