@@ -11,6 +11,23 @@ namespace HaarlemFestival_Web.Repositories
     {
         private FestivalContext context = new FestivalContext();
 
+
+        private JazzRepository() { }
+
+        public static JazzRepository instance = null;
+
+        public static JazzRepository Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new JazzRepository();
+                }
+                return instance;
+            }
+        }
+
         public List<string> GetDays()
         {
             List<string> Days = new List<string>();

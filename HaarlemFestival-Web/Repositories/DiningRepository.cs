@@ -13,6 +13,22 @@ namespace HaarlemFestival_Web.Repositories
 
         private FestivalContext context = new FestivalContext();
 
+        private DiningRepository() { }
+
+        public static DiningRepository instance = null;
+
+        public static DiningRepository Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new DiningRepository();
+                }
+                return instance;
+            }
+        }
+
         public bool Delete(Dining objectToDelete)
         {
             context.Dining.Remove(objectToDelete);

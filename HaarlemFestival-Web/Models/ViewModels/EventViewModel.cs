@@ -40,7 +40,7 @@ namespace HaarlemFestival_Web.Models.ViewModels
 
         public IEnumerable<Activity> GetAllActivities()
         {
-            ActivityRepository ar = new ActivityRepository();
+            ActivityRepository ar = ActivityRepository.Instance;
 
             return ar.GetAll();
         }

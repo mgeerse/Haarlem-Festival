@@ -12,6 +12,22 @@ namespace HaarlemFestival_Web.Repositories
     {
         private FestivalContext context = new FestivalContext();
 
+        private TalkingRepository() { }
+
+        public static TalkingRepository instance = null;
+
+        public static TalkingRepository Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new TalkingRepository();
+                }
+                return instance;
+            }
+        }
+
         public bool Delete(Talking objectToDelete)
         {
             throw new NotImplementedException();

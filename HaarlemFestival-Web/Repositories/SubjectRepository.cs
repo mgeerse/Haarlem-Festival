@@ -11,35 +11,21 @@ namespace HaarlemFestival_Web.Repositories
     {
         private FestivalContext context = new FestivalContext();
 
-        #region Obsolete methods
+        private SubjectRepository() { }
 
-        /// <summary>
-        /// Retrieves a specific subject from the database. Since this method is not 
-        /// inherited from <see cref="IRepository{T}"/>, it should not be used.
-        /// Instead, use <see cref="GetById(int)"/>.
-        /// </summary>
-        /// <param name="SubjectId"></param>
-        /// <returns></returns>
-        [Obsolete("Use the method inferred from the repository instead.")]
-        public Subject GetSubject(int SubjectId)
+        public static SubjectRepository instance = null;
+
+        public static SubjectRepository Instance
         {
-            Subject Subject = context.Subjects.Find(SubjectId);
-            return Subject;
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new SubjectRepository();
+                }
+                return instance;
+            }
         }
-
-        /// <summary>
-        /// Retrieves all subjects from the database. Since this method is not
-        /// inherited from <see cref="IRepository{T}"/>, it should not be used.
-        /// Instead, use <see cref="GetAll()"/>
-        /// </summary>
-        /// <returns></returns>
-        [Obsolete("Use the method inferred from the repository instead.")]
-        public IList<Subject> GetAllSubjects()
-        {
-            return context.Subjects.ToList();
-        }
-
-        #endregion
 
         /// <summary>
         /// Deletes the given instance from the database.

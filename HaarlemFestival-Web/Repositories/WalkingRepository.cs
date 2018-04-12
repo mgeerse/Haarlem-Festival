@@ -9,8 +9,26 @@ namespace HaarlemFestival_Web.Repositories
 {
     public class WalkingRepository : IRepository<Walking>
     {
-
         private FestivalContext context = new FestivalContext();
+
+        private static WalkingRepository instance = null;
+
+        private WalkingRepository()
+        {
+
+        }
+
+        public static WalkingRepository Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new WalkingRepository();
+                }
+                return instance;
+            }
+        }
 
         public bool Delete(Walking objectToDelete)
         {

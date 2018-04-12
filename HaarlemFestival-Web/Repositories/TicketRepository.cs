@@ -11,6 +11,22 @@ namespace HaarlemFestival_Web.Repositories
     {
         private FestivalContext db = new FestivalContext();
 
+        public static TicketRepository instance = null;
+
+        private TicketRepository() { }
+
+        public static TicketRepository Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new TicketRepository();
+                }
+                return instance;
+            }
+        }
+
         public IEnumerable<Ticket> GetAll()
         {
             return db.Tickets;

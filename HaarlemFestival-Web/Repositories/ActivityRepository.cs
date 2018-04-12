@@ -13,6 +13,22 @@ namespace HaarlemFestival_Web.Repositories
 
         private FestivalContext context = new FestivalContext();
 
+        private ActivityRepository() { }
+
+        public static ActivityRepository instance = null;
+
+        public static ActivityRepository Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new ActivityRepository();
+                }
+                return instance;
+            }
+        }
+
         public bool Delete(Activity objectToDelete)
         {
             try

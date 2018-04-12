@@ -13,12 +13,12 @@ namespace HaarlemFestival_Web.Controllers
     public class CheckoutController : Controller
     {
 
-        private RestaurantRepository restaurantRepository = new RestaurantRepository();
+        private RestaurantRepository restaurantRepository = RestaurantRepository.Instance;
 
-        private WalkingRepository walkingRepository = new WalkingRepository();
-        private DiningRepository diningRepository = new DiningRepository();
-        private JazzRepository jazzRepository = new JazzRepository();
-        private TalkingRepository talkingRepository = new TalkingRepository();
+        private WalkingRepository walkingRepository = WalkingRepository.Instance;
+        private DiningRepository diningRepository = DiningRepository.Instance;
+        private JazzRepository jazzRepository = JazzRepository.Instance;
+        private TalkingRepository talkingRepository = TalkingRepository.Instance;
 
         /// <summary>
         /// GET: /Checkout/
