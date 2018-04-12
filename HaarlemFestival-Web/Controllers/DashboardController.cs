@@ -12,7 +12,7 @@ namespace HaarlemFestival_Web.Controllers
 {
     public class DashboardController : Controller
     {
-        ActivityRepository activityRepo = new ActivityRepository();
+        ActivityRepository activityRepo = ActivityRepository.Instance;
 
         #region Overview
         // GET: Dashboard

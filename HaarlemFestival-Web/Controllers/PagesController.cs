@@ -29,7 +29,7 @@ namespace HaarlemFestival_Web.Controllers
             return View();
         }
 
-        private DiningRepository diningRepository = new DiningRepository();
+        private DiningRepository diningRepository = DiningRepository.Instance;
 
         public ActionResult Dining()
         {
@@ -37,7 +37,7 @@ namespace HaarlemFestival_Web.Controllers
             return View(information);
         }
 
-        private JazzRepository jazzRepository = new JazzRepository();
+        private JazzRepository jazzRepository = JazzRepository.Instance;
 
         public ActionResult Jazz()
         {
@@ -46,7 +46,7 @@ namespace HaarlemFestival_Web.Controllers
             return View(Days);
         }
 
-        private TalkingRepository talkingRepository = new TalkingRepository();
+        private TalkingRepository talkingRepository = TalkingRepository.Instance;
 
         public ActionResult Talking()
         {

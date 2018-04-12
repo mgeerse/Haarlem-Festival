@@ -10,12 +10,12 @@ namespace HaarlemFestival_Web.Controllers
 {
     public class TicketController : Controller
     {
-        private TicketRepository ticketRepository = new TicketRepository();
+        private TicketRepository ticketRepository = TicketRepository.Instance;
 
-        private JazzRepository jazzRepository = new JazzRepository();
-        private DiningRepository diningRepository = new DiningRepository();
-        private WalkingRepository walkingRepository = new WalkingRepository();
-        private TalkingRepository talkingRepository = new TalkingRepository();
+        private JazzRepository jazzRepository = JazzRepository.Instance;
+        private DiningRepository diningRepository = DiningRepository.Instance;
+        private WalkingRepository walkingRepository = WalkingRepository.Instance;
+        private TalkingRepository talkingRepository = TalkingRepository.Instance;
 
         private ActivityRepository activityRepository = new ActivityRepository();
 

@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="HaarlemFestival_Web.Models.Walking" Collapsed="true">
-    <Position X="3.75" Y="4.25" Width="1.5" />
+  <Class Name="HaarlemFestival_Web.Models.Walking">
+    <Position X="3.75" Y="5.5" Width="1.5" />
     <AssociationLine Name="TourLocations" Type="HaarlemFestival_Web.Models.Location" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="3.75" Y="4.635" />
-        <Point X="3.375" Y="4.635" />
-        <Point X="3.375" Y="2.5" />
-        <Point X="4" Y="2.5" />
+        <Point X="3.75" Y="6.187" />
+        <Point X="3.375" Y="6.187" />
+        <Point X="3.375" Y="3.5" />
+        <Point X="4" Y="3.5" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -21,8 +21,8 @@
       <Property Name="TourLocations" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="HaarlemFestival_Web.Models.Account" Collapsed="true">
-    <Position X="13.25" Y="2" Width="1.5" />
+  <Class Name="HaarlemFestival_Web.Models.Account">
+    <Position X="11.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAIAAAAAAAAAAAQAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Models\Account.cs</FileName>
@@ -35,26 +35,26 @@
       <FileName>Models\Activity.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Subject" />
       <Property Name="Location" />
+      <Property Name="Subject" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="HaarlemFestival_Web.Models.Cuisine" Collapsed="true">
-    <Position X="6" Y="6.75" Width="1.5" />
+  <Class Name="HaarlemFestival_Web.Models.Cuisine">
+    <Position X="6" Y="9.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACABAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Cuisine.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HaarlemFestival_Web.Models.Customer" Collapsed="true">
+  <Class Name="HaarlemFestival_Web.Models.Customer">
     <Position X="13.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQCAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAg=</HashCode>
       <FileName>Models\Customer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HaarlemFestival_Web.Models.Dining" Collapsed="true">
-    <Position X="6" Y="4.25" Width="1.5" />
+  <Class Name="HaarlemFestival_Web.Models.Dining">
+    <Position X="6" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Dining.cs</FileName>
@@ -63,49 +63,49 @@
       <Property Name="Restaurant" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="HaarlemFestival_Web.Models.Jazz" Collapsed="true">
-    <Position X="8.25" Y="4.25" Width="1.5" />
+  <Class Name="HaarlemFestival_Web.Models.Jazz">
+    <Position X="8.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAAAIAAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Jazz.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HaarlemFestival_Web.Models.Location">
-    <Position X="4" Y="1.75" Width="1.5" />
+    <Position X="4" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAACQAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <HashCode>IAACAAAAAAAAAAAAAAAAACQAAAAAAAAAAAIAAAAAAAA=</HashCode>
       <FileName>Models\Location.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HaarlemFestival_Web.Models.Restaurant" Collapsed="true">
-    <Position X="6" Y="5.5" Width="1.5" />
+  <Class Name="HaarlemFestival_Web.Models.Restaurant">
+    <Position X="6" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAQAAAAAAAAAAAIAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Restaurant.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Cuisines" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="HaarlemFestival_Web.Models.Subject" Collapsed="true">
+  <Class Name="HaarlemFestival_Web.Models.Subject">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAgAAAAAAAAAIQAAAAAAAAAAAAAAIAAAAA=</HashCode>
       <FileName>Models\Subject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HaarlemFestival_Web.Models.Talking" Collapsed="true">
-    <Position X="10.5" Y="4.25" Width="1.5" />
+  <Class Name="HaarlemFestival_Web.Models.Talking">
+    <Position X="10.5" Y="5.5" Width="1.5" />
     <AssociationLine Name="SpeakerOne" Type="HaarlemFestival_Web.Models.Interviewee" FixedFromPoint="true">
       <Path>
-        <Point X="10.688" Y="4.941" />
-        <Point X="10.688" Y="5.5" />
+        <Point X="10.688" Y="6.497" />
+        <Point X="10.688" Y="7.5" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="SpeakerTwo" Type="HaarlemFestival_Web.Models.Interviewee" FixedFromPoint="true">
       <Path>
-        <Point X="11.875" Y="4.941" />
-        <Point X="11.875" Y="5.5" />
+        <Point X="11.875" Y="6.497" />
+        <Point X="11.875" Y="7.5" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -117,7 +117,7 @@
       <Property Name="SpeakerTwo" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="HaarlemFestival_Web.Models.Ticket" Collapsed="true">
+  <Class Name="HaarlemFestival_Web.Models.Ticket">
     <Position X="10.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAECAAAEAQAAAEAAAAIAAACAAAAAABAAAAAAAEQAAAA=</HashCode>
@@ -128,22 +128,22 @@
       <Property Name="Customer" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="HaarlemFestival_Web.Models.TourGuide" Collapsed="true">
-    <Position X="3.75" Y="5.5" Width="1.5" />
+  <Class Name="HaarlemFestival_Web.Models.TourGuide">
+    <Position X="3.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAACAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\TourGuide.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HaarlemFestival_Web.Models.Interviewee" Collapsed="true">
-    <Position X="10.5" Y="5.5" Width="1.5" />
+  <Class Name="HaarlemFestival_Web.Models.Interviewee">
+    <Position X="10.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Interviewee.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="HaarlemFestival_Web.Models.AccountType" Collapsed="true">
-    <Position X="13.25" Y="3.5" Width="1.5" />
+  <Enum Name="HaarlemFestival_Web.Models.AccountType">
+    <Position X="12.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\AccountType.cs</FileName>

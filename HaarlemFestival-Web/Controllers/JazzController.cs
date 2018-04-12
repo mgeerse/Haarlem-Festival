@@ -10,7 +10,7 @@ namespace HaarlemFestival_Web.Controllers
 {
     public class JazzController : Controller
     {
-        private JazzRepository jazzRepository = new JazzRepository();
+        private JazzRepository jazzRepository = JazzRepository.Instance;
 
         public ActionResult Day(string Date)
         {
