@@ -41,7 +41,12 @@ namespace HaarlemFestival_Web.Models
                 UsedIds.Add(0);
                 return 0;
             }
-            return UsedIds.Last() + 1;
+
+            int lastId = UsedIds.Last();
+            int newId = UsedIds.Last() + 1;
+            UsedIds.Add(newId);
+            return newId;
+
         }
         public void AddTicket(Ticket ticket)
         {

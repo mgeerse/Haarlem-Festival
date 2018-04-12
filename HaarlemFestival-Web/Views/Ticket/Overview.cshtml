@@ -25,7 +25,8 @@
         {
             using (Html.BeginForm("EditTicket", "Ticket", FormMethod.Post, new { TicketId = Html.Value("TicketId"), Amount = Html.Value("Amount"), Option = Html.Value("submit") }))
             {
-        <tr>
+                @Html.ValidationSummary()
+        <tr style="border-top-style:solid; border-top-width:1px; border-top-color:black">
             <td>@item.Id</td>
             <td>@item.Activity.Name</td>
             <td><input type="number" name="amount" value="@item.Amount" /></td>

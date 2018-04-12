@@ -38,7 +38,14 @@ namespace HaarlemFestival_Web.Controllers
             switch (submit)
             {
                 case "Update Amount":
-                    shoppingCart.UpdateTicketAmount(TicketId, Amount);
+                    if (Amount != 0)
+                    {
+                        shoppingCart.UpdateTicketAmount(TicketId, Amount);
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("Error!", "You must set the amount higher than 0 before updating your basket.");
+                    }
                     break;
 
                 case "Remove Ticket":
@@ -65,7 +72,16 @@ namespace HaarlemFestival_Web.Controllers
             Jazz jazz = jazzRepository.GetById(Id);
             Ticket ticket = CreateTicketFromJazzActivity(jazz, Amount);
 
-            shoppingCart.AddTicket(ticket);
+            if (Amount != 0)
+            {
+                shoppingCart.AddTicket(ticket);
+            }
+            else
+            {
+                ModelState.AddModelError("Error!", "You must set the amount before adding it to your basket.");
+            }
+
+            
             return Jazz();
         }
 

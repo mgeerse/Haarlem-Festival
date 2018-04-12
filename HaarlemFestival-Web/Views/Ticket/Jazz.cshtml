@@ -37,9 +37,9 @@
             using (Html.BeginForm("OrderJazzTicket", "Ticket", FormMethod.Post, new { Id = Html.Value("Id"), Amount = Html.ValueFor(m => m.Amount) } ))
             {
                 Html.ValidationSummary();
-                <tr>
+                <tr style="border-top-style:solid; border-top-width:1px; border-top-color:black">
                     <td><input  name="Id" value="@item.Id" /></td>
-                    <td><input type="number" min="0" name="Amount" /></td>
+                    <td><input type="number" min="0" name="Amount" value="0"/></td>
                     <td>@item.Artist</td>
                     @if (item.Capacity == -1)
                     {
