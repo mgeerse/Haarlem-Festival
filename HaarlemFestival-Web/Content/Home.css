@@ -110,18 +110,22 @@ td, .SubjectColumn {
 
 #Jazz {
     background: url(../Content/Images/Home/Jazz.png);
+    background-size: cover;
 }
 
 #Talking {
     background: url(../Content/Images/Home/Talking.png);
+    background-size: cover;
 }
 
 #Tours {
-    background: url(../Content/Images/Home/Tours.png);
+    background: url(../Content/Images/Home/Historic.png);
+    background-size: cover;
 }
 
 #Dining {
-    background: url(../Content/Images/Home/Restaurants.png);
+    background: url(../Content/Images/Home/Dining.png);
+    background-size: cover;
 }
 
 #JO {

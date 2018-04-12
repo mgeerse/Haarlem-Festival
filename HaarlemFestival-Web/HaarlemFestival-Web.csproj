@@ -163,7 +163,29 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JazzController.cs" />
     <Compile Include="Controllers\PagesController.cs" />
+    <Compile Include="Controllers\TicketController.cs" />
+    <Compile Include="Migrations\201804111900527_LocationsInRestaurants.cs" />
+    <Compile Include="Migrations\201804111900527_LocationsInRestaurants.Designer.cs">
+      <DependentUpon>201804111900527_LocationsInRestaurants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804111903384_RestaurantInLocation.cs" />
+    <Compile Include="Migrations\201804111903384_RestaurantInLocation.Designer.cs">
+      <DependentUpon>201804111903384_RestaurantInLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804111911387_WalkingInLocation.cs" />
+    <Compile Include="Migrations\201804111911387_WalkingInLocation.Designer.cs">
+      <DependentUpon>201804111911387_WalkingInLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804111914488_removeWalkingFromLocation.cs" />
+    <Compile Include="Migrations\201804111914488_removeWalkingFromLocation.Designer.cs">
+      <DependentUpon>201804111914488_removeWalkingFromLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shoppingcart.cs" />
+    <Compile Include="Models\ViewModels\JazzTicket.cs" />
+    <Compile Include="Models\ViewModels\JazzDay.cs" />
     <Compile Include="Models\ViewModels\JazzViewModel.cs" />
+    <Compile Include="Models\ViewModels\OverviewViewModel.cs" />
+    <Compile Include="Repositories\TicketRepository.cs" />
     <Compile Include="Repositories\RestaurantRepository.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
@@ -235,6 +257,12 @@
     <Content Include="Content\Home.css" />
     <Content Include="Content\Images\Dining\Background.jpg" />
     <Content Include="Content\Images\Home\historic.jpg" />
+    <Content Include="Content\Images\Historic\1GroteMarkt.jpg" />
+    <Content Include="Content\Images\Historic\2GroteKerk.jpg" />
+    <Content Include="Content\Images\Historic\8AmsterdamsePoort.jpg" />
+    <Content Include="Content\Images\Home\Dining.png" />
+    <Content Include="Content\Images\Home\Historic.png" />
+    <Content Include="Content\Images\Home\Talking.png" />
     <Content Include="Content\Images\Jazz\Artists\ChrisAllen.jpg" />
     <Content Include="Content\Images\Jazz\Artists\Evolve.jpg" />
     <Content Include="Content\Images\Jazz\Artists\FoxMayors.jpg" />
@@ -258,16 +286,11 @@
     <Content Include="Content\Images\Jazz\Carousel\Carousel2.jpg" />
     <Content Include="Content\Images\Jazz\Carousel\Carousel3.jpg" />
     <Content Include="Content\Images\Jazz\Carousel\Carousel4.jpg" />
-    <Content Include="Content\Images\Historic\1. Grote Markt.jpg" />
-    <Content Include="Content\Images\Historic\2. Grote Kerk.jpg" />
-    <Content Include="Content\Images\Historic\3. De Hallen.jpg" />
-    <Content Include="Content\Images\Historic\4. Proveniershof.jpg" />
-    <Content Include="Content\Images\Historic\5. Jopenkerk.jpg" />
-    <Content Include="Content\Images\Historic\6. Waalse Kerk.jpg" />
-    <Content Include="Content\Images\Historic\7. Molen de Adriaan.jpg" />
-    <Content Include="Content\Images\Historic\8. Amsterdamse Poort.jpg" />
-    <Content Include="Content\Images\Historic\9. Hof van Bakenes.jpg" />
     <Content Include="Content\Images\Historic\background.jpg" />
+    <Content Include="Content\Images\Historic\background.jpg" />
+    <Content Include="Content\Images\Historic\plattegrond haarlem.jpg" />
+    <Content Include="Content\Images\Historic\plattegrond_haarlem2.jpg" />
+    <Content Include="Content\Images\Historic\plattegrond_haarlem3.jpg" />
     <Content Include="Content\Images\logo.svg" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\Home\Historic.png" />
@@ -405,11 +428,6 @@
     <Content Include="Views\Pages\Test.cshtml" />
     <Content Include="Views\Pages\Dining.cshtml" />
     <Content Include="Views\Pages\Jazz.cshtml" />
-    <Content Include="Views\Jazz\Thursday.cshtml" />
-    <Content Include="Views\Jazz\Band.cshtml" />
-    <Content Include="Views\Jazz\Friday.cshtml" />
-    <Content Include="Views\Jazz\Saturday.cshtml" />
-    <Content Include="Views\Jazz\Sunday.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Admin\_Layout_Guest.cshtml" />
     <Content Include="Views\Checkout\Choose.cshtml" />
@@ -438,11 +456,17 @@
     <Content Include="Views\Shared\_EditTalking.cshtml" />
     <Content Include="Views\Shared\_EditWalking.cshtml" />
     <Content Include="Views\Shared\_EditDining.cshtml" />
+    <Content Include="Views\Pages\Historic.cshtml" />
+    <Content Include="Views\Jazz\Day.cshtml" />
+    <Content Include="Views\Ticket\Jazz.cshtml" />
+    <Content Include="Views\Ticket\Index.cshtml" />
+    <Content Include="Views\Ticket\Overview.cshtml" />
+    <Content Include="Views\Ticket\OrderJazzTicket.cshtml" />
+    <Content Include="Views\Ticket\Buy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Helpers\" />
-    <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -483,6 +507,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801311358424_AccountTable.resx">
       <DependentUpon>201801311358424_AccountTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804111900527_LocationsInRestaurants.resx">
+      <DependentUpon>201804111900527_LocationsInRestaurants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804111903384_RestaurantInLocation.resx">
+      <DependentUpon>201804111903384_RestaurantInLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804111911387_WalkingInLocation.resx">
+      <DependentUpon>201804111911387_WalkingInLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804111914488_removeWalkingFromLocation.resx">
+      <DependentUpon>201804111914488_removeWalkingFromLocation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

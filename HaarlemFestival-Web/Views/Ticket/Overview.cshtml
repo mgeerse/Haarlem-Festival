@@ -1,0 +1,43 @@
+﻿@model List<HaarlemFestival_Web.Models.Ticket>
+@{
+    ViewBag.Title = "Order Tickets";
+    Layout = "~/Views/Shared/Pages/_Layout.cshtml";
+}
+
+<h2>Your tickets - overview</h2>
+
+
+@if (Model.Count != 0)
+{
+
+
+    <table class="table-primary" style="width:100%">
+        <tr class="table-responsive-md">
+            <th>Event</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Location</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Activity.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Amount</td>
+            <td>@item.Activity.StartTime.ToShortDateString()</td>
+            <td>@item.Activity.StartTime.ToShortTimeString() - @item.Activity.EndTime.ToShortTimeString()</td>
+            <td>@item.Activity.Location</td>
+        </tr>
+        }
+    </table>
+}
+else
+{
+    <br />
+    <h3 class="alert-warning">No tickets ordered</h3>
+
+    <a href="~/Ticket/" class="alert-info">Order tickets here</a>
+}

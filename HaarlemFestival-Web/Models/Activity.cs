@@ -16,6 +16,7 @@ namespace HaarlemFestival_Web.Models
     public abstract class Activity
     {
         [Key]
+        [Display(Name = "Id")]
         public int Id { get; private set; }
 
         // Non-referencing properties

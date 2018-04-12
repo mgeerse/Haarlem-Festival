@@ -136,8 +136,61 @@
                                                             <div class="button" id="fris">Fris</div>\
                                     ');
                     });
+
+
+                    $('#mr-and-mrs').click(function () {
+                        $('#restaurantname').children('h1').text('Mr. & Mrs.');
+                        $('#restaurantname').children('p').text('Mr. and Mrs. is located near the St. Bavochurch and has made a name for itself with its luxurious one-man dishes. This restaurant, specialized in Dutch cuisine, is focused on making your visit a luxurious one. From the over-the-top dishes to the incredibly stylish interior of this restaurant, you are sure to feel like a star dining here.');
+                    });
+                    $('#ratatouille').click(function () {
+                        $('#restaurantname').children('h1').text('Ratatouille');
+                        $('#restaurantname').children('p').text('The competitor in style and luxury to Mr. and Mrs., Ratatouille is a restaurant that focuses on exquisite French dishes. Afterwards, you can enjoy your view of the Spaarne with some exclusive wine. With a wide arrangement of beautiful seafood dishes, you will not be leaving with an empty stomach. ');
+                    });
+                    $('#ml').click(function () {
+                        $('#restaurantname').children('h1').text('ML');
+                        $('#restaurantname').children('p').text('Restaurant ML is located in a beautifully renovated 17th century national monument. The bright, refined atmosphere of the building and with the richness of the dishes served at this restaurant have been awarded with a Michelin star several times in the restaurant\'s lifetime. You will truly feel like and be treated like royalty from the 17th century in this restaurant.');
+                    });
+                    $('#fris').click(function () {
+                        $('#restaurantname').children('h1').text('Fris');
+                        $('#restaurantname').children('p').text('Restaurant Fris describes itself as a modern restaurant with a classic French kitchen and worldwide influences. Owner and chef Rick May has worked at acclaimed Michelin restaurants in the past, and has now given his finest dishes to the world for anyone to enjoy. Being located nearby the Frederikspark, this restaurant puts passion and respect in each of their dishes, and you can taste that.');
+                    });
+                    $('#specktakel').click(function () {
+                        $('#restaurantname').children('h1').text('Specktakel');
+                        $('#restaurantname').children('p').text('Restaurant Specktakel places its focus on giving you a very homely experience. Their exclusive connections with wine suppliers give them an expansive range of wines for you to choose from. Specktakel boats an impressive arrangement of dishes for you to choose from, with international and Asian flavors added in the mix.');
+                    });
+                    $('#brinkmann').click(function () {
+                        $('#restaurantname').children('h1').text('Brinkmann');
+                        $('#restaurantname').children('p').text('The amazing view of the Grote Markt that you get at Grand Cafe Brinkmann is only the first reason you will visit. With their modernized dishes and Dutch influences, this restaurant will appeal to a large group of people. A relaxed atmosphere and a feeling of warmth play a large role in this restaurant.');
+                    });
+                    $('#toujours').click(function () {
+                        $('#restaurantname').children('h1').text('Toujours');
+                        $('#restaurantname').children('p').text('Urban Frenchy Bistro Toujours combines the elements you love from the Dutch cuisine with the simplicity of European dishes, and produces with them a night you will not forget. Toujours is located at the Oude Markt and promotes its No-Nonsense ways proudly. If you are ready to eat and eat well, visit them.');
+                    });
+                    $('#golden-bull').click(function () {
+                        $('#restaurantname').children('h1').text('The Golden Bull');
+                        $('#restaurantname').children('p').text('As an Argentinian Steakhouse, The Golden Bull does not lure you in with extravagance. Their mantra is simple; Beef done well. However, do not be fooled by the apparent simplicity of their dishes. The cooks over at the Golden Bull know what they are doing, and they will make sure you taste that too.');
+                    });
+
+
+
+                    $('#all').click(function () {
+                        $('#restaurantbtn').html('<div class="button" id="mr-and-mrs">Mr and Mrs.</div>\
+                                    <div class="button" id="ratatouille" > Ratatouille</div>\
+                                    <div class="button" id="ml">ML</div>\
+                                    <div class="button" id="fris">Fris</div>\
+                                    <div class="button" id="specktakel">Specktakel</div>\
+                                    <div class="button" id="brinkmann">Brinkmann</div>\
+                                    <div class="button" id="toujours">Toujours</div>\
+                                    <div class="button" id="golden-bull">The Golden Bull</div>');
+                    });
                 });
             </script>
         </div>
     </div>
 </body>
+
+<style>
+    #dining.active {
+        color: #000;
+    }
+</style>
