@@ -37,9 +37,13 @@ namespace HaarlemFestival_Web.Controllers
             return View(information);
         }
 
+        private JazzRepository jazzRepository = new JazzRepository();
+
         public ActionResult Jazz()
         {
-            return View();
+            //Geef de verschillende dagen mee naar de view.
+            List<string> Days = jazzRepository.GetDays();
+            return View(Days);
         }
 
         private TalkingRepository talkingRepository = new TalkingRepository();

@@ -18,6 +18,7 @@ namespace HaarlemFestival_Web.Models
 
         public string Name { get; set; }
 
+        public ICollection<Location> Location { get; set; }
         public ICollection<Cuisine> Cuisines { get; set; }
     }
 }
