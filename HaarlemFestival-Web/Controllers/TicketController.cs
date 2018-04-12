@@ -41,7 +41,8 @@ namespace HaarlemFestival_Web.Controllers
         [HttpPost]
         public ActionResult OrderJazzTicket(int Id, int Amount)
         {
-            return View("~/Views/Ticket/Jazz.aspx");
+            
+            return View("~/Views/Home/Index.cshtml");
         }
     }
 }

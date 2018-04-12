@@ -18,7 +18,7 @@ namespace HaarlemFestival_Web.Models.ViewModels
 
         public ShoppingCart shoppingCart;
 
-        [Display(Name = "")]
+        [Display(Name = "Amount")]
         [Range(0, int.MaxValue, ErrorMessage = "Not a valid number has been given")]
         public int Amount;
     }
