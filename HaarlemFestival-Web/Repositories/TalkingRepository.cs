@@ -30,7 +30,9 @@ namespace HaarlemFestival_Web.Repositories
 
         public bool Delete(Talking objectToDelete)
         {
-            throw new NotImplementedException();
+            context.Talking.Remove(objectToDelete);
+            context.SaveChanges();
+            return true;
         }
 
         public IEnumerable<Talking> GetAll()
@@ -41,19 +43,22 @@ namespace HaarlemFestival_Web.Repositories
 
         public Talking GetById(int id)
         {
-            throw new NotImplementedException();
+            Talking talking = context.Talking.Single(model => (model.Id == id));
+            return talking;
         }
 
         public Talking Insert(Talking objectToInsert)
         {
-            throw new NotImplementedException();
+            context.Talking.Add(objectToInsert);
+            context.SaveChanges();
+            return objectToInsert;
         }
 
         public Talking Update(Talking objectToUpdate)
         {
             try
             {
-                Talking oudObject = context.Talking.Single(x => (x.Id == objectToUpdate.Id));
+                Talking oudObject = context.Talking.Single(model => (model.Id == objectToUpdate.Id));
 
                 oudObject = objectToUpdate;
 

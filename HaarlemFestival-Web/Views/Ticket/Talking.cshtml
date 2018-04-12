@@ -1,17 +1,12 @@
 ﻿@model HaarlemFestival_Web.Models.ViewModels.TalkingTicket
 @{
-    ViewBag.Title = "Order Tickets";
+    ViewBag.Title = "Order Tickets, Max 2 tickets per day";
     Layout = "~/Views/Shared/Pages/_Layout.cshtml";
 }
 
 <h2>Talking Haarlem Ticket Overview</h2>
 
 <section>
-    @*foreach (var item in Model.GetType().GetProperties().OfType<IEnumerable<object>>())
-        {
-            Console.Write(item);
-        }*@
-
     @if (Model.justOrdered)
     {
         <section class="text-success border-success">

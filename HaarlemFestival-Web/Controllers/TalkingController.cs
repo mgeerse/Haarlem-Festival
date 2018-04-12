@@ -9,13 +9,21 @@ namespace HaarlemFestival_Web.Controllers
 {
     public class TalkingController : Controller
     {
-        TalkingRepository talkingRepository = new TalkingRepository();
+        TalkingTicket talking = new TalkingTicket();
 
-        public ActionResult Talking()
+        public ActionResult maxTickets()
         {
-            TalkingTicket TalkingTicket = new TalkingTicket();
-            TalkingTicket.talking = talkingRepository.GetAll();
-            return View("~/Views/Ticket/Talking.cshtml", TalkingTicket);
+            int maxNumerOfTickets = 0;
+
+            if (maxNumerOfTickets <= 2)
+            {
+                return View("~/Views/Ticket/Talking.cshtml", talking);
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "You can order a maximum of two tickets per day";
+                return View("~/Views/Ticket/Talking.cshtml", talking);
+            }
         }
     }
 }
