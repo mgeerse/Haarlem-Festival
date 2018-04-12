@@ -39,5 +39,10 @@ namespace HaarlemFestival_Web.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public int GetAmountOfOrderedTicketsPerActivity(int ActivityId)
+        {
+            return db.Tickets.Where(m => m.ActivityId == ActivityId).Count();
+        }
     }
 }

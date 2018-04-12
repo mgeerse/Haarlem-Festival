@@ -11,6 +11,10 @@ namespace HaarlemFestival_Web.Repositories
     {
         private FestivalContext context = new FestivalContext();
 
+        public void RemoveCapacity(Jazz Object, int i)
+        {
+        }
+
         public List<string> GetDays()
         {
             List<string> Days = new List<string>();
@@ -90,7 +94,7 @@ namespace HaarlemFestival_Web.Repositories
 
                 context.SaveChanges();
 
-                return oudObject;
+                return objectToUpdate;
             }
             catch (Exception)
             {
