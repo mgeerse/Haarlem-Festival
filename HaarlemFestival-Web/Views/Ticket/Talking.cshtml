@@ -4,26 +4,59 @@
     Layout = "~/Views/Shared/Pages/_Layout.cshtml";
 }
 
-<link rel="stylesheet" href="../Content/Talking.css" />
+<h2>Talking Haarlem Ticket Overview</h2>
 
 <section>
-    <br />
-    <h1>Talking Haarlem</h1>
-    <p>The place where famous people interview each other</p>
-    <br />
-    <br />
-    <table>
-        <tr>
-            <td><img src="../Content/Images/Talking/robxgiel.PNG" alt="Rob meets Giel" width="600" height="160"></td>
+    @*foreach (var item in Model.GetType().GetProperties().OfType<IEnumerable<object>>())
+        {
+            Console.Write(item);
+        }*@
+
+    @if (Model.justOrdered)
+    {
+        <section class="text-success border-success">
+            <b>Your tickets have succesfully been added to your basket.</b>
+            <b>Your basket can be found <a class="text-info" href="/Ticket/Overview"></a></b>
+        </section>
+    }
+
+    <table style="width:100%">
+        <tr class="table-primary">
+            <th>Amount</th>
+            <th>Speakers</th>
+            <th>Tickets Left</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th></th>
         </tr>
-        <tr>
-            <td><img src="../Content/Images/Talking/femkexjob.PNG" alt="Femke meets Job " width="600" height="160"></td>
-        </tr>
-        <tr>
-            <td><img src="../Content/Images/Talking/paulxbrigitte.PNG" alt="Paul meets Brigitte" width="600" height="160"></td>
-        </tr>
+        @foreach (var item in Model.talking)
+        {
+            using (Html.BeginForm("OrderTalkingTicket", "Ticket", FormMethod.Post, new { Id = Html.Value("Id"), Amount = Html.ValueFor(m => m.amount), Comment = Html.ValueFor(m => m.comment)}))
+            {
+                Html.ValidationSummary();
+                <tr>
+                    <td hidden="hidden"><input hidden="hidden" name="Id" value="@item.Id" /></td>
+                    <td><input type="number" min="0" name="Amount" /></td>
+                    <td>@item.SpeakerOne.Name meets @item.SpeakerTwo.Name</td>
+                    @if (item.Capacity == -1)
+                    {
+                        <td>&infin;</td>
+                    }
+                    else if (item.Capacity == 0)
+                    {
+                        <td>Tickets sold out!</td>
+                    }
+                    else
+                    {
+                        <td>@item.Capacity</td>
+                    }
+                    <td>@item.StartTime.ToShortDateString()</td>
+                    <td>@item.StartTime.ToShortTimeString() - @item.EndTime.ToShortTimeString()</td>
+                    <td>@item.Location</td>
+                    <td><input class="btn-info" type="submit" value="Add Item to Basket" /></td>
+                </tr>
+            }
+        }
     </table>
-    <a href="~/Ticket/Talking">
-        <div class="reserveButton">Reserve</div>
-    </a>
 </section>

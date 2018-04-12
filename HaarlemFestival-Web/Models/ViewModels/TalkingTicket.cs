@@ -14,7 +14,10 @@ namespace HaarlemFestival_Web.Models.ViewModels
         //Dit is nodig doordat de database geen mogelijkheid biedt tot het makkelijk berkenen van de al geboekte tickets
         public IEnumerable<Ticket> tickets;
 
+        [Display(Name = "Amount")]
+        [Range(0, int.MaxValue, ErrorMessage = "Not a valid number has been given")]
         public int amount;
+        public string comment;
         public ShoppingCart shoppingCart;
         public bool justOrdered;
     }

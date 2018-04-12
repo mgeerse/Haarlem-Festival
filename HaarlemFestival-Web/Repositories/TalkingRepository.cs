@@ -23,24 +23,6 @@ namespace HaarlemFestival_Web.Repositories
             return talking;
         }
 
-        public IEnumerable<Talking> GetSpeakerOne()
-        {
-            IEnumerable<Talking> talking = context.Talking.Include(model => model.SpeakerOne);
-            return talking;
-        }
-
-        public IEnumerable<Talking> GetSpeakerTwo()
-        {
-            IEnumerable<Talking> talking = context.Talking.Include(model => model.SpeakerTwo);
-            return talking;
-        }
-
-        public IEnumerable<Talking> GetDescription()
-        {
-            IEnumerable<Talking> talking = context.Talking.Include(model => model.Description);
-            return talking;
-        }
-
         public Talking GetById(int id)
         {
             throw new NotImplementedException();
