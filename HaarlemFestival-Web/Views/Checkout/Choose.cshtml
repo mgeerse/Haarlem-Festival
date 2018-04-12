@@ -23,8 +23,10 @@
     </div>
 </div>
 <script>
-    $('btn.order').click(function () {
-        var element = '<div></div>';
-        $('#shoppingcart').add();
+    $(document).ready(function () {
+        $('btn.order').click(function () {
+            var element = '<div class="col-12"><div class="row">' + $('#activity').val() + ' - ' + $('#amount').val() + '</div></div>';
+            $('#shoppingcart').add();
+        });
     });
 </script>

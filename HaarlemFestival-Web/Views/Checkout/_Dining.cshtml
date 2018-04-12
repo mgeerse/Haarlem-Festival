@@ -3,42 +3,40 @@
     ViewBag.Title = "_Dining";
 }
 
-@using (Html.BeginForm("AddTicketToCart", "Checkout", FormMethod.Post, new { id = "order" }))
-{
-    <div class="row">
-        <label class="col-md-6 required" for="restaurant">Restaurant</label>
-        <select class="col-md-6" id="restaurant"></select>
-    </div>
-    <div class="row">
-        <label class="col-md-6 required" for="timeslot">Timeslot</label>
-        <select class="col-md-6" id="timeslot"></select>
-    </div>
-    <div class="row">
-        <label class="col-md-6 required">Amount of adults</label>
-        <div><input class="number col-md-6" width="100" type="number" id="adult-count" value="0" /></div>
-    </div>
-    <div class="row">
-        <label class="col-md-6">Amount of children</label>
-        <div><input class="col-md-6" width="100" type="number" id="child-count" value="0" /></div>
-    </div>
-    <div class="row">
-        <label class="col-md-6">Comments</label>
-        <textarea class="col-md-6" placeholder="Allergies, comments etc."></textarea>
-    </div>
-    <div class="row">
-        <div class="col-md-6"><span style="color:red">*</span> = The field is required.</div>
-        <div class="col-md-6 btn"><input type="submit" class="btn" form="order" value="Add to cart" /></div>
-    </div>
-}
+
+<div class="row">
+    <label class="col-md-6 required" for="activity">Restaurant</label>
+    <select class="col-md-6" id="activity"></select>
+</div>
+<div class="row">
+    <label class="col-md-6 required" for="timeslot">Timeslot</label>
+    <select class="col-md-6" id="timeslot"></select>
+</div>
+<div class="row">
+    <label class="col-md-6 required" for="amount">Amount of adults</label>
+    <div><input class="number col-md-6" width="100" type="number" id="amount" value="0" /></div>
+</div>
+<div class="row">
+    <label class="col-md-6">Amount of children</label>
+    <div><input class="col-md-6" width="100" type="number" id="child-count" value="0" /></div>
+</div>
+<div class="row">
+    <label class="col-md-6">Comments</label>
+    <textarea class="col-md-6" placeholder="Allergies, comments etc."></textarea>
+</div>
+<div class="row">
+    <div class="col-md-6"><span style="color:red">*</span> = The field is required.</div>
+    <div class="col-md-6 btn"><input type="submit" class="btn" form="order" value="Add to cart" /></div>
+</div>
 
 <script type="text/javascript">
     $(document).ready(function () {
         $.getJSON('/Checkout/GetRestaurants', null, function (data) {
             $.each(data, function () {
-                $('#restaurant').append('<option value=' +
+                $('#activity').append('<option value=' +
                     this.Id + '>' + this.Name + '</option>');
             });
-            $.getJSON('/Checkout/GetActivitiesForRestaurant', { day: $('#restaurant').val() }, function (data) {
+            $.getJSON('/Checkout/GetActivitiesForRestaurant', { day: $('#activity').val() }, function (data) {
                 $.each(data, function () {
                     var startString = '' + this.StartTime;
                     var endString = '' + this.EndTime;
@@ -52,9 +50,9 @@
             alert('Error getting restaurants!');
         });
 
-        $('#restaurant').change(function () {
+        $('#activity').change(function () {
             $('#timeslot option').remove();
-            $.getJSON('/Checkout/GetActivitiesForRestaurant', { day: $('#restaurant').val() }, function (data) {
+            $.getJSON('/Checkout/GetActivitiesForRestaurant', { day: $('#activity').val() }, function (data) {
                 $.each(data, function () {
                     var startString = '' + this.StartTime;
                     var endString = '' + this.EndTime;
