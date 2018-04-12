@@ -26,24 +26,26 @@
             using (Html.BeginForm("EditTicket", "Ticket", FormMethod.Post, new { TicketId = Html.Value("TicketId"), Amount = Html.Value("Amount"), Option = Html.Value("submit") }))
             {
                 @Html.ValidationSummary()
-        <tr style="border-top-style:solid; border-top-width:1px; border-top-color:black">
-            <td>@item.Id</td>
-            <td>@item.Activity.Name</td>
-            <td><input type="number" name="amount" value="@item.Amount" /></td>
-            <td>&euro;@item.Price</td>
-            <td>&euro;@(item.Price * item.Amount)</td>
-            <td>@item.Activity.StartTime.ToShortDateString()</td>
-            <td>@item.Activity.StartTime.ToShortTimeString() - @item.Activity.EndTime.ToShortTimeString()</td>
+                <tr style="border-top-style:solid; border-top-width:1px; border-top-color:black">
+                    <td>@item.Id</td>
+                    <td>@item.Activity.Name</td>
+                    <td><input type="number" name="amount" value="@item.Amount" /></td>
+                    <td>&euro;@item.Price</td>
+                    <td>&euro;@(item.Price * item.Amount)</td>
+                    <td>@item.Activity.StartTime.ToShortDateString()</td>
+                    <td>@item.Activity.StartTime.ToShortTimeString() - @item.Activity.EndTime.ToShortTimeString()</td>
 
-            <td><input type="number" name="TicketId" hidden="hidden" value="@item.Id" /></td>
-            <td><input class="btn-warning" name="submit" value="Update Amount" type="submit" /></td>
-            <td><input class="btn-warning" name="submit" value="Remove Ticket" type="submit" /></td>
-        </tr>
+                    <td><input type="number" name="TicketId" hidden="hidden" value="@item.Id" /></td>
+                    <td><input class="btn-warning" name="submit" value="Update Amount" type="submit" /></td>
+                    <td><input class="btn-warning" name="submit" value="Remove Ticket" type="submit" /></td>
+                </tr>
             }
         }
-
-
     </table>
+
+    <br />
+    <br />
+    <a href="/Ticket/Index">Back to all tickets</a>
 }
 else
 {
@@ -53,4 +55,3 @@ else
     <a href="~/Ticket/" class="alert-info">Order tickets here</a>
 }
 
-<a href="/Ticket/Index">Back to all tickets</a>
