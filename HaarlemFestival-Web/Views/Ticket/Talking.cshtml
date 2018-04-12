@@ -1,0 +1,29 @@
+﻿@model HaarlemFestival_Web.Models.ViewModels.TalkingTicket
+@{
+    ViewBag.Title = "Order Tickets";
+    Layout = "~/Views/Shared/Pages/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="../Content/Talking.css" />
+
+<section>
+    <br />
+    <h1>Talking Haarlem</h1>
+    <p>The place where famous people interview each other</p>
+    <br />
+    <br />
+    <table>
+        <tr>
+            <td><img src="../Content/Images/Talking/robxgiel.PNG" alt="Rob meets Giel" width="600" height="160"></td>
+        </tr>
+        <tr>
+            <td><img src="../Content/Images/Talking/femkexjob.PNG" alt="Femke meets Job " width="600" height="160"></td>
+        </tr>
+        <tr>
+            <td><img src="../Content/Images/Talking/paulxbrigitte.PNG" alt="Paul meets Brigitte" width="600" height="160"></td>
+        </tr>
+    </table>
+    <a href="~/Ticket/Talking">
+        <div class="reserveButton">Reserve</div>
+    </a>
+</section>

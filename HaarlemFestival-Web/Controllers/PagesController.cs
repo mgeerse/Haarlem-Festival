@@ -46,6 +46,7 @@ namespace HaarlemFestival_Web.Controllers
             return View(Days);
         }
 
+        // GET: Talking
         private TalkingRepository talkingRepository = new TalkingRepository();
 
         public ActionResult Talking()
