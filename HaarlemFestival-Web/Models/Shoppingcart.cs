@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using HaarlemFestival_Web.Repositories;
 
 namespace HaarlemFestival_Web.Models
 {
@@ -9,6 +10,9 @@ namespace HaarlemFestival_Web.Models
     {
         //Maarten Geerse
 
+
+
+        private TicketRepository ticketRepository = new TicketRepository();
         //Singleton
         public static readonly ShoppingCart UniqueInstance;
 
@@ -33,11 +37,20 @@ namespace HaarlemFestival_Web.Models
         public void AddTicket(Ticket ticket)
         {
             tickets.Add(ticket);
+            ticketRepository.Insert(ticket);
         }
 
-        public void RemoveTicket(Ticket ticket)
+        public void RemoveTicketByObject(Ticket ticket)
         {
             tickets.Remove(ticket);
+            ticketRepository.Delete(ticket);
+        }
+
+        public void RemoveTicketByInt(int Id)
+        {
+            Ticket ticket = tickets.Where(m => m.Id == Id).Single();
+            tickets.Remove(ticket);
+            ticketRepository.Delete(ticket);
         }
 
         public decimal GetTotal()

@@ -33,7 +33,7 @@
         </tr>
         @foreach (var item in Model.jazz)
         {
-            using (Html.BeginForm("OrderJazzTicket", "Ticket", FormMethod.Post, new { Id = Html.Value("Id"), Amount = Html.ValueFor(m => m.Amount) }))
+            using (Html.BeginForm("OrderJazzTicket", "Ticket", FormMethod.Post, new { Id = Html.Value("Id"), Amount = Html.ValueFor(m => m.Amount) } ))
             {
                 Html.ValidationSummary();
                 <tr>

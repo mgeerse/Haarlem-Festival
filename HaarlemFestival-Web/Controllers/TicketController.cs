@@ -32,6 +32,24 @@ namespace HaarlemFestival_Web.Controllers
             return View("~/Views/Ticket/Overview.cshtml", shoppingCart.tickets);
         }
 
+        [HttpPost]
+        public ActionResult EditTicket(int Id, string Option, int Amount)
+        {
+            switch (Option)
+            {
+                case "Update Amount":
+                    Ticket ticket = shoppingCart.tickets.Where(m => m.Id == Id).Single();
+                    ticket.Amount = Amount;
+                    break;
+
+                case "Remove Ticket":
+                    shoppingCart.RemoveTicketByInt(Id);
+                    break;
+            }
+
+            return Overview();
+        }
+
         public ActionResult Jazz()
         {
             JazzTicket JazzTicket = new JazzTicket
@@ -50,14 +68,12 @@ namespace HaarlemFestival_Web.Controllers
 
             shoppingCart.AddTicket(MakeTicketFromJazzActivity(jazz, Amount));
 
-            
-
             return Jazz();
         }
 
         private Ticket MakeTicketFromJazzActivity(Jazz jazz, int Amount)
         {
-            return new Ticket
+            Ticket ticket = new Ticket
             {
                 ActivityId = jazz.Id,
                 Activity = activityRepository.GetById(jazz.Id),
@@ -65,6 +81,8 @@ namespace HaarlemFestival_Web.Controllers
                 Amount = Amount,
                 SoldAt = DateTime.Now,
             };
+
+            return ticketRepository.Insert(ticket);
         }
     }
 }

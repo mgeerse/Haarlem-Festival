@@ -23,15 +23,24 @@
 
         @foreach (var item in Model)
         {
-        <tr>
-            <td>@item.Activity.Name</td>
-            <td>@item.Price</td>
-            <td>@item.Amount</td>
-            <td>@item.Activity.StartTime.ToShortDateString()</td>
-            <td>@item.Activity.StartTime.ToShortTimeString() - @item.Activity.EndTime.ToShortTimeString()</td>
-            <td>@item.Activity.Location</td>
-        </tr>
+            using (Html.BeginForm("EditTicket", "Ticket", FormMethod.Post, new { TicketId = Html.Value("Id"), Option = Html.Value("submit"), Amount = Html.Value("amount") }))
+            {
+
+                <tr>
+                    <td hidden="hidden"><input hidden="hidden" name="Id" value="@item.Id" /></td>
+                    <td><input type="number" name="amount" value="@item.Amount" /></td>
+                    <td>@item.Price</td>
+                    <td>@item.Amount</td>
+                    <td>@item.Activity.StartTime.ToShortDateString()</td>
+                    <td>@item.Activity.StartTime.ToShortTimeString() - @item.Activity.EndTime.ToShortTimeString()</td>
+                    <td>@item.Id</td>
+                    <td><input class="btn-warning" name="submit" value="Update Amount" type="submit" /></td>
+                    <td><input class="btn-warning" name="submit" value="Remove Ticket" type="submit" /></td>
+                </tr>
+            }
         }
+
+
     </table>
 }
 else
