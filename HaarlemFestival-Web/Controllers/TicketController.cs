@@ -6,6 +6,9 @@ using System.Web.Mvc;
 using HaarlemFestival_Web.Repositories;
 using HaarlemFestival_Web.Models.ViewModels;
 using HaarlemFestival_Web.Models;
+using System.Net.Mail;
+using System.Text;
+
 namespace HaarlemFestival_Web.Controllers
 {
     public class TicketController : Controller
@@ -16,6 +19,7 @@ namespace HaarlemFestival_Web.Controllers
         private WalkingRepository walkingRepository = WalkingRepository.Instance;
         private TalkingRepository talkingRepository = TalkingRepository.Instance;
         private ActivityRepository activityRepository = ActivityRepository.Instance;
+        private CustomerRepository customerRepository = CustomerRepository.Instance;
 
         private ShoppingCart shoppingCart = ShoppingCart.UniqueInstance;
 
@@ -23,6 +27,13 @@ namespace HaarlemFestival_Web.Controllers
         public ActionResult Index()
         {
             return View("~/Views/Ticket/Index.cshtml");
+        }
+
+        public ActionResult Buy()
+        {
+            TicketRegisterViewModel ticketRegisterViewModel = new TicketRegisterViewModel();
+
+            return View("~/Views/Ticket/Buy.cshtml", ticketRegisterViewModel);
         }
 
         public ActionResult Overview()
@@ -56,6 +67,73 @@ namespace HaarlemFestival_Web.Controllers
             return Overview();
         }
 
+        [HttpPost]
+        public ActionResult Register(string Firstname, string Sirname, string Email)
+        {
+            //Send mail
+            SmtpClient smtpClient = new SmtpClient("smtp.live.com", 25);
+
+            smtpClient.Credentials = new System.Net.NetworkCredential("mgeerse@hotmail.com", "1koolland&");
+            smtpClient.UseDefaultCredentials = true;
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtpClient.EnableSsl = true;
+            smtpClient.Host = "smtp.hotmail.com";
+            smtpClient.Port = 25;
+            MailMessage mail = new MailMessage();
+
+            mail.Body += "Dear " + Firstname + " " + Sirname + ",";
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in shoppingCart.tickets)
+            {
+                sb.Append("Activity: " + item.Activity.Name + "\n");
+                sb.Append("Starting from " + item.Activity.StartTime.ToShortDateString().ToString() + " unitll " + item.Activity.EndTime.ToShortDateString() + "on " + item.Activity.StartTime.ToShortDateString() + "\n");
+                sb.Append("You're expected at:" + item.Activity.Location);
+                sb.Append("\n\n");
+            };
+
+            mail.Body += sb.ToString();
+
+            //Setting From , To and CC
+            mail.From = new MailAddress("mgeerse@hotmail.com", "Haarlem Festival Tickets");
+            mail.To.Add(new MailAddress(Email));
+
+            try
+            {
+                //Dit lagde eerder uit-
+                smtpClient.Send(mail);
+            }
+            catch (Exception e)
+            {
+                //niets
+            }
+            //Genoeg gehad met de lol.
+            //Nu de gegevens van tickets uit shoppingCart sturen naar de database!
+
+
+            //En dan nog de customer in de database zetten
+            Customer customer = new Customer
+            {
+                FirstName = Firstname,
+                LastName = Sirname,
+                EmailAddress = Email,
+                Tickets = shoppingCart.tickets
+            };
+
+            customerRepository.Insert(customer);
+
+            List<Ticket> customerTickets = shoppingCart.tickets;
+            List<Ticket> escape = new List<Ticket>();
+            foreach (var item in customerTickets)
+            {
+                Ticket ticket = item;
+                escape.Add(ticket);
+            }
+
+
+            return View("~/Views/Ticket/Thanks");
+        }
+
         public ActionResult Jazz()
         {
             JazzTicket JazzTicket = new JazzTicket();
@@ -81,7 +159,6 @@ namespace HaarlemFestival_Web.Controllers
                 ModelState.AddModelError("Error!", "You must set the amount before adding it to your basket.");
             }
 
-            
             return Jazz();
         }
 
