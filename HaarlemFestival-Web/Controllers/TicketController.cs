@@ -17,6 +17,7 @@ namespace HaarlemFestival_Web.Controllers
         private WalkingRepository walkingRepository = new WalkingRepository();
         private TalkingRepository talkingRepository = new TalkingRepository();
 
+        private ShoppingCart shoppingCart = new ShoppingCart();
 
         // GET: Ticket
         public ActionResult Index()
@@ -41,8 +42,21 @@ namespace HaarlemFestival_Web.Controllers
         [HttpPost]
         public ActionResult OrderJazzTicket(int Id, int Amount)
         {
-            
+            Jazz jazz = jazzRepository.GetById(Id);
+
+            shoppingCart.AddTicket(MakeTicketFromJazzActivity(jazz, Amount));
+
             return View("~/Views/Home/Index.cshtml");
+        }
+
+        private Ticket MakeTicketFromJazzActivity(Jazz jazz, int Amount)
+        {
+            return new Ticket
+            {
+                Price = jazz.Price,
+                Amount = Amount,
+                SoldAt = DateTime.Now,
+            };
         }
     }
 }
