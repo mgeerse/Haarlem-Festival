@@ -1,10 +1,35 @@
-﻿@model List<HaarlemFestival_Web.Models.Ticket>
+﻿@model HaarlemFestival_Web.Models.ViewModels.TicketRegisterViewModel
 @{
-    ViewBag.Title = "Order Tickets";
+    ViewBag.Title = "Checkout Page";
     Layout = "~/Views/Shared/Pages/_Layout.cshtml";
 }
 
 
-<h2>Buy your tickets</h2>
+<center>
+    <br />
+    <h5>Thank you for your interest in Haarlem Festival.</h5>
 
-<h5>Thank you for your interest in Haarlem Festival.</h5>
+
+    @Html.ValidationSummary()
+    @using (Html.BeginForm("Register", "Ticket", FormMethod.Post,
+        new { Firstname = Html.ValueFor(m => m.Firstname),
+            Sirname = Html.ValueFor(m => m.Sirname),
+            Email = Html.ValueFor(m => m.Email) }))
+    {
+        @Html.LabelFor(m => m.Firstname) <br />
+        @Html.TextBoxFor(m => m.Firstname)
+        @Html.ValidationMessageFor(m => m.Firstname)
+        <br />
+        @Html.LabelFor(m => m.Sirname) <br />
+        @Html.TextBoxFor(m => m.Sirname)
+        @Html.ValidationMessageFor(m => m.Sirname)
+        <br />
+        @Html.LabelFor(m => m.Email)<br />
+        @Html.TextBoxFor(m => m.Email)
+        @Html.ValidationMessageFor(m => m.Email)
+        <br />
+        <input type="submit" value="To Buypage" />
+    }
+</center>
+
+

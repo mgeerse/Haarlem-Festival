@@ -1,10 +1,48 @@
-﻿
+﻿@model HaarlemFestival_Web.Models.Subject
+
+@{
+    ViewBag.Title = "Create Event";
+    Layout = "~/Views/Shared/Admin/_Layout.cshtml";
+}
+
 @{
     ViewBag.Title = "PageContent";
     Layout = "~/Views/Shared/Admin/_Layout.cshtml";
 }
 
-<h2>@Html.ActionLink("Dashboard", "Index") > Manage Event Page Content</h2>
+<h2>@Html.ActionLink("Dashboard", "Index") > Select Main Event Page</h2>
 
-<h4>Select a main event:.. </h4>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <hr />
+
+        <h4>Select a main event: </h4>
+        @Html.ActionLink(linkText: "Jazz @ Patronaat",
+                    actionName: "EditJazz",
+                    controllerName: "Dashboard",
+                    routeValues: new { id = 5 },
+                    htmlAttributes: new { @class = "icon-1 info-tooltip", @Title = "EditJazz" })<br />
+
+        @Html.ActionLink("Talking Haarlem", "EditTalking", "Dashboard")<br />
+
+        @Html.ActionLink(linkText: "Historic Tour",
+                    actionName: "EditWalking",
+                    controllerName: "Dashboard",
+                    routeValues: new { id = 7 },
+                    htmlAttributes: new { @class = "icon-1 info-tooltip", @Title = "EditWalking" })<br />
+
+        @Html.ActionLink(linkText: "Dinner in Haarlem",
+                    actionName: "EditDining",
+                    controllerName: "Dashboard",
+                    routeValues: new { id = 8 },
+                    htmlAttributes: new { @class = "icon-1 info-tooltip", @Title = "EditDining" })<br />
+
+  
+    </div>
+}
+
 

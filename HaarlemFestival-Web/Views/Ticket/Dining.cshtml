@@ -1,0 +1,60 @@
+﻿@model HaarlemFestival_Web.Models.ViewModels.DiningTicket
+@{
+    ViewBag.Title = "Order Tickets";
+    Layout = "~/Views/Shared/Pages/_Layout.cshtml";
+
+    //var test = Model.GetType().GetProperties().OfType<IEnumerable<object>>();
+}
+<h2>Dining Ticket Overview</h2>
+
+<section>
+    @*foreach (var item in Model.GetType().GetProperties().OfType<IEnumerable<object>>())
+        {
+            Console.Write(item);
+        }*@
+
+    @if (Model.shoppingCart.tickets.Count != 0)
+    {
+        <section class="text-success border-success">
+            <b>Sweet! Your tickets have succesfully been added to your basket.</b>
+            <b>Your basket can be found <a class="text-info" href="/Ticket/Overview">by clicking here</a></b>
+        </section>
+    }
+
+    <table style="width:100%">
+        <tr class="table-primary">
+            <th>Amount</th>
+            <th>Restaurant</th>
+            <th>Tickets Left</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.dining)
+        {
+            using (Html.BeginForm("OrderDiningTicket", "Ticket", FormMethod.Post, new { Id = Html.Value("Id"), Amount = Html.ValueFor(m => m.amount) } ))
+            {
+                Html.ValidationSummary();
+                <tr style="border-top-style:solid; border-top-width:1px; border-top-color:black">
+                    <td><input type="number" min="0" name="Amount" value="0"/></td>
+                    <td>@item.Restaurant.Name</td>
+                    @if (item.Capacity == -1)
+                    {
+                        <td>&infin;</td>
+                    }
+                    else if (item.Capacity == 0)
+                    {
+                        <td>Tickets sold out!</td>
+                    }
+                    else
+                    {
+                        <td>@item.Capacity</td>
+                    }
+                    <td>@item.StartTime.ToShortDateString()</td>
+                    <td>@item.StartTime.ToShortTimeString() - @item.EndTime.ToShortTimeString()</td>
+                    <td><input class="btn-info" type="submit" value="Add Item to Basket" /></td>
+                </tr>
+            }
+        }
+    </table>
+</section>

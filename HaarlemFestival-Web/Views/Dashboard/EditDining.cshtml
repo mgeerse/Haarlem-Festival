@@ -1,0 +1,43 @@
+﻿@using HaarlemFestival_Web.Models
+@using HaarlemFestival_Web.Models.ViewModels
+@model HaarlemFestival_Web.Models.Subject
+
+@{
+    ViewBag.Title = "EditDining";
+    Layout = "~/Views/Shared/Admin/_Layout.cshtml";
+}
+
+<h2>@Html.ActionLink("Dashboard", "Index") > @Html.ActionLink("Select Main Event Page", "PageContent") > Edit Dining Page</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.Hidden("Id", Model.Id)
+        </div>
+
+        <b>@Html.Label("Dining Page Name:")</b>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = Model.Name.ToString() } })
+        </div>
+
+        <b> @Html.Label("Dining Page Description:")</b>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", placeholder = Model.Description.ToString() } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Confirm Edit Dining" class="btn btn-default" />
+        </div>
+    </div>
+    <hr />
+}
+
+<div>
+    <br />@Html.ActionLink("Back to Main Event Selection", "PageContent")<br />
+</div>

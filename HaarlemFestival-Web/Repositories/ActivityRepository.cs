@@ -81,5 +81,10 @@ namespace HaarlemFestival_Web.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public int GetLastId()
+        {
+            return context.Activities.Last().Id;
+        }
     }
 }

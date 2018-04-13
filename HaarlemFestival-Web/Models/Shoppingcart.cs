@@ -13,6 +13,7 @@ namespace HaarlemFestival_Web.Models
         public List<int> UsedIds = new List<int>();
 
         private TicketRepository ticketRepository = TicketRepository.instance;
+
         //Singleton
         public static readonly ShoppingCart UniqueInstance;
 
@@ -52,7 +53,7 @@ namespace HaarlemFestival_Web.Models
         {
             //Shoppingcart moet zijn eigen Id's bijhouden totdat deze in de database gaan.
             //In de database worden ze weggehaald en gebruikt de database haar eigen nummering hiervoor.
-            ticket.Id = UsedIds.Last() + 1;
+            ticket.Id = GetNewId();
 
             tickets.Add(ticket);
         }
