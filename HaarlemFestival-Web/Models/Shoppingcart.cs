@@ -83,7 +83,6 @@ namespace HaarlemFestival_Web.Models
             {
                 price += item.Price;
             }
-
             return price;
         }
     }

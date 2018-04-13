@@ -9,12 +9,10 @@ namespace HaarlemFestival_Web.Controllers
 {
     public class TalkingController : Controller
     {
-        TalkingTicket talking = new TalkingTicket();
+        private TalkingRepository talking = TalkingRepository.Instance;
 
-        public ActionResult maxTickets()
+        public ActionResult maxTickets(int maxNumerOfTickets)
         {
-            int maxNumerOfTickets = 0;
-
             if (maxNumerOfTickets <= 2)
             {
                 return View("~/Views/Ticket/Talking.cshtml", talking);
