@@ -185,13 +185,15 @@
     <Compile Include="Models\ViewModels\DiningDay.cs" />
     <Compile Include="Models\ViewModels\DiningTicket.cs" />
     <Compile Include="Models\ViewModels\JazzTicket.cs" />
+    <Compile Include="Models\ViewModels\AvailableTicket.cs" />
+    <Compile Include="Models\ViewModels\IntervieweeViewModel.cs" />
     <Compile Include="Models\ViewModels\JazzDay.cs" />
     <Compile Include="Models\ViewModels\JazzViewModel.cs" />
+    <Compile Include="Models\ViewModels\SubjectViewModel.cs" />
+    <Compile Include="Repositories\IntervieweeRepository.cs" />
     <Compile Include="Models\ViewModels\OverviewViewModel.cs" />
     <Compile Include="Models\ViewModels\TicketRegisterViewModel.cs" />
     <Compile Include="Repositories\CustomerRepository.cs" />
-    <Compile Include="Models\ViewModels\SubjectViewModel.cs" />
-    <Compile Include="Repositories\IntervieweeRepository.cs" />
     <Compile Include="Repositories\TicketRepository.cs" />
     <Compile Include="Repositories\RestaurantRepository.cs" />
     <Compile Include="Controllers\TestController.cs" />
