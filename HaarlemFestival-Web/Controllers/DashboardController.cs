@@ -96,6 +96,7 @@ namespace HaarlemFestival_Web.Controllers
 
                 //Historic
                 case 7:
+
                     Walking walking = new Walking { Name = name, Description = description, Capacity = capacity, Price = price, StartTime = startTime, EndTime = endTime, LocationId = 23, SubjectId = subjectId};
                     activityRepo.Insert(walking);
                     break;
