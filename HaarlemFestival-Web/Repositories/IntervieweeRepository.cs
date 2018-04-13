@@ -1,9 +1,10 @@
-﻿using HaarlemFestival_Web.Contexts;
-using HaarlemFestival_Web.Models;
+﻿using HaarlemFestival_Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using HaarlemFestival_Web.Contexts;
+using System.Data.Entity;
 
 namespace HaarlemFestival_Web.Repositories
 {
