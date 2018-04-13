@@ -1,0 +1,77 @@
+﻿@using HaarlemFestival_Web.Models
+@using HaarlemFestival_Web.Models.ViewModels
+@model EventViewModel
+
+@{
+    ViewBag.Title = "EventDetails";
+    Layout = "~/Views/Shared/Admin/_Layout.cshtml";
+}
+
+<h2>@Html.ActionLink("Dashboard", "Index") > Manage Activities</h2>
+
+@*<input type="text" id="myInput" class="col-lg-5" placeholder="Filter by typing here..">*@
+
+<button class="col-lg-2">
+    @Html.ActionLink(linkText: "Add Activity",
+                 actionName: "CreateActivity",
+                 controllerName: "Dashboard"
+                 )
+</button>
+
+<span class="col-lg-5"> </span>
+
+<table id="myTable">
+    <tbody>
+        <tr class="header">
+            <th>Id</th>
+            <th>Activity Name</th>
+            <th>Description</th>
+            <th>Capacity</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Main Event</th>
+            <th>Location</th>
+            <th>Price</th>
+            <th> </th>
+            <th> </th>
+        </tr>
+
+        @foreach (Activity a in Model.ActivitiesList)
+        {
+            if (a != null)
+            {
+                <tr class="filter-row">
+                    <td>@a.Id</td>
+                    <td>@a.Name</td>
+                    <td class="col-lg-1">@a.Description</td>
+                    <td class="col-lg-1">@a.Capacity</td>
+                    <td class="col-lg-1">@a.StartTime</td>
+                    <td class="col-lg-1">@a.EndTime</td>
+                    <td class="col-lg-1">@Model.GetSubjectById(a.SubjectId)</td>
+                    <td class="col-lg-1">@Model.GetLocationById(a.LocationId)</td>
+                    <td class="col-lg-1">@a.Price</td>
+                    <td class="col-lg-1">
+                        @Html.ActionLink(linkText: "Edit",
+                        actionName: "EditActivity",
+                        controllerName: "Dashboard",
+                        routeValues: new { id = a.Id, subjectId = a.SubjectId },
+                        htmlAttributes: new { @class = "icon-1 info-tooltip", @Title = "Edit" })
+                    </td>
+
+                    <td class="col-lg-1">
+                        @Html.ActionLink(linkText: "Remove",
+                        actionName: "RemoveActivity",
+                        controllerName: "Dashboard",
+                        routeValues: new { id = a.Id },
+                        htmlAttributes: new { onclick = "return confirm('Are you sure you wish to delete this activity?');" }
+                        )
+                    </td>
+                </tr>
+            }
+            else
+            {
+                continue;
+            }
+        }
+    </tbody>
+</table>

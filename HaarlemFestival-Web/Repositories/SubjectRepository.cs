@@ -53,12 +53,27 @@ namespace HaarlemFestival_Web.Repositories
         /// <returns>The subject with the given Id. Returns <code>null</code> if none are found.</returns>
         public Subject GetById(int id)
         {
-            throw new NotImplementedException();
+            return context.Subjects.FirstOrDefault(s => s.Id == id);
+        }
+
+        public Subject GetByName(string name)
+        {
+            return context.Subjects.FirstOrDefault(s => s.Name == name) as Subject;
         }
 
         public Subject Insert(Subject objectToInsert)
         {
             throw new NotImplementedException();
+        }
+
+        public Subject Update(int id, Subject objectToUpdate)
+        {
+            Subject existingSubject = context.Subjects.Where(s => s.Id == id).FirstOrDefault();
+            existingSubject.Name = objectToUpdate.Name;
+            existingSubject.Description = objectToUpdate.Description;
+            context.SaveChanges();
+
+            return objectToUpdate;
         }
 
         public Subject Update(Subject objectToUpdate)
