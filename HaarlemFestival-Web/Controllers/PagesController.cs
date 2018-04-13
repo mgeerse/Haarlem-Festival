@@ -30,10 +30,11 @@ namespace HaarlemFestival_Web.Controllers
         }
 
         private DiningRepository diningRepository = DiningRepository.Instance;
+        private RestaurantRepository restaurantRepository = RestaurantRepository.Instance;
 
         public ActionResult Dining()
         {
-            IEnumerable<Dining> information = diningRepository.GetAll();
+            IEnumerable<Restaurant> information = restaurantRepository.GetAll();
             return View(information);
         }
 

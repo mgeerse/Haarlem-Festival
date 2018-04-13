@@ -1,4 +1,5 @@
-﻿@model IEnumerable<HaarlemFestival_Web.Models.Dining>
+﻿@using HaarlemFestival_Web.Models
+@model IEnumerable<HaarlemFestival_Web.Models.Restaurant>
 @{
     ViewBag.Title = "Dining";
     Layout = "~/Views/Shared/Pages/_Layout.cshtml";
@@ -7,16 +8,24 @@
 <link rel="stylesheet" href="../Content/Dining.css" />
 
 <body>
+    < <!--Titel, links boven met logo eronder.-->
+
+    <header class="header">
+        <h1>
+            Dining in Haarlem
+        </h1>
+    </header>
+
+
+
+    <a id="buyTickets" href="~/Ticket/Index">Buy tickets here</a>
+
+
     <div class="btn-group">
-        <button>Show all</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
-        <button>Reserveren</button>
+        @foreach (Restaurant restaurant in Model)
+        {
+            <button >@restaurant.Name</button>
+        }
     </div>
+
 </body>

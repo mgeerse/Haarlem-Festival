@@ -180,7 +180,6 @@
     <Compile Include="Migrations\201804111914488_removeWalkingFromLocation.Designer.cs">
       <DependentUpon>201804111914488_removeWalkingFromLocation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\ViewModels\AvailableTicket.cs" />
     <Compile Include="Models\ViewModels\IntervieweeViewModel.cs" />
     <Compile Include="Models\Shoppingcart.cs" />
     <Compile Include="Models\ViewModels\DiningDay.cs" />

@@ -24,5 +24,20 @@ border-bottom: none; /* Prevent double borders */
 
 /* Add a background color on hover */
 .btn-group button:hover{
-background-color: transparent;
+background-color: black;
 } 
+
+.header {
+    font-size: 600%;
+    color: white;
+    font-family: Korolev;
+    padding: 15px;
+}
+
+#buyTickets {
+    font-size: 200%;
+    color: orange;
+    background-color: black;
+    font-family: Korolev;
+    padding: 15px;
+}
