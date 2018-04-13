@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/Admin/_Layout.cshtml";
 }
 
-<h2>Edit Event</h2>
+<h2>@Html.ActionLink("Dashboard", "Index") > @Html.ActionLink("Manage Event Specific Details", "EventDetails") > Edit Activity</h2>
 
 @using (Html.BeginForm()) 
 {
@@ -67,29 +67,6 @@
         </div>
 
         @Html.Hidden("SubjectId", Model.SubjectId)
-
-        @*@switch (Model.SubjectId)
-        {
-            //Jazz
-            case 5:
-                @Html.Partial("_EditJazz");
-                break;
-
-            //Talking
-            case 6:
-                @Html.Partial("_EditTalking");
-                break;
-
-            //Historic
-            case 7:
-                @Html.Partial("_EditWalking");
-                break;
-
-            //Dining
-            case 8:
-                @Html.Partial("_EditDining");
-                break;
-        }*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

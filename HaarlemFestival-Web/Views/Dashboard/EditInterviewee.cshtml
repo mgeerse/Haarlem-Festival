@@ -1,0 +1,48 @@
+﻿@model HaarlemFestival_Web.Models.Interviewee
+
+@{
+    ViewBag.Title = "EditEvent";
+    Layout = "~/Views/Shared/Admin/_Layout.cshtml";
+}
+
+<h2>@Html.ActionLink("Dashboard", "Index") > @Html.ActionLink("Select Main Event Page", "PageContent") > @Html.ActionLink("Talking", "EditTalking") > Edit Interviewee </h2>
+
+
+@using (Html.BeginForm())
+{
+    <hr />
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Activity</h4>
+        <hr />
+
+        <div class="form-group">
+            <div>
+                @Html.Hidden("Id", Model.Id)
+            </div>
+
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = Model.Name.ToString() } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", placeholder = Model.Description.ToString() } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Confirm edit" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to Interviewee List", "EditTalking")
+</div>

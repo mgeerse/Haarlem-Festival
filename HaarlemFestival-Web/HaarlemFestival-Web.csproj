@@ -181,8 +181,11 @@
       <DependentUpon>201804111914488_removeWalkingFromLocation.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModels\AvailableTicket.cs" />
+    <Compile Include="Models\ViewModels\IntervieweeViewModel.cs" />
     <Compile Include="Models\ViewModels\JazzDay.cs" />
     <Compile Include="Models\ViewModels\JazzViewModel.cs" />
+    <Compile Include="Models\ViewModels\SubjectViewModel.cs" />
+    <Compile Include="Repositories\IntervieweeRepository.cs" />
     <Compile Include="Repositories\TicketRepository.cs" />
     <Compile Include="Repositories\RestaurantRepository.cs" />
     <Compile Include="Controllers\TestController.cs" />
@@ -443,16 +446,19 @@
     <Content Include="Views\Dashboard\TicketSalesAttendance.cshtml" />
     <Content Include="Views\Dashboard\TimeTable.cshtml" />
     <Content Include="Views\Dashboard\PageContent.cshtml" />
-    <Content Include="Views\Dashboard\EventDetails.cshtml" />
+    <Content Include="Views\Dashboard\ActivityDetails.cshtml" />
     <Content Include="Views\Dashboard\PersonalInfo.cshtml" />
-    <Content Include="Views\Dashboard\EditEvent.cshtml" />
-    <Content Include="Views\Shared\_EditJazz.cshtml" />
+    <Content Include="Views\Dashboard\EditActivity.cshtml" />
     <Content Include="Views\Shared\_EditTalking.cshtml" />
-    <Content Include="Views\Shared\_EditWalking.cshtml" />
-    <Content Include="Views\Shared\_EditDining.cshtml" />
     <Content Include="Views\Pages\Historic.cshtml" />
     <Content Include="Views\Jazz\Day.cshtml" />
     <Content Include="Views\Ticket\Index.cshtml" />
+    <Content Include="Views\Dashboard\CreateActivity.cshtml" />
+    <Content Include="Views\Dashboard\EditTalking.cshtml" />
+    <Content Include="Views\Dashboard\EditJazz.cshtml" />
+    <Content Include="Views\Dashboard\EditInterviewee.cshtml" />
+    <Content Include="Views\Dashboard\EditDining.cshtml" />
+    <Content Include="Views\Dashboard\EditWalking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

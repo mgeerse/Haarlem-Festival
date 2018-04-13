@@ -16,7 +16,7 @@ namespace HaarlemFestival_Web.Models
     public class Subject
     {
         [Key]
-        public int Id { get; private set; }
+        public int Id { get; set; }
 
         // Non-referencing properties
         public string Name { get; set; }
