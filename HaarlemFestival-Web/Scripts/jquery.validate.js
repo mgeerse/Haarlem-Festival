@@ -1,11 +1,4 @@
 /*!
-<<<<<<< HEAD
- * jQuery Validation Plugin v1.17.0
- *
- * https://jqueryvalidation.org/
- *
- * Copyright (c) 2017 Jörn Zaefferer
-=======
  * jQuery Validation Plugin v1.16.0
  *
  * http://jqueryvalidation.org/
