@@ -103,7 +103,7 @@ namespace HaarlemFestival_Web.Controllers
                 //Dit lagde eerder uit-
                 smtpClient.Send(mail);
             }
-            catch (Exception e)
+            catch (Exception) // NV 4-13-18: Je kunt ook catchen zonder exception of exception variabele.
             {
                 //niets
             }
@@ -144,6 +144,16 @@ namespace HaarlemFestival_Web.Controllers
             return View("~/Views/Ticket/Jazz.cshtml", JazzTicket);
         }
 
+        public ActionResult Dining()
+        {
+            DiningTicket diningTicket = new DiningTicket();
+
+            diningTicket.dining = diningRepository.GetAll();
+            diningTicket.shoppingCart = ShoppingCart.UniqueInstance;
+
+            return View("~/Views/Ticket/Dining.cshtml", diningTicket);
+        }
+
         [HttpPost]
         public ActionResult OrderJazzTicket(int Id, int Amount)
         {
@@ -162,6 +172,24 @@ namespace HaarlemFestival_Web.Controllers
             return Jazz();
         }
 
+        [HttpPost]
+        public ActionResult OrderDiningTicket(int id, int amount)
+        {
+            Dining dining = diningRepository.GetById(id);
+            Ticket ticket = CreateTicketFromActivity(dining, amount);
+
+            if (amount != 0)
+            {
+                shoppingCart.AddTicket(ticket);
+            }
+            else
+            {
+                ModelState.AddModelError("Please set a correct amount.", new ArgumentException("Incorrect ticket amount"));
+            }
+
+            return Dining();
+        }
+
         private Ticket CreateTicketFromJazzActivity(Jazz jazz, int Amount)
         {
             Ticket ticket = new Ticket();
@@ -170,6 +198,19 @@ namespace HaarlemFestival_Web.Controllers
             ticket.Activity = activityRepository.GetById(jazz.Id);
             ticket.Price = jazz.Price;
             ticket.Amount = Amount;
+            ticket.SoldAt = DateTime.Now;
+
+            return ticket;
+        }
+
+        private Ticket CreateTicketFromActivity(Activity activity, int amount)
+        {
+            Ticket ticket = new Ticket();
+            ticket.Id = shoppingCart.GetNewId();
+            ticket.ActivityId = activity.Id;
+            ticket.Activity = activityRepository.GetById(activity.Id);
+            ticket.Price = activity.Price;
+            ticket.Amount = amount;
             ticket.SoldAt = DateTime.Now;
 
             return ticket;

@@ -81,14 +81,7 @@ namespace HaarlemFestival_Web.Controllers
 
         public ActionResult PartialDining()
         {
-            DiningViewModel model = new DiningViewModel()
-            {
-                Restaurants = restaurantRepository.GetAll().ToList(),
-                SelectedRestaurant = 0,
-                DiningActivities = diningRepository.GetAll().ToList(),
-                SelectedItemId = 0
-            };
-            return PartialView("_Dining", model);
+            return PartialView("_Dining");
         }
 
         public ActionResult PartialJazz()
