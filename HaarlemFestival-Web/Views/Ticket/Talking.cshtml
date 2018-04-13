@@ -15,43 +15,47 @@
         </section>
     }
 
-    <table style="width:100%">
-        <tr class="table-primary">
-            <th>Amount</th>
-            <th>Speakers</th>
-            <th>Tickets Left</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Location</th>
-            <th></th>
-        </tr>
-        @foreach (var item in Model.talking)
-        {
-            using (Html.BeginForm("OrderTalkingTicket", "Ticket", FormMethod.Post, new { Id = Html.Value("Id"), Amount = Html.ValueFor(m => m.amount), Comment = Html.ValueFor(m => m.comment)}))
+        <table style="width:100%">
+            <tr class="table-primary">
+                <th>TicketId</th>
+                <th>Amount</th>
+                <th>Speakers</th>
+                <th>Tickets Left</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Location</th>
+                <th>Comment(s)</th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model.talking)
             {
-                Html.ValidationSummary();
-                <tr>
-                    <td hidden="hidden"><input hidden="hidden" name="Id" value="@item.Id" /></td>
-                    <td><input type="number" min="0" name="Amount" /></td>
-                    <td>@item.SpeakerOne.Name meets @item.SpeakerTwo.Name</td>
-                    @if (item.Capacity == -1)
-                    {
-                        <td>&infin;</td>
-                    }
-                    else if (item.Capacity == 0)
-                    {
-                        <td>Tickets sold out!</td>
-                    }
-                    else
-                    {
-                        <td>@item.Capacity</td>
-                    }
-                    <td>@item.StartTime.ToShortDateString()</td>
-                    <td>@item.StartTime.ToShortTimeString() - @item.EndTime.ToShortTimeString()</td>
-                    <td>@item.Location</td>
-                    <td><input class="btn-info" type="submit" value="Add Item to Basket" /></td>
-                </tr>
+                using (Html.BeginForm("OrderTalkingTicket", "Ticket", FormMethod.Post, new { Id = Html.Value("Id"), Amount = Html.ValueFor(m => m.amount), Comment = Html.ValueFor(m => m.comment) }))
+                {
+                    Html.ValidationSummary();
+            <tr style="border-top-style:solid; border-top-width:1px; border-top-color:black">
+                <td><input name="Id" value="@item.Id" /></td>
+                <td><input type="number" min="0" name="Amount" value="0" />
+                <td>@item.SpeakerOne.Name meets @item.SpeakerTwo.Name</td>
+                @if (item.Capacity == -1)
+                {
+                    <td>&infin;</td>
+                }
+                else if (item.Capacity == 0)
+                {
+                    <td>Tickets sold out!</td>
+                }
+                else
+                {
+                    <td>@item.Capacity</td>
+                }
+                <td>@item.StartTime.ToShortDateString()</td>
+                <td>@item.StartTime.ToShortTimeString() - @item.EndTime.ToShortTimeString()</td>
+                <td>@item.Location</td>
+                <td><input type="text"/>
+                <td><input class="btn-info" type="submit" value="Add Item to Basket" /></td>
+            </tr>
+                }
             }
-        }
-    </table>
+            
+        </table>
 </section>

@@ -100,10 +100,11 @@ namespace HaarlemFestival_Web.Controllers
 
         public ActionResult Talking()
         {
-            TalkingTicket TalkingTicket = new TalkingTicket
-            {
-                talking = talkingRepository.GetAll()
-            };
+            TalkingTicket TalkingTicket = new TalkingTicket();
+
+            TalkingTicket.talking = talkingRepository.GetAll();
+            TalkingTicket.shoppingCart = ShoppingCart.UniqueInstance;
+
             return View("~/Views/Ticket/Talking.cshtml", TalkingTicket);
         }
 
@@ -115,17 +116,35 @@ namespace HaarlemFestival_Web.Controllers
             return Talking();
         }
 
-        private Ticket MakeTicketFromTalkingActivity(Talking talking, int amount, string comment)
+        private Ticket MakeTicketFromTalkingActivity(Talking Talking, int Amount, string Comment)
         {
             return new Ticket
             {
-                ActivityId = talking.Id,
-                Activity = activityRepository.GetById(talking.Id),
-                Price = talking.Price,
-                Amount = amount,
-                Comment = comment,
+                ActivityId = Talking.Id,
+                Activity = activityRepository.GetById(Talking.Id),
+                Price = Talking.Price,
+                Amount = Amount,
+                Comment = Comment,
                 SoldAt = DateTime.Now,
             };
+        }
+
+        [HttpPost]
+        public ActionResult maxTicketsPerDay(int Amount, int Id, string Comment)
+        {
+            Talking talking = talkingRepository.GetById(Id);
+            Ticket ticket = MakeTicketFromTalkingActivity(talking, Amount, Comment);
+
+            if(Amount <= 2)
+            {
+                shoppingCart.AddTicket(ticket);
+            }
+            else
+            {
+                ModelState.AddModelError("Error!", "You can order a maximum of two tickets per day.");
+            }
+
+            return Talking();
         }
     }
 }
